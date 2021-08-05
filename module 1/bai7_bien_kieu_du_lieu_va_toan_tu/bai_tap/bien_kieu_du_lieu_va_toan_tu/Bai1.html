@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương Trình Nhập Điểm</title>
+</head>
+<body>
+<script>
+    let InputPhysics;
+    let InputChemistry;
+    let InputBiology;
+    InputPhysics=prompt('Khai báo điểm Vật Lý');
+    InputChemistry=prompt('Khao báo điểm Hóa Học');
+    InputBiology=prompt('Khai báo điểm sinh học');
+    let physics=parseInt(InputPhysics);
+    let Chemistry=parseInt(InputChemistry);
+    let Biology=parseInt(InputBiology);
+    let Total = physics + Chemistry + Biology
+    let AveragePoint = Total / 3
+document.write('Tổng điểm là: '+Total)
+document.write('<br>')
+document.write('Điểm trung bình là: '+AveragePoint)
+
+</script>
+
+</body>
+</html>

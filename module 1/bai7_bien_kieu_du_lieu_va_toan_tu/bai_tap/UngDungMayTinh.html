@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Caculator</h2>
+<form>
+    <input id="input1" type="text" name="giatri1">
+    <input id="input2" type="text" name="giatri2">
+    <br><br>
+    <button type="button" onclick="addition()">Addition(+)</button>
+    <button type="button" onclick="subtraction()">Subtraction(-)</button>
+    <button type="button" onclick="multiplication()">Multiplication(X)</button>
+    <button type="button" onclick="division()">Division(/)</button>
+    <br><br>
+    <b id="rs1">Result</b>
+    <b id="rs"></b>
+    <script>
+        function addition() {
+            let input1=document.getElementById("input1").value;
+            let input2=document.getElementById("input2").value;
+            let result;
+            result=parseInt(input1)+parseInt(input2);
+            document.getElementById("rs").innerHTML=result;
+            document.getElementById("rs1").innerHTML="Result Addition: ";
+        }
+        function subtraction() {
+            let input1=document.getElementById("input1").value;
+            let input2=document.getElementById("input2").value;
+            let result;
+            result=parseInt(input1)-parseInt(input2);
+            document.getElementById("rs").innerHTML=result;
+            document.getElementById("rs1").innerHTML="Result Subtraction: ";
+        }
+        function multiplication() {
+            let input1=document.getElementById("input1").value;
+            let input2=document.getElementById("input2").value;
+            let result;
+            result=parseInt(input1)*parseInt(input2);
+            document.getElementById("rs").innerHTML=result;
+            document.getElementById("rs1").innerHTML="Result Multiplication: ";
+        }
+        function division() {
+            let input1=document.getElementById("input1").value;
+            let input2=document.getElementById("input2").value;
+            let result;
+            result=parseInt(input1)/parseInt(input2);
+            document.getElementById("rs").innerHTML=result;
+            document.getElementById("rs1").innerHTML="Result Division: ";
+        }
+    </script>
+</form>
+
+</body>
+</html>

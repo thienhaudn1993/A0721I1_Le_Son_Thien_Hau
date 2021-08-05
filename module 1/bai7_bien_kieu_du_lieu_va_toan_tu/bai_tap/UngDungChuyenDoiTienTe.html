@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get">
+    <table>
+        <tr>
+            <th>Ammout</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="text" id="input" name="ammount"></td>
+            <td>
+                <select id="option1">
+                    <option value="VND">VietNam</option>
+                    <option value="USD">USD</option>
+                </select>
+            </td>
+            <td>
+                <select id="option2">
+                    <option value="USD">USD</option>
+                    <option value="VND">VietNam</option>
+                </select>
+            </td>
+            <td><button type="button" onclick="convert()">Convert</button></td>
+        </tr>
+        <style>
+            td,th{
+                text-align: center;
+                padding-left: 20px;
+            }
+        </style>
+    </table>
+</form>
+<br>
+<b>Result: </b>
+<b id="rs"></b>
+<script>
+    function convert() {
+        let input=document.getElementById("input").value;
+        let option1=document.getElementById("option1").value;
+        let option2=document.getElementById("option2").value;
+        let result;
+        if (option1=="VND" && option2=="USD"){
+            result=input/23000;
+            document.getElementById("rs").innerHTML=result;
+        }
+        else if (option1=="USD" && option2=="VND"){
+            result=input*23000;
+            document.getElementById("rs").innerHTML=result;
+        }
+        else if (option1==option2){
+            alert("error");
+        }
+    }
+</script>
+</body>
+</html>

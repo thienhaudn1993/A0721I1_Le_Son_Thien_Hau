@@ -15,40 +15,35 @@
     <button type="button" onclick="multiplication()">Multiplication(X)</button>
     <button type="button" onclick="division()">Division(/)</button>
     <br><br>
-    <b id="rs1">Result</b>
-    <b id="rs"></b>
+    <b id="rs1"></b>
     <script>
         function addition() {
             let input1=document.getElementById("input1").value;
             let input2=document.getElementById("input2").value;
             let result;
             result=parseInt(input1)+parseInt(input2);
-            document.getElementById("rs").innerHTML=result;
-            document.getElementById("rs1").innerHTML="Result Addition: ";
+            document.getElementById("rs1").innerHTML="Result Addition: " +result;
         }
         function subtraction() {
             let input1=document.getElementById("input1").value;
             let input2=document.getElementById("input2").value;
             let result;
             result=parseInt(input1)-parseInt(input2);
-            document.getElementById("rs").innerHTML=result;
-            document.getElementById("rs1").innerHTML="Result Subtraction: ";
+            document.getElementById("rs1").innerHTML="Result Subtraction: " +result;
         }
         function multiplication() {
             let input1=document.getElementById("input1").value;
             let input2=document.getElementById("input2").value;
             let result;
             result=parseInt(input1)*parseInt(input2);
-            document.getElementById("rs").innerHTML=result;
-            document.getElementById("rs1").innerHTML="Result Multiplication: ";
+            document.getElementById("rs1").innerHTML="Result Multiplication: " +result;
         }
         function division() {
             let input1=document.getElementById("input1").value;
             let input2=document.getElementById("input2").value;
             let result;
             result=parseInt(input1)/parseInt(input2);
-            document.getElementById("rs").innerHTML=result;
-            document.getElementById("rs1").innerHTML="Result Division: ";
+            document.getElementById("rs1").innerHTML="Result Division: " +result;
         }
     </script>
 </form>

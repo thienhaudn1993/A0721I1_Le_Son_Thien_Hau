@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<script>
+    let user=prompt("Input User in here")
+    if (user == "Admin") {
+        let pass=prompt("Input Pass in here")
+        if (pass == "TheMaster"){
+            alert("Welcome!")
+        }
+        else if (pass == null){
+            alert("Canceled")
+        }
+        else {
+            alert("Wrong Pass")
+        }
+    }
+    else if (user == null) {
+        alert("Canceled")
+    }
+    else {
+        alert("'I don't know you")
+    }
+</script>
+</body>
+</html>

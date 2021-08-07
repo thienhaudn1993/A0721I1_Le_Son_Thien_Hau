@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chỉ số BMI</title>
+</head>
+<body>
+<script>
+    let BMI;
+    let weight;
+    let height;
+    weight=prompt('Input weight in here');
+    height=prompt('Input height in here');
+    BMI = weight / (Math.pow(height,2));
+    if (BMI<18.5) {
+        document.write("BMI is Underweight");
+    }
+    else if (BMI<25) {
+        document.write("BMI is Normal");
+    }
+    else if (BMI<30) {
+        document.write("BMI is Overweight");
+    }
+    else {
+        document.write("BMI is Obese");
+    }
+
+</script>
+
+</body>
+</html>

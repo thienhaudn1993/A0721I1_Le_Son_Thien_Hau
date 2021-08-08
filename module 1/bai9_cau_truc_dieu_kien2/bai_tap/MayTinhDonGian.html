@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <table id="khung">
+        <tr>
+            <th colspan="4" "><input type="text" name="nhapSo" id="kq"></th>
+        </tr>
+        <tr>
+            <th><button type="button" style="color: blue; font-size: 30px" value="1" onclick="set_num(this.value)">1</button></th>
+            <th><button type="button" style="color: blue; font-size: 30px" value="2" onclick="set_num(this.value)">2</button></th>
+            <th><button type="button" style="color: blue; font-size: 30px" value="3" onclick="set_num(this.value)">3</button></th>
+            <th><button type="button" style="color: blue; font-size: 30px" value="+" onclick="set_num(this.value)">+</button></th>
+        </tr>
+        <tr>
+            <th><button type="button" style="color: blue; font-size: 30px" value="4" onclick="set_num(this.value)">4</button></th>
+            <th><button type="button" style="color: blue; font-size: 30px" value="5" onclick="set_num(this.value)">5</button></th>
+            <th><button type="button" style="color: blue; font-size: 30px" value="6" onclick="set_num(this.value)">6</button></th>
+            <th><button type="button" style="color: blue; font-size: 30px" value="-" onclick="set_num(this.value)">-</button></th>
+        </tr>
+        <tr>
+            <th><button type="button" style="color: blue; font-size: 30px" value="7" onclick="set_num(this.value)">7</button></th>
+            <th><button type="button" style="color: blue; font-size: 30px" value="8"onclick="set_num(this.value)">8</button></th>
+            <th><button type="button" style="color: blue; font-size: 30px" value="9"onclick="set_num(this.value)">9</button></th>
+            <th><button type="button" style="color: blue; font-size: 30px" value="*"onclick="set_num(this.value)">x</button></th>
+        </tr>
+        <tr>
+            <th><button type="button" style="color: blue; font-size: 30px" value="C"onclick="xoa()">C</button></th>
+            <th><button type="button" style="color: blue; font-size: 30px" value="0"onclick="set_num(this.value)">0</button></th>
+            <th><button type="button" style="color: blue; font-size: 30px" value="="onclick="dauBang()">=</button></th>
+            <th><button type="button" style="color: blue; font-size: 30px" value="/"onclick="set_num(this.value)">/</button></th>
+        </tr>
+        <style>
+            #kq{
+                margin: 20px;
+                padding: 15px;
+                width: 350px;
+                text-align: right;
+                font-size: 30px;
+            }
+            #khung{
+                border: 10px solid black;
+
+            }
+
+            body {
+                padding: 100px 0px 0px 100px;
+                font-family: Arial;
+            }
+            button {
+                background-color: white ;
+                padding: 5px 10px 5px 10px;
+                margin: 0px 15px 15px 15px;
+                border-color: #dddddd;
+                width: 70px;
+                text-align: center;
+            }
+        </style>
+    </table>
+</form>
+<script>
+    let x=''
+    // gắn a với một id nào đó
+    function a(id) {
+        return document.getElementById(id);
+    }
+    function set_num(num) {
+        x+=num;
+        a('kq').value=x;
+    }
+    function xoa() {
+        x='';
+        a('kq').value=x;
+    }
+    function dauBang() {
+        a('kq').value=eval(a('kq').value);
+        x=a('kq').value;
+    }
+</script>
+</body>
+</html>

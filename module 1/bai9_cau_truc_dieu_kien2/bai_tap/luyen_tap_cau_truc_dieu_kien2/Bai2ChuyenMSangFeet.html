@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="kq1"></h1>
+<h1 id="kq"></h1>
+<script>
+    let m=prompt('Nhập số mét');
+    let ft = m*3.2808;
+    if (m>=0) {
+        document.getElementById('kq1').innerHTML='Mét nhập vào m là: ' +m;
+        document.getElementById('kq').innerHTML='-> Feet nhận được ft là: ' +ft;
+    }
+    else {
+        alert('Nhập m sai thông số m cần phải >0')
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Viết chương trình tính tiền điện với chỉ số mới và chỉ số cũ
+Biết rằng 100 kWh đầu giá 1000
+từ kWh 101 – 150 giá 1200
+từ kWh 151 – 200 giá 2000
+từ 201 trở lên giá 2500-->
+
+<script>
+    let nhap=prompt('Nhập số kWh tháng này của bạn');
+    let tienDien;
+    if (nhap<100) {
+        tienDien = nhap*1000;
+        alert('Tiền điện tháng này của bạn là ' +tienDien + ' VNĐ');
+    }
+    else if (nhap<=150) {
+        tienDien = 100*1000+(nhap-100)*1200;
+        alert('Tiền điện tháng này của bạn là ' +tienDien + ' VNĐ');
+    }
+    else if (nhap<=200) {
+        tienDien = 100*1000+50*1200+(nhap-150)*2000;
+        alert('Tiền điện tháng này của bạn là ' +tienDien + ' VNĐ');
+    }
+    else {
+        tienDien = 100*1000+50*1200+50*2000+(nhap-200)*2500;
+        alert('Tiền điện tháng này của bạn là ' +tienDien + ' VNĐ');
+    }
+</script>
+</body>
+</html>

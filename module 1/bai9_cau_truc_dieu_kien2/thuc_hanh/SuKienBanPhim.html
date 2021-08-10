@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="docReady()">
+<img id="nobita" src="https://static.wikia.nocookie.net/thenewdisneyandpixar/images/4/41/Nobita.jpg" alt="nobita1" style="position:absolute;left:0;right:0" height="200" width="150"/>
+<script>
+    // Xây dựng các hàm xử lý khi nhấn phím lên
+    function upArrowPressed() {
+        let element=document.getElementById('nobita');
+        element.style.top=parseInt(element.style.top) -5 +'px';
+    }
+    // Xây dựng các hàm xử lý khi nhấn phím xuống
+    function downArrowPressed() {
+        var element=document.getElementById('nobita');
+        element.style.top=parseInt(element.style.top) +5 +'px';
+    }
+    // Xây dựng các hàm xử lý khi nhấn phím bên phải
+    function rightArrowPressed() {
+        var element=document.getElementById('nobita');
+        element.style.left=parseInt(element.style.left) +5 +'px';
+    }
+    // Xây dựng các hàm xử lý khi nhấn phím trái
+    function leftArrowPressed() {
+        var element=document.getElementById('nobita');
+        element.style.left=parseInt(element.style.left) -5 +'px';
+    }
+    // Xây dựng các hàm nhận các phím
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftArrowPressed();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+            case 38:
+                upArrowPressed();
+                break;
+            case 40:
+                downArrowPressed();
+                break;
+        }
+    }
+    // Xây dựng hàm doReady()
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+    /*Gọi hàm doReady()
+    <body onload="docReady()">*/
+</script>
+</body>
+</html>

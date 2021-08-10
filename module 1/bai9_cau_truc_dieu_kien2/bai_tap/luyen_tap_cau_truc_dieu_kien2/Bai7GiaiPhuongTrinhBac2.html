@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Phương trình bậc 2 ax^2+bx+c=0 (a#0)-->
+<h1 id="kq"></h1>
+<h1 id="kq1"></h1>
+<h1 id="kq2"></h1>
+<script>
+    let a=prompt('Nhập giá trị a vào đây');
+    let b=prompt('Nhập giá trị b vào đây');
+    let c=prompt('Nhập giá trị c vào đây');
+    let x1;
+    let x2;
+    let denta = parseInt(b*b-4*a*c);
+    if (a!=0) {
+        if (denta<0) {
+            alert('Phương trình vô nghiệm');
+        }
+        else if (denta==0) {
+            x1 = (-b)/(2*a);
+            x2 = (-b)/(2*a);
+            document.getElementById('kq').innerHTML = 'Phương trình có nghiệm kép x1, x2 là ';
+            document.getElementById('kq1').innerHTML = 'x1 là ' + x1
+            document.getElementById('kq2').innerHTML = 'x2 là ' + x2
+           // alert('Phương trình có nghiệm x1,x2 là '+ x1 = x2 = -b/2a)
+        }
+        else {
+            x1 = (-b+Math.sqrt(denta))/(2*a);
+            x2 = (-b-Math.sqrt(denta))/(2*a);
+            document.getElementById('kq').innerHTML = 'Phương trình có 2 nghiêm phân biệt x1,x2';
+            document.getElementById('kq1').innerHTML = 'x1 là ' + x1
+            document.getElementById('kq2').innerHTML = 'x2 là ' + x2
+        }
+    }
+    else {
+        alert('Phương trình trở thành bậc 1')
+    }
+
+</script>
+</body>
+</html>

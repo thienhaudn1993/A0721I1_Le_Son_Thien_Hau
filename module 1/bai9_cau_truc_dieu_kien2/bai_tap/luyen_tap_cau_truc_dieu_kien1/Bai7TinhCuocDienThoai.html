@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--tính cước điện thoại bàn cho một hộ gia đình với các thông số như sau ( đơn vị ngàn VNĐ ):-->
+<!--Phí thuê bao bắt buộc là 25 nghìn.-->
+<!--600 đồng cho mỗi gọi của 50 phút đầu tiên.-->
+<!--400 đồng cho mỗi phút gọi của 150 phút tiếp theo.-->
+<!--200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.-->
+<h2 id="kq"></h2>
+<h2 id="kq1"></h2>
+<script>
+    let soPhut;
+    const phiThueCoDinh=25000;
+    let phiThue;
+    let tong;
+    soPhut=parseInt(prompt('Nhập số phút(ph) đã gọi'))
+    if (soPhut>200) {
+        phiThue=(soPhut-200)*200+150*400+50*600;
+        tong=phiThue+phiThueCoDinh;
+        document.getElementById('kq').innerHTML = " Bạn đã gọi " +soPhut;
+        document.getElementById('kq1').innerHTML = "Tổng số tiền phải trả là " +tong;
+    }
+    else if (soPhut>50) {
+        phiThue=(soPhut-50)*400+50*600;
+        tong=phiThue+phiThueCoDinh;
+        document.getElementById('kq').innerHTML = " Bạn đã gọi " +soPhut;
+        document.getElementById('kq1').innerHTML = "Tổng số tiền phải trả là " +tong;
+    }
+    else {
+        phiThue=soPhut*600;
+        tong=phiThue+phiThueCoDinh;
+        document.getElementById('kq').innerHTML = " Bạn đã gọi " +soPhut;
+        document.getElementById('kq1').innerHTML = "Tổng số tiền phải trả là " +tong;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="input" type="text" placeholder="Nhập Số" value="">
+<button type="button" onclick="nhapSo()">Click</button>
+<h1 id="kq"></h1>
+<script>
+    function nhapSo() {
+    let input=document.getElementById('input').value;
+    if (input>0) {
+        document.getElementById('kq').innerHTML = input + ' là số lớn hơn 0';
+    }
+    else {
+        document.getElementById('kq').innerHTML = input + ' là số nhỏ hơn 0';
+    }
+    }
+
+    // let a=parseInt(prompt('Nhập số nguyên'));
+    // if (a>0) {
+    //     document.getElementById('kq').innerHTML = a + ' là số lớn hơn 0';
+    // }
+    // else {
+    //     document.getElementById('kq').innerHTML = a + ' là số nhỏ hơn 0';
+    // }
+
+</script>
+</body>
+</html>

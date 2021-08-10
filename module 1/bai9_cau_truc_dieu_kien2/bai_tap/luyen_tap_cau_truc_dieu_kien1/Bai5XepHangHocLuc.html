@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--tddgtx : Tổng điểm kiểm tra, đánh giá thường xuyên-->
+<!--ddggk : Điểm kiểm tra, đánh giá giữa kì-->
+<!--ddgck : Điểm kiểm tra, đánh giá cuối kì-->
+<!--ddgtx : Điểm kiểm tra, đánh giá thường xuyên-->
+<!--dtbmhk : Điểm trung bình môn học kì-->
+Tổng điểm kiểm tra, đánh giá thường xuyên
+<input id="tddgtx" type="text" placeholder="tddgtx">
+<br><br>
+Điểm kiểm tra, đánh giá giữa kì
+<input id="ddggk" type="text" placeholder="ddggk">
+<br><br>
+Điểm kiểm tra, đánh giá cuối kì
+<input id="ddgck" type="text" placeholder="ddgck">
+<br><br>
+Điểm kiểm tra, đánh giá thường xuyên
+<input id="ddgtx" type="text" placeholder="ddgtx">
+<br><br>
+<input type="button" value="Tính điểm" onclick="tongDiem()">
+<h2 id="kq"></h2>
+<h1 id="kq1" style="color: red"></h1>
+<script>
+    function tongDiem() {
+    let tddgtx=document.getElementById('tddgtx').value;
+    let ddggk=document.getElementById('ddggk').value;
+    let ddgck=document.getElementById('ddgck').value;
+    let ddgtx=document.getElementById('ddgtx').value;
+    dtbmhk=(parseInt(tddgtx)+2*parseInt(ddggk)+3*parseInt(ddgck))/(parseInt(ddgtx)+5)
+    document.getElementById('kq').innerHTML = 'Điểm trung bình môn học kì là: ' + dtbmhk
+    if (dtbmhk>3.6) {
+        document.getElementById('kq1').innerHTML = "Loại xuất sắc";
+    }
+    else if (dtbmhk>3.2) {
+        document.getElementById('kq1').innerHTML = "Loại Giỏi";
+    }
+    else if (dtbmhk>2.5) {
+        document.getElementById('kq1').innerHTML = "Loại Khá";
+    }
+    else if (dtbmhk>2) {
+        document.getElementById('kq1').innerHTML = "Loại Trung Bình";
+    }
+    else {
+        document.getElementById('kq1').innerHTML = "Loại Yếu";
+    }
+    }
+</script>
+</body>
+</html>

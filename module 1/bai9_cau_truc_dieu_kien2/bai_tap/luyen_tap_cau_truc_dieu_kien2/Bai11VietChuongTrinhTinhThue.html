@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuế Thu Nhập Cá Nhân</title>
+</head>
+<body>
+<!-- Các bậc tính thuế thu nhập cá nhân
+Bậc 1: 4 triệu đồng/tháng 0%;
+Bậc 2: Trên 4 - 6 triệu đồng/tháng: 5%;
+Bậc 3: Trên 6 - 9 triệu đồng: 10%;
+Bậc 4: Trên 9 - 14 triệu đồng/tháng: 15%;
+Bậc 5: trên 14 - 24 triệu đồng/tháng: 20%;
+Bậc 6: Trên 24 - 44 triệu đồng/tháng: 25%;
+Bậc 7: Trên 44 - 84 triệu đồng/tháng: 30%;
+Bậc 8: Trên 84 triệu đồng: 35%.-->
+<script>
+    let thuNhap=prompt('Nhập thu nhập của bạn trong tháng này:');
+    let tienThue;
+    if (thuNhap<=4000000) {
+        tienThue=thuNhap*0;
+        alert('Tiền thuế bạn cần phải đóng là ' +tienThue+ ' VNĐ');
+    }
+    else if (thuNhap<=6000000) {
+        tienThue=thuNhap*0.05;
+        alert('Tiền thuế bạn cần phải đóng là ' +tienThue+ ' VNĐ');
+    }
+    else if (thuNhap<=9000000) {
+        tienThue=thuNhap*0.1;
+        alert('Tiền thuế bạn cần phải đóng là ' +tienThue+ ' VNĐ');
+    }
+    else if (thuNhap<=14000000) {
+        tienThue=thuNhap*0.15;
+        alert('Tiền thuế bạn cần phải đóng là ' +tienThue+ ' VNĐ');
+    }
+    else if (thuNhap<=24000000) {
+        tienThue=thuNhap*0.2;
+        alert('Tiền thuế bạn cần phải đóng là ' +tienThue+ ' VNĐ');
+    }
+    else if (thuNhap<=44000000) {
+        tienThue=thuNhap*0.25;
+        alert('Tiền thuế bạn cần phải đóng là ' +tienThue+ ' VNĐ');
+    }
+    else if (thuNhap<=84000000) {
+        tienThue=thuNhap*0.3;
+        alert('Tiền thuế bạn cần phải đóng là ' +tienThue+ ' VNĐ');
+    }
+    else {
+        tienThue=thuNhap*0.35;
+        alert('Tiền thuế bạn cần phải đóng là ' +tienThue+ ' VNĐ');
+    }
+</script>
+</body>
+</html>

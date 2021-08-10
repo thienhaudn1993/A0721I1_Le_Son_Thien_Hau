@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="kq">Kết quả</h1>
+<script>
+    // Nếu < 15 tuổi không được học lớp 10
+    // Nếu =15 tuổi được học lớp 10
+    // Nếu >15 (16-18) tuổi tối đa được học lớp 10 cho những người dân tộc thiểu số, học sinh khuyết tật, học sinh có hoàn cảnh đặc biệt khó khăn, học sinh ở nước ngoài về nước
+    let a=prompt('Nhập số tuổi được phép học lớp 10 dưới dây')
+    if (a<15) {
+        document.getElementById("kq").innerHTML = 'Bạn chưa đủ độ tuổi vào lớp 10 theo quy định';
+    }
+    else if (a==15) {
+        document.getElementById('kq').innerHTML = 'Bạn đã đủ độ tuổi vào lớp 10 theo quy định';
+    }
+    else {
+        document.getElementById('kq').innerHTML = 'Độ tuổi (16-18) được học lớp 10 cho những người dân tộc thiểu số, học sinh khuyết tật, học sinh có hoàn cảnh đặc biệt khó khăn, học sinh ở nước ngoài về nước';
+    }
+</script>
+</body>
+</html>

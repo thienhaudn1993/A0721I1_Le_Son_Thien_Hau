@@ -62,6 +62,7 @@
         </style>
     </table>
 </form>
+<!-- Cách 1:
 <script>
     let x=''
     // gắn a với một id nào đó
@@ -80,6 +81,23 @@
         a('kq').value=eval(a('kq').value);
         x=a('kq').value;
     }
+</script>-->
+<!--Cách 2-->
+<script>
+    function set_num(so) {
+        let nhap=document.getElementById('kq').value +=so;
+    }
+    function dauBang() {
+        document.getElementById('kq').value = eval(document.getElementById('kq').value);
+    }
+    function xoa() {
+        document.getElementById('kq').value =""
+    }
+    /*function xoaMotKyTu() {
+        let string = document.getElementById("nhap").value;
+        let string1 = string.substr(0, string.length - 1);
+        document.getElementById("nhap").value = string1;
+    }*/
 </script>
 </body>
 </html>

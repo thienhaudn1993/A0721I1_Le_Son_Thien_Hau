@@ -5,6 +5,37 @@
     <title>Viết chương trình tính lãi ngân hàng</title>
 </head>
 <body>
+<!--Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.-->
 
+
+<!--  t = m*(1+r)^n
+
+Trong đó:
+t = Tổng tiền anh A phải trả
+
+m = Số tiền gốc
+
+r = lãi suất hàng tháng
+
+n = số tháng vay-->
+<h1 id="tong"></h1>
+<h1 id="tongLai"></h1>
+<h2>Tổng tiền lãi từng tháng là:</h2>
+<h3 id="laiThang"></h3>
+<script>
+    let m=parseInt(prompt('Nhập số tiền gốc cần vay là: '));
+    let r=parseInt(prompt('Nhập lãi suất mỗi tháng % là: '));
+    let n=parseInt(prompt('Nhập số tháng vay là: '));
+    let t=m * Math.pow((1+r/100),n);
+    let tlt;
+    document.getElementById('tong').innerHTML='Tổng số tiền cần trả là ' +t+ ' VNĐ';
+    let tl=t-m;
+    document.getElementById('tongLai').innerHTML='Tổng tiền lãi cần trả là ' +tl+ ' VNĐ ';
+
+for(let tv=1; tv<=n; tv++) {
+    tlt = m * Math.pow((1 + r / 100), tv) - m;
+    document.getElementById('laiThang').innerHTML +='Tổng tiền lãi của tháng ' +tv+' là ' +tlt+ ' vnđ '+'<br>';
+}
+</script>
 </body>
 </html>

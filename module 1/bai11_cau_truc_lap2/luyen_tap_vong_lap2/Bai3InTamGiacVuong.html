@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau-->
+<script>
+    // 1/ Hình 1
+    for (let i=1; i<=5; i++) {
+        for (let j=1; j<=5; j++) {
+            if (j===1 || i===5||(i===2 & j===2)||(i===3 & j===2)||(i===3 & j===3)||(i===4 & j===2)||(i===4 & j===3)||(i===4 & j===4)) {
+                document.write('*');
+            }
+            else {
+                document.write('&nbsp&nbsp');
+            }
+        }
+        document.write('<br>');
+    }
+
+    // 1/ Hình 2
+    /*for (let i=1; i<=5; i++) {
+        for (let j=1; j<=5; j++) {
+            if (j===1 || i===1||(i===5 & j===1)||(i===4 & j===2)||(i===3 & j===2)||(i===3 & j===3)||(i===2 & j===2)||(i===2 & j===3)||(i===2 & j===4)) {
+                document.write('*');
+            }
+            else {
+                document.write('&nbsp&nbsp');
+            }
+        }
+        document.write('<br>');
+    }*/
+
+    // 1/ Hình 3
+
+    /*for (let i=1; i<=5; i++) {
+            for (let j=1; j<=5; j++) {
+                if (j===5 || i===5||(i===2 & j===4)||(i===3 & j===3)||(i===3 & j===4)||(i===4 & j===2)||(i===4 & j===3)||(i===4 & j===4)) {
+                    document.write('*');
+                }
+                else {
+                    document.write('&nbsp&nbsp');
+                }
+            }
+            document.write('<br>');
+        }*/
+
+    // 1/ Hình 4
+
+  /*  for (let i=1; i<=5; i++) {
+        for (let j=1; j<=5; j++) {
+            if (j===5 || i===1||(i===2 & j===2)||(i===2 & j===3)||(i===2 & j===4)||(i===3 & j===3)||(i===3 & j===4)||(i===4 & j===4)) {
+                document.write('*');
+            }
+            else {
+                document.write('&nbsp&nbsp');
+            }
+        }
+        document.write('<br>');
+    }*/
+</script>
+</body>
+</html>

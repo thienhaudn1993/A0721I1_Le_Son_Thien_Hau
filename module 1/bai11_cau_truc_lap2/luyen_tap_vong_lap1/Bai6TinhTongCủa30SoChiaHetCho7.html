@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.-->
+<script>
+    let count=0;
+    let tong=0;
+    let daySo='';
+    for (let i=1;i>=1;i++) {
+        if (i%7==0) {
+            daySo +=i + ' ';
+            tong += i;
+            count +=1;
+            if(count==30) {
+                break;
+            }
+        }
+    }
+    document.write("Dãy số tìm được là: " + daySo + ' '+'<br>')
+    document.write("Tổng là: " +tong)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 4: Tìm số đầu tiên trong dãy Fibonacci chia hết cho 5.-->
+<script>
+    let fibonacci="";
+    let so = new Array();
+    let i;
+    for (i=0;i<20;i++) {
+        if (i==0) {
+            so[0]=0;
+            fibonacci = so[0] +' , '
+            document.write(fibonacci)
+        }
+        else if (i==1) {
+            so[1]=1;
+            fibonacci = so[1] +' , '
+            document.write(fibonacci)
+        }
+        else {
+            so[i]=so[i-2] + so[i-1];
+
+            fibonacci = so[i] +' , '
+            document.write(fibonacci)
+            if (so[i]%5==0) {
+                chia5=so[i];
+                break
+        }
+    }
+    }
+    document.write('<br><br>'+'Số chia hết cho 5 đầu tiên ' +chia5)
+
+</script>
+</body>
+</html>

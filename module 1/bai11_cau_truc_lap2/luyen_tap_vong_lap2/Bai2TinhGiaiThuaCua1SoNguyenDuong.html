@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 2: Tính giai thừa của một số nguyên dương-->
+<!--    n!=n*(n-1)*(n-2)...4*3*2*1
+        0!=1-->
+<script>
+    let n=parseInt(prompt('Nhập số giai thừa vào đây:'))
+    let giaiThua=1;
+
+    if (n==0 || n==1) {
+        giaiThua=1
+        document.write('Giai thừa của '+ n +' là '+giaiThua)
+    }
+    else if (n<0) {
+        alert('Số giao thừa cần nhập phải là số dương');
+    }
+    else {
+        let num=1;
+        while (num<=n) {
+            giaiThua = giaiThua*num;
+            num++;
+        }
+        document.write('Giai thừa của '+ n +' là '+giaiThua)
+    }
+
+</script>
+</body>
+</html>

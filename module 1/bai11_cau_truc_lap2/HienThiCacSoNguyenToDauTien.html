@@ -8,15 +8,53 @@
 <!--Mô tả
 Trong phần này, chúng ta sẽ phát triển một ứng dụng cho phép hiển thị 20 số nguyên tố đầu tiên.-->
 <script>
-    let number = parseInt(prompt('Nhập số để lưu số lượng số nguyên tố cần in:'));
+    let numbers = prompt('Nhập số để lưu số lượng số nguyên tố cần in:');
     let count=0;
     let daySo ='';
-    for (let n=2; n>=2 ; n++) {
-        if (n%1==0 && )
+    let num=2;
 
-        count+=1;
+    while (count<numbers) {
+        let flag=true;
+        if (num<2) {
+            flag=false;
+        }
+        else {
+            for (let i=2; i<num ; i++) {
+                if (num%i==0) {
+                    flag=false;
+                    break;
+                }
+            }
+        }
+        if (flag) {
+            daySo+= num +',';
+            count++;
+        }
+
+       num++
     }
 
+    document.write(daySo);
+
+
+    /*let flag=true;
+    if (num<2) {
+        flag=false;
+    }
+    else {
+        for (let i=2; i<num ; i++) {
+            if (num%i==0) {
+                flag=false;
+                break;
+            }
+        }
+    }
+    if (flag) {
+        alert('là số nguyên tố');
+    }
+    else {
+        alert('no')
+    }*/
 </script>
 </body>
 </html>

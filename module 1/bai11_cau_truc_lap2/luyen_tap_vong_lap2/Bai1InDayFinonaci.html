@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt('Nhập số để lưu số lượng số cần in trong dãy Finonaci ');
+    let fibonacci="";
+    let so = new Array();
+    let count=0;
+
+        for (let i=0;i<n;i++) {
+            if (i==0) {
+                so[0]=0;
+                fibonacci = so[0] +' , '
+                document.write(fibonacci)
+            }
+            else if (i==1) {
+                so[1]=1;
+                fibonacci = so[1] +' , '
+                document.write(fibonacci)
+            }
+            else {
+                so[i]=so[i-2] + so[i-1];
+                fibonacci = so[i] +' , '
+                document.write(fibonacci)
+            }
+        }
+
+
+</script>
+</body>
+</html>

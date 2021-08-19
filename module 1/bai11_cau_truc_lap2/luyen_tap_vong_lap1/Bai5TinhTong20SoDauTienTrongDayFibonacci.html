@@ -7,7 +7,24 @@
 <body>
 <!--Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.-->
 <script>
-    let fibonacci="";
+    //Cách 1
+    let f0=0;
+    let f1=1;
+    let f=f0+f1;
+    let result=f0+' '+f1+' ';
+    let sum=f0+f1;
+    for (let i=0; i<18; i++) {
+        sum+=f;
+        result+=f+' ';
+        f0=f1;
+        f1=f;
+        f=f0+f1;
+    }
+    document.write(result +'<br/>');
+    document.write('Tổng của 20 số đầu tiên là ' +sum);
+
+    //Cách 2
+   /* let fibonacci="";
     let so = new Array();
     let tong=0;
     for (let i=0;i<20;i++) {
@@ -29,7 +46,7 @@
             tong += so[i]
         }
     }
-    document.write('<br><br>' +'Tổng của 20 số đầu tiên trong dãy là '+tong);
+    document.write('<br><br>' +'Tổng của 20 số đầu tiên trong dãy là '+tong);*/
     </script>
 </body>
 </html>

@@ -7,7 +7,22 @@
 <body>
 <!--Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.-->
 <script>
-  let fibonacci="";
+    // Cách 1
+    let f0=0;
+    let f1=1;
+    let f=f0+f1;
+    let result=f0+' '+f1+' ';
+    for (let i=0; i<18; i++) {
+        result+=f+' ';
+        f0=f1;
+        f1=f;
+        f=f0+f1;
+    }
+    document.write(result +' ')
+
+
+    // Cách 2
+  /*let fibonacci="";
   let so = new Array();
   for (let i=0;i<20;i++) {
       if (i==0) {
@@ -26,7 +41,7 @@
           fibonacci = so[i] +' , '
           document.write(fibonacci)
       }
-  }
+  }*/
 </script>
 </body>
 </html>

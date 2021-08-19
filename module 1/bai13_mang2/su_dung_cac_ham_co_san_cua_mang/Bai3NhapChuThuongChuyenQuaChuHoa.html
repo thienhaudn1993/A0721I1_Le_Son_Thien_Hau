@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa.
+Ví dụ: nếu bạn nhập vào chuỗi 'The Quick Brown Fox' kết quả của chương trình là 'tHE qUICK bROWN fOX'.-->
+<script>
+    let num = prompt('Nhập chuỗi kí tự vào đây: ');
+    let src = num.toString();
+    let upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let lower = 'abcdefghijklmnopqrstuvwxyz';
+    let result =[];
+
+    for (let i=0;i<src.length;i++) {
+        if (upper.indexOf(src[i]) !==-1) {
+            result.push(src[i].toLowerCase());
+        }
+        else if (lower.indexOf(src[i]) !==-1) {
+            result.push(src[i].toUpperCase());
+        }
+        else {
+            result.push(src[i]);
+        }
+    }
+    document.write(result.join(''))
+
+</script>
+</body>
+</html>

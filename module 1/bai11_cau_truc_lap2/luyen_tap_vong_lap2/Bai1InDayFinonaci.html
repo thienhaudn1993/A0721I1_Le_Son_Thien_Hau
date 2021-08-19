@@ -6,7 +6,24 @@
 </head>
 <body>
 <script>
-    let n = prompt('Nhập số để lưu số lượng số cần in trong dãy Finonaci ');
+    //Cách 1:
+    let n = parseInt(prompt('Nhập số để lưu số lượng số cần in trong dãy Finonaci '))
+    let f0=0;
+    let f1=1;
+    let f=f0+f1;
+    let result=f0+','+f1+',';
+    for (let i=2; i<n; i++) {
+        result+=f+',';
+        f0=f1;
+        f1=f;
+        f=f0+f1;
+    }
+    document.write(result)
+
+
+
+    //Cách 2
+    /*let n = prompt('Nhập số để lưu số lượng số cần in trong dãy Finonaci ');
     let fibonacci="";
     let so = new Array();
     let count=0;
@@ -28,7 +45,7 @@
                 document.write(fibonacci)
             }
         }
-
+*/
 
 </script>
 </body>

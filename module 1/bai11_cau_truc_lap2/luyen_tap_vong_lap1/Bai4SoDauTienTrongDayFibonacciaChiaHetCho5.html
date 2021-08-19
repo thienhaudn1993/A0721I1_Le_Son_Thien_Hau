@@ -7,7 +7,24 @@
 <body>
 <!--Bài 4: Tìm số đầu tiên trong dãy Fibonacci chia hết cho 5.-->
 <script>
-    let fibonacci="";
+    // Cách 1:
+    let f0=0;
+    let f1=1;
+    let f=f0+f1;
+    let result=f0+' '+f1+' ';
+    for (let i=0; i<20; i++) {
+        if (f%5==0) {
+            alert('Số chia hết cho 5 đầu tiên trong dẫy Fibonacci là ' +f)
+            break;
+        }
+        result+=f+' ';
+        f0=f1;
+        f1=f;
+        f=f0+f1;
+    }
+
+    //Cách 2
+    /*let fibonacci="";
     let so = new Array();
     let i;
     for (i=0;i<20;i++) {
@@ -28,11 +45,11 @@
             document.write(fibonacci)
             if (so[i]%5==0) {
                 chia5=so[i];
-                break
+                break;
         }
     }
     }
-    document.write('<br><br>'+'Số chia hết cho 5 đầu tiên ' +chia5)
+    document.write('<br><br>'+'Số chia hết cho 5 đầu tiên ' +chia5)*/
 
 </script>
 </body>

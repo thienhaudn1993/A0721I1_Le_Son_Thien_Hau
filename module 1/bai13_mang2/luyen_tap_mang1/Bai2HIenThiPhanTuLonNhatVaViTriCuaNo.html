@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.-->
+<script>
+    let num =[];
+    for (let n=0; n<10; n++ ) {
+        num[n]=Number(prompt('Nhập số trong dãy 10 số'));
+    }
+    document.write('num = ['+num+']<br/>')
+    // document.write('Dãy số đã nhập là '+ num.join(",") +'<br/>')
+    let max = num[0];
+    let index = 0;
+    for (let n=1;n<num.length;n++) {
+        if (num[n]>max) {
+            max = num[n];
+            index=n;
+        }
+    }
+    document.write('Phần tử lớn nhất trong mảng là ' +max+ ' tại vị trí ' +index);
+
+</script>
+</body>
+</html>

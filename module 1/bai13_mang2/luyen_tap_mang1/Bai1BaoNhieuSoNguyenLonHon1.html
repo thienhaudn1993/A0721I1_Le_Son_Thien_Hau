@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.
+Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.-->
+<script>
+    //Cách 1: Cho sẵn số
+    /*let daySo =[4,6,11,24,1,-3,53,14,2,17];
+    let count =[];
+    for (let i=0;i<daySo.length;i++) {
+        if (daySo[i]>10) {
+            count.push(daySo[i]);
+        }
+    }
+    document.write('Dãy 10 số trong mảng khởi tạo sẵn là: '+daySo.join(",") +'<br/>');
+    document.write('Các số nguyên lớn hơn 10 là: '+count.join(","));*/
+
+    //Cách 2: Cho người dùng nhập số:
+    let num =[];
+    let count =[];
+    for (let n=0; n<10; n++ ) {
+        num[n]=Number(prompt('Nhập số trong dãy 10 số'));
+    }
+    // document.write('Dãy số đã nhập là '+ num.join(",") +'<br/>')
+    document.write('num = ['+num+']<br/>')
+    for (let i=0;i<num.length;i++) {
+        if (num[i]>10) {
+            count.push(num[i]);
+        }
+    }
+    document.write('Các số nguyên lớn hơn 10 là: '+count.join(","));
+</script>
+</body>
+</html>

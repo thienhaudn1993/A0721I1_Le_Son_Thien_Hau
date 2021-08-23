@@ -7,7 +7,38 @@
 <body>
 <!--Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi-->
 <script>
-    let num = [];
+    let num=[];
+    let soAm=[];
+    for (let n=0;n<10;n++) {
+        num[n] = Number(prompt('Nhập 10 số'));
+    }
+
+    for (n=0;n<num.length;n++) {
+        if (num[n] <0) {
+            soAm.push(num[n])
+        }
+    }
+    document.write('Chuỗi đã nhập vào là '+num+ '<br/>');
+    document.write('Các số âm trong chuổi là ' +soAm);
+
+    // Cách 2
+  /*  let num=[];
+    let count='';
+    let soAm='';
+    for (let n=0;n<10;n++) {
+        num[n] = Number(prompt('Nhập 10 số'));
+    }
+
+    for (n=0;n<num.length;n++) {
+        if (num[n] <0) {
+        soAm+=num[n]+ ' , ';
+        }
+    }
+    count+=soAm;
+    document.write('Chuỗi đã nhập vào là '+num+ '<br/>');
+    document.write('Các số âm trong chuổi là ' +count);*/
+
+
 </script>
 </body>
 </html>

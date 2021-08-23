@@ -5,6 +5,36 @@
     <title>Title</title>
 </head>
 <body>
+<h2>Caro Game Simple</h2>
+<p id="caro"></p>
+<input type="button" value="Change Value" onclick="changeValue()">
+<script>
+    let data='';
+    let board =[];
+    for (let i=0;i<5;i++) {
+        board[i]=new Array(0,0,0,0,0);
+    }
+    for (i=0;i<5;i++) {
+        data+="<br/>";
+        for (j=0;j<5;j++) {
+            data+=board[i][j] + "&nbsp;&nbsp;";
+        }
+    }
+    document.getElementById('caro').innerHTML=data
+    function changeValue() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        board[positionX][positionY] = "x";
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        document.getElementById('caro').innerHTML = "<hr/>" + data;
+    }
 
+</script>
 </body>
 </html>

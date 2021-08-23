@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mang =[1, 2, "hau le", 5, "thanh le", 12, "phuong le", 9, 5, 32, "nhung","hung"];
+    let dem =0;
+    document.write("mang = ["+mang+"]<br/><br/>" )
+    for (let i=0; i<mang.length;i++) {
+        if (mang[i]%1!=0) {
+            dem++
+            document.write("Số từ trong chuỗi \"" +mang[i]+"\"" +" là " +mang[i].length+"<br/>");
+        }
+
+    }
+    document.write("<b>Số từ trong mảng là:</b> " +dem);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Translate English-Vietnamese</h3>
+<input id="input" type="text" placeholder="Input English">
+<input type="button" onclick="dich()" value="Click Here"><br>
+<p><b>Translate:</b></p>
+<p id="result"></p>
+<script>
+    let input = document.getElementById('input');
+    let tiengAnh = ["hello", "where","goodbye","engineer","sorry" ];
+    let tiengViet = ["xin chào", "ở đâu","tạm biệt","kỹ sư","xin lỗi" ];
+    let count=0
+    // document.write("Tiếng anh trên hệ thống chỉ mới có các từ sau: " +tiengAnh)
+    function dich() {
+        for (let i=0;i<tiengAnh.length;i++) {
+            if (input.value == tiengAnh[i]) {
+                count=0
+                document.getElementById('result').innerHTML = tiengViet[i];
+            }
+            else {
+                count++
+            }
+        }
+        if (count>tiengAnh.length-1) {
+            alert('Không có dữ liệu')
+
+        }
+    }
+</script>
+</body>
+</html>

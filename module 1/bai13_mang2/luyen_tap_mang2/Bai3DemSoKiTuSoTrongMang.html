@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong mảng.-->
+<script>
+    let mang =[1, 2, "hau le", 5, "thanh le", 12, "phuong le", 9, 5, 32, "nhung",87];
+    let dem =0;
+    document.write("mảng = ["+mang+"]<br/>" )
+    for (let i=0; i<mang.length;i++) {
+        if (mang[i]%1==0) {
+            dem++
+        }
+    }
+    document.write("Số kí tự số trong mảng là: " +dem)
+</script>
+</body>
+</html>

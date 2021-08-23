@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="play()">Play</button>
+<script>
+    function play() {
+        let min = parseInt(prompt('Nhập vào giá trị nhỏ nhất '));
+        let max = parseInt(prompt('Nhập vào giá trị lớn nhất '));
+        let random = min+Math.round(Math.random()*(max-min));
+        let choose;
+        let count=0
+        do {
+            choose=prompt("Nhập số bạn đoán");
+            count++;
+            if (choose==random) {
+                alert('Bạn đã đoán trúng');
+                break;
+            }
+            else if (choose<random) {
+                alert('Số bạn nhập nhỏ hơn kết quả')
+            }
+            else {
+                alert('Số bạn nhập lớn hơn kết quả')
+            }
+            if (count==3) {
+                alert('Bạn đã hết quyền chọn');
+                break;
+            }
+
+        } while (true) // true để lun lun chạy vô hạn
+    }
+</script>
+</body>
+</html>

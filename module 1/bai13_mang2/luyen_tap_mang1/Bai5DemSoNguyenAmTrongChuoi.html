@@ -9,17 +9,21 @@
 <script>
     let num=[];
     let soAm=[];
-    for (let n=0;n<10;n++) {
+    let dem=0
+    for (let n=0;n<4;n++) {
         num[n] = Number(prompt('Nhập 10 số'));
     }
 
     for (n=0;n<num.length;n++) {
         if (num[n] <0) {
             soAm.push(num[n])
+            dem++
         }
+
     }
     document.write('Chuỗi đã nhập vào là '+num+ '<br/>');
-    document.write('Các số âm trong chuổi là ' +soAm);
+    document.write('Có '+dem+' số âm trong chuỗi lần lượt là ' +soAm);
+
 
     // Cách 2
   /*  let num=[];

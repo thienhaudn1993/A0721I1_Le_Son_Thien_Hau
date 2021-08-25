@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 1: Cho mảng a chỉ chứa các số nguyên
+Xây dựng mảng b là prefix sums của mảng a cụ thể theo công thức:
+b[0]   = a[0]
+b[1]   = a[0] + a[1]
+b[2]   = a[0] + a[1] + a[2]
+...
+b[n - 1] = a[0] + a[1] + ... + a[n - 1]
+với n là độ dài của mảng a.
+Ví dụ: Cho a = [1, 2, 3], thì kết quả prefixSums(a) = [1, 3, 6].
+Mảng b được tạo ra: [1, 1 + 2, 1 + 2 + 3] = [1, 3, 6]-->
+<script>
+    //Cách 1: Cho trước phần tử a
+
+    /*let a=[1,2,3,6,7,8];
+    let b=[];
+    b[0]=a[0]
+    b[1]= b[0]+a[1];
+    for (let n=1;n<a.length;n++) {
+        b[n] = b[n-1]+a[n]
+    }
+    document.write("Mảng prefixSums b=["+b+"]")*/
+
+
+    // Cách 2: Nhập từng phân từ của mảng a
+
+    let a=[];
+    for (i=0;i<6;i++) {
+        a[i]=Number(prompt("Nhập số"));
+    }
+    document.write("Mảng a=["+a+"]<br/>");
+    let b=[];
+    b[0]=a[0]
+    b[1]= b[0]+a[1];
+    for (let n=1;n<a.length;n++) {
+        b[n] = b[n-1]+a[n];
+    }
+    document.write("Mảng prefixSums b=["+b+"]");
+
+</script>
+
+</body>
+</html>

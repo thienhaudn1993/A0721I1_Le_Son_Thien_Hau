@@ -11,26 +11,45 @@ Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thu
 (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)
 -->
 <script>
-    let num =[1,3,5,2,12,25,11,6,8,7];
+    let arr= [5,2,2,2,6,7];// xóa 2; 3,4,5,6,7,7=>gán số =0;
+    // chạy for thì i=1 => 5,2,2,6,7,0;=>i=1[5,2,2,6,7,0]
+    let v = prompt("nhập số cần xóa");
+    for (let i=0; i<arr.length;i++){
+        if (v==arr[i]){
+            for (let j=i;j<arr.length-1;j++){
+                arr[j]=arr[j+1];
+            }
+            arr[arr.length-1]=0;
+            alert("xóa"+arr)
+            i--;
+        }
+    }
+    alert(arr)
+
+
+
+
+
+    /*let num =[1,3,5,2,12,25,11,6,8,7];
     let n =Number(prompt('Nhập số')); //5
     let mangNew=[]
     flag = false
     for (let i=0;i<num.length;i++) {
         if (num[i]==n) {
-            flag=true
+            flag=true;
         }
         else {
-            mangNew.push(num[i])
+            mangNew.push(num[i]);
         }
     }
     document.write('Mảng số đã cho là [' +num+']<br/>')
     if (flag==true) {
-        document.write(n+' is in the array <br/>')
+        document.write(n+' is in the array <br/>');
     }
     else {
-        alert(n+' is not in the array')
+        alert(n+' is not in the array');
     }
-    document.write(" Mảng mới =["+mangNew+"]")
+    document.write(" Mảng mới =["+mangNew+"]")*/
 </script>
 </body>
 </html>

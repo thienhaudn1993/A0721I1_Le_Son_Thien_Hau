@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 2: Cho 2 mảng A và B chứa số nguyên. Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A
+Chú ý các phần tử giống nhau chỉ tính là 1 lần xuất hiện
+Ví dụ:  A=[7,2,5,3,5,3] và B=[7,2,5,4,6,3,5,3] thì kết quả missingValue(A, B) = [4, 6]-->
+
+<script>
+    let a= [7,2,5,3,5,3];
+    let b= [7,2,5,4,6,3,5,3];
+    let dem =0
+    let missingValue=[];
+    for (let i=0;i<a.length;i++) {
+        for (let j=0;j<b.length;j++) {
+            if (b[j] == a[i] ) {
+            }
+            else {
+                dem++
+            }
+        }
+    }
+    missingValue.push(dem)
+    document.write(missingValue)
+</script>
+</body>
+</html>

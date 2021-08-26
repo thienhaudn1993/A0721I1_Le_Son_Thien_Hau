@@ -7,84 +7,83 @@
 <body>
 <p id="result"></p>
 <script>
-
-    let arr = new Array(10);
-    for (let i = 0; i < 10; i++) {
-        arr[i] = new Array(10);
-        for (let j = 0; j < arr[i].length; j++) {
-            arr[i][j] = "";
+    let arr = new Array(30);
+    let checkPlayer1 =true;
+    for (let i=0;i<30;i++){
+        arr[i] = new Array(30)
+        for (let j=0;j<arr[i].length;j++) {
+            arr[i][j]="";
         }
     }
-    let checkPlayer1=true;
-    display();
+    display()
     // Hàm hiện thị
     function display() {
-        let tableString = '<table border="1">';
-        for (let i = 0; i <8; i++) {
+        let tableString ='<table border="1">';
+        for (let i=0;i<28;i++) {
             tableString += '<tr>';
-            for (let j = 0; j < 10; j++) {
-                tableString += '<td style="height: 30px; width: 30px" onclick="play('+i+','+j+')">' + arr[i][j] + '</td>';
+            for (let j=0;j<30;j++) {
+                tableString +='<td style="height: 30px; width: 30px" onclick="play('+i+','+j+')">'+arr[i][j]+'</td>';
             }
-            tableString += ' </tr>';
+            tableString += '</tr>';
         }
-        tableString += '</table>'
-        document.getElementById("result").innerHTML = tableString;
+        tableString +='</table>';
+        document.getElementById('result').innerHTML=tableString;
     }
     // hàm để cho người chơi đánh dấu
     function play(i,j) {
-        if (checkPlayer1&&!checkPlayed(i,j)){
-            arr[i][j]="X";
+        if (checkPlayer1&&!checkPlayed(i,j)) {
+            arr[i][j] = "X";
             checkPlayer1=false;
-            if (checkWin()){
-                alert("người chơi 1 chiến thắng");
+            if (checkWin()) {
+                alert("X là người chiến thắng");
             }
-        }else if (!checkPlayer1&&!checkPlayed(i,j)) {
-            arr[i][j]="O";
-            checkPlayer1=true;
-            if (checkWin()){
-                alert("người chơi 2 chiến thắng");
+        } else if (!checkPlayer1&&!checkPlayed(i,j)){
+            arr[i][j] = "O";
+            checkPlayer1=true
+            if (checkWin()) {
+                alert("O là người chiến thắng");
             }
         }
-
-        display();
+        display()
     }
     // hàm kiểm tra xem ô này đã dc chơi chưa
     function checkPlayed(i,j) {
-        if (arr[i][j]!==""){
-            alert("ô này chời rồi bạn ơi!!!")
+        if (arr[i][j]!=="") {
+            alert("Ô này đã có người đánh rồi")
             return true;
-        }else {
+        }
+        else {
             return false;
         }
     }
-    // hàm kiểm tra chiến thắng với 3 ô liên tiếp
-    function checkWin() {
-        for (let i = 0; i < 10; i++) {
+    // hàm kiểm tra chiến thắng với 5 ô liên tiếp
+    function checkWin(i,j) {
+        for (let i = 0; i < 30; i++) {
             for (let j = 0; j < arr[i].length; j++) {
-                if (arr[i][j]=="X"){
-                    if (arr[i][j+1]=="X"&&arr[i][j+2]=="X"){
+                if (arr[i][j] == "X") {
+                    if (arr[i][j + 1] == "X" && arr[i][j + 2] == "X" && arr[i][j + 3] == "X" && arr[i][j + 4] == "X") {
                         return true;
                     }
-                    if (arr[i+1][j]=="X"&&arr[i+2][j]=="X"){
+                    if (arr[i + 1][j] == "X" && arr[i + 2][j] == "X" && arr[i + 3][j] == "X" && arr[i + 4][j] == "X") {
                         return true;
                     }
-                    if (arr[i+1][j+1]=="X"&&arr[i+2][j+2]=="X"){
+                    if (arr[i + 1][j + 1] == "X" && arr[i + 2][j + 2] == "X" && arr[i + 3][j + 3] == "X" && arr[i + 4][j + 4] == "X") {
                         return true;
                     }
-                    if (arr[i+1][j-1]=="X"&&arr[i+2][j-2]=="X"){
+                    if (arr[i + 1][j - 1] == "X" && arr[i + 2][j - 2] == "X" && arr[i + 3][j - 3] == "X" && arr[i + 4][j - 4] == "X") {
                         return true;
                     }
-                }else if(arr[i][j]=="O"){
-                    if (arr[i][j+1]=="O"&&arr[i][j+2]=="O"){
+                } else if (arr[i][j] == "O") {
+                    if (arr[i][j + 1] == "O" && arr[i][j + 2] == "O" && arr[i][j + 3] == "O" && arr[i][j + 4] == "O") {
                         return true;
                     }
-                    if (arr[i+1][j]=="O"&&arr[i+2][j]=="O"){
+                    if (arr[i + 1][j] == "O" && arr[i + 2][j] == "O" && arr[i + 3][j] == "O" && arr[i + 4][j] == "O") {
                         return true;
                     }
-                    if (arr[i+1][j+1]=="O"&&arr[i+2][j+2]=="O"){
+                    if (arr[i + 1][j + 1] == "O" && arr[i + 2][j + 2] == "O" && arr[i + 3][j + 3] == "O" && arr[i + 4][j + 4] == "O") {
                         return true;
                     }
-                    if (arr[i+1][j-1]=="O"&&arr[i+2][j-2]=="O"){
+                    if (arr[i + 1][j - 1] == "O" && arr[i + 2][j - 2] == "O" && arr[i + 3][j - 3] == "O" && arr[i + 4][j - 4] == "O") {
                         return true;
                     }
                 }

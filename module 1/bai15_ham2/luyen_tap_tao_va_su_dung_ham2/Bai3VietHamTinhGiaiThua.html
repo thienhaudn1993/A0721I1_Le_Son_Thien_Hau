@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.-->
+<script>
+    function tinhGiaiThua(n) {
+        let ketQua=1;
+        if (n<0) {
+            alert("Cần nhập số >=0")
+            return 'không có kết quả'
+        }
+        else if (n==0 || n==1) {
+            ketQua=1
+        }
+        else {
+            for (i=1;i<=n;i++) {
+                ketQua=ketQua*i;
+            }
+        }
+        return ketQua
+    }
+    let giaiThua = parseInt(prompt('Nhập số nguyên dương vào đây'))
+    let ketQua = tinhGiaiThua(giaiThua)
+    document.write("Giai thừa của "+giaiThua+" là "+ketQua)
+</script>
+</body>
+</html>

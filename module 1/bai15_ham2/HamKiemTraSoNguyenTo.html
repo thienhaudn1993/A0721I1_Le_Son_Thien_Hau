@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isNumber(number) {
+        let count=0;
+        while (true) {
+            for (let i=1;i<=number;i++) {
+                if (number%i===0) {
+                    count++
+                }
+            }
+            if (count===2) {
+                alert(number+ " is Prime")
+                break;
+            }
+            else {
+                alert(number+ " Not is Prime")
+                break;
+            }
+        }
+    }
+    let num = parseInt(prompt("Nhập số cần kiểm tra có phải số nguyên tố hay không"))
+    isNumber(num)
+</script>
+</body>
+</html>

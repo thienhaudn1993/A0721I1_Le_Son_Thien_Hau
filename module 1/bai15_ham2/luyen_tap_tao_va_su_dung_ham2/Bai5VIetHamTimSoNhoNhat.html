@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.-->
+<script>
+    function checkMin(arr) {
+        let min =arr[0];
+        for (let i=1;i<3;i++) {
+            if (arr[i]<min) {
+                min=arr[i];
+            }
+        }
+        return min;
+    }
+    let mang=[]
+    for (let i=0;i<3;i++) {
+         mang[i] = parseInt(prompt("Nhập số nguyên"))
+    }
+    console.log(mang)
+    let min = checkMin(mang);
+    document.write('Ba số nguyên mà bạn đã nhập vào là '+mang+'<br/>');
+    document.write('Giá trị nhỏ nhất trong 3 số đó là '+min);
+</script>
+</body>
+</html>

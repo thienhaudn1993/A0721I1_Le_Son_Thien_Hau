@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.-->
+<script>
+    function doiCho(arr) {
+        for (i=0;i<6;i++) {
+            arr[i]
+        }
+        return arr.reverse()
+    }
+    let mang=[]
+    for (let i=0;i<6;i++) {
+        mang[i] = parseInt(prompt("Nhập số nguyên"))
+    }
+    document.write('Mảng số nguyên vừa nhập vào là [ '+mang+' ]<br/>');
+    let ketQua = doiCho(mang);
+    document.write('Mảng số nguyên sau khi đảo ngược là [ '+ketQua+' ]');
+</script>
+</body>
+</html>

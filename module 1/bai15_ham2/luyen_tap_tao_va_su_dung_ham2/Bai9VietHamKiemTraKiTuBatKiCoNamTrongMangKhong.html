@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.-->
+<script>
+
+    function checkNumber(arr,n) {
+        let dem =0
+        for (let i=0;i<arr.length;i++) {
+            if (n==arr[i]) {
+                 dem++
+            }
+        }
+        if (dem>0) {
+        return dem
+        }
+        else {
+            return -1
+        }
+    }
+    let mang =['a',1,2,1,6,2,8,2,'a','b','a','c','b'];
+    document.write('mang = [ '+mang+' ]<br/>')
+    let num= prompt('Nhập kí tự bất kì')
+    let dem = checkNumber(mang,num);
+    if (dem>0) {
+        document.write('Với kí tự nhập vào là \"'+num+'"\ thì số lần xuất hiện trong mang là '+dem);
+    }
+    else {
+        alert('\"'+num+'"\ nhập vào không có trong mảng')
+    }
+
+</script>
+</body>
+</html>

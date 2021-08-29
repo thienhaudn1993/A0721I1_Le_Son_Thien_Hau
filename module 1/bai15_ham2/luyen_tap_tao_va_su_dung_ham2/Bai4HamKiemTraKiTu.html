@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.-->
+<script>
+    function checkKiTu(str) {
+        if (str %1==0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    let str =prompt('Nhập bất kì')
+    if (checkKiTu(str)) {
+        alert(str+' là kí tự số');
+    }
+    else {
+        alert(str+' không phải là kí tự số');
+    }
+</script>
+</body>
+</html>

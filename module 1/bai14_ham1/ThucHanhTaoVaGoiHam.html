@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function processCofirm(answer) {
+        let result=''
+        if (answer) {
+            result="Excellent. We'll play a nice game of chess.";
+        }
+        else {
+            result = "Maybe later then.";
+        }
+        return result
+    }
+    let cofirmAnswer = confirm("Shall we play a game");
+    let theAnswer = processCofirm(cofirmAnswer);
+    alert(theAnswer);
+</script>
+</body>
+</html>

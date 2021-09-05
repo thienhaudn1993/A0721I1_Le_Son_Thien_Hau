@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius) {
+            this.radius = radius;
+        }
+        getRadius() {
+            return this.radius;
+        }
+        getArea() {
+            return Math.PI*this.radius*this.radius;
+        }
+        toString(){
+            return "Với Bán kính hình tròn là "+this.radius+" .Thì diện tích hình tròn là "+Math.PI*this.radius*this.radius
+        }
+    }
+    let circle = new Circle(2);
+    let radius = circle.getRadius();
+    let area = circle.getArea()
+    alert("Với Bán kính hình tròn là "+radius+" .Thì diện tích hình tròn là "+area)
+    let circle2  = new Circle(10);
+     radius = circle2.getRadius();
+     area = circle2.getArea()
+    alert("Với Bán kính hình tròn là "+radius+" .Thì diện tích hình tròn là "+area)
+
+
+    /*alert(circle.toString());
+    let circle2  = new Circle(10);
+    alert(circle2.toString());*/
+
+</script>
+</body>
+</html>

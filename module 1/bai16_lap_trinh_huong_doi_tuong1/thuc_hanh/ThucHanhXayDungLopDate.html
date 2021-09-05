@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  /*  let MyDate = function(day, month, year) {
+        // thuộc tính
+        this.day = day;
+
+        this.month = month;
+
+        this.year = year;
+        // Phương thức hành động
+        this.getDay = function() {
+            return this.day;
+        }
+        this.getMonth = function() {
+            return this.month;
+        }
+        this.getYear = function() {
+            return this.year;
+        }
+        this.setDay = function(day) {
+            this.day  = day;
+        }
+        this.setMonth = function(month) {
+            this.month  = month;
+        }
+        this.setYear = function(year) {
+            this.year  = year;
+        }
+    };*/
+
+
+    class MyDate1{
+        constructor(day,month,year) {
+            // Khai bao thuoc tinh
+            this.day = day;
+
+            this.month = month;
+
+            this.year = year;
+        }
+        getDay() {
+            return this.day;
+        }
+        getMonth() {
+            return this.month;
+        }
+        getYear() {
+            return this.year;
+        }
+        setDay(day){
+            this.day=day;
+        }
+        setMonth(month){
+            this.month=month;
+        }
+        setYear(year){
+            this.year=year;
+        }
+        setDate(day,month,year) {
+            this.day=day;
+            this.month=month;
+            this.year=year;
+        }
+        // trar veef thoong qua Date dang chuoi
+        toString(){
+            return this.day+"/"+ this.month+"/"+this.year;
+        }
+    }
+    let date1 = new MyDate1("1","2","2000");
+    let date2=new MyDate1(2,10,2010);
+    let date3=new MyDate1(10,10,2010);
+    alert(date1.getDay()+"/"+date1.getMonth()+"/"+date1.getYear());
+
+
+  //Thao tac voi date1
+    date1.setDate(3,3,2023);
+    alert(date1.toString());
+    alert("doi tuong 2 "+date2.toString());
+    date3.setDay(30);
+    alert(date3.toString());
+    date2.setMonth(12);
+    alert(date2.toString())
+</script>
+</body>
+</html>

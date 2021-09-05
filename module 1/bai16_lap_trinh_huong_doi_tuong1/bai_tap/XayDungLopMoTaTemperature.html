@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(doC) {
+            if (doC<-273) {
+                alert('Cần nhập nhiệt độ lớn hơn -273')
+            }
+            else {
+                this.c=doC;
+            }
+        }
+        nhietDoC(){
+            return this.c;
+        }
+        nhietDoF(){
+            return 1.8*this.c+32;
+        }
+        doKenvin(){
+            return this.c+273.15
+        }
+    }
+    let num = parseInt(prompt("Nhập nhiệt độ C bạn muốn đổi"))
+    let temperature = new Temperature(num);
+    let nhietDoC = temperature.nhietDoC();
+    let nhietDoF = temperature.nhietDoF();
+    let doKenvin = temperature.doKenvin();
+    document.write("Nhiệt độ C là "+nhietDoC+"<br/>");
+    document.write("    Nhiệt độ F là "+nhietDoF+" và Nhiệt độ Kenvin là "+doKenvin);
+
+</script>
+</body>
+</html>

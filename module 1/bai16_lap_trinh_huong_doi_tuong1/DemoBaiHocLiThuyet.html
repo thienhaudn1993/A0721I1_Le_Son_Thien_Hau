@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+​
+<script>
+    /**
+     * Khai báo 1 đối tượng sinh viên tên Nguyễn Văn A
+     *
+     */
+    // let student1 = {
+    //     name: 'Nguyễn Văn A',
+    //     age: 20,
+    //     address: 'Đà Nẵng',
+    //     phoneNumber: '0978273826'
+    // }
+    //
+    // alert("Thông tin của bạn sinh viên là: " + "\n" +
+    //     "Tên: " + student1.name + "\n" +
+    //     "Tuổi: " + student1.age
+    // )
+    /**
+     * Khai báo class Student
+     */
+    // class Student{
+    //     constructor(name, age, address, phoneNumber) {
+    //         this.name = name;
+    //         this.age = age;
+    //         this.address = address;
+    //         this.phoneNumber = phoneNumber;
+    //     }
+    //     goToSchool(){
+    //         alert("Sinh viên đi học bằng xe đạp");
+    //     }
+    //     di_thi(){
+    //         alert("Sinh viên đi thi tại các trung tâm");
+    //     }
+    // }
+    // let student1 = new Student("Nguyễn Văn A", 23, "Đà Nẵng", "097684463");
+    // let student2 = new Student("Nguyễn Văn B", 23, "Đà Nẵng", "097684463");
+    // let student3 = new Student("Nguyễn Văn C", 23, "Đà Nẵng", "097684463");
+    // alert("Thông tin của bạn sinh viên là: " + "\n" +
+    //     "Tên: " + student2.name + "\n" +
+    //     "Tuổi: " + student2.age
+    //
+    /**
+     * Khai báo class Nhân viên (Employee)
+     */
+    class Employee {
+        constructor(id, name, age, salary, phone, department) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+            this._salary = salary;
+            this.phone = phone;
+            this.department = department;
+        }
+        displayEmployee() {
+            document.writeln("Tên nhân viên là: " + this.name);
+            document.writeln("<br>");
+            document.writeln("Tuổi nhân viên là: " + this.age);
+            document.writeln("<br>");
+            document.writeln("Số điện thoại nhân viên là: " + this.phone);
+        }
+    }
+    let employee1 = new Employee(1, 'Nguyễn Thành Công 1', 25, 5000000, '0965362864', 'Kinh doanh');
+    let employee2 = new Employee(2, 'Nguyễn Thành Công 2', 25, 5000000, '0965362864', 'Kinh doanh');
+    employee2.displayEmployee();
+</script>
+</body>
+</html>

@@ -5,6 +5,86 @@
     <title>Title</title>
 </head>
 <body>
+<!--<table border="1">
+    <tr>
+        <th>STT</th>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Nokia</td>
+        <td><input type="button" value="Edit"></td>
+        <td><input type="button" value="Delete"></td>
+    </tr>
+</table>-->
+<input id="addproduct" type="text" placeholder="New product">
+<button onclick="addProductNew()">Add New Product</button>
+<p>Số lượng sản phẩm: <span id="total"></span></p>
+<p id="result"></p>
+<script>
+    let productList =["Nokia","SamSung","Oppo","Iphone","Apple Watch"];
+    display()
 
+    function display() {
+        let tableString ='<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Name</th>\n' +
+            '        <th>Edit</th>\n' +
+            '        <th>Delete</th>\n' +
+            '    </tr>\n';
+        for (let i=0;i<productList.length;i++) {
+            tableString+='<tr>\n' +
+                '        <td>'+(i+1)+'</td>\n' +
+                '        <td>'+productList[i]+'</td>\n' +
+                '        <td><input type="button" value="Edit" onclick="editProduct('+i+')"></td>\n' +
+                '        <td><input type="button" value="Delete" onclick="deleteProduct('+i+')"></td>\n' +
+                '    </tr>\n' ;
+        }
+        tableString+='</table>';
+        document.getElementById('result').innerHTML=tableString;
+        document.getElementById('total').innerHTML=productList.length;
+
+    }
+    function addProductNew() {
+        let newProduct=document.getElementById('addproduct').value;
+        if (newProduct=='') {
+            alert('Vui lòng nhập sản phẩm bạn muốn thêm');
+        }
+        else {
+            productList.push(newProduct);
+            document.getElementById('addproduct').value='';
+
+        }
+        display()
+    }
+    function editProduct(id) {
+        let editName = prompt('Nhập tên sản phẩm muốn sửa');
+        if (editName=='') {
+            alert('Vui lòng nhập tên cần sửa');
+        }
+        else if (editName==null) {
+            alert('Bạn đã hủy chỉnh sửa tên sản phẩm');
+        }
+        else {
+            productList[id]=editName;
+        }
+        display()
+
+    }
+    function deleteProduct(id) {
+        let deleteName = confirm('Bạn có muốn xóa')
+        if (deleteName) {
+            productList.splice(id,1)
+            alert('Bạn đã xóa thành công');
+        }
+        else {
+            alert('Bạn đồng ý giữ nguyên sản phẩm');
+        }
+        display()
+    }
+</script>
 </body>
 </html>

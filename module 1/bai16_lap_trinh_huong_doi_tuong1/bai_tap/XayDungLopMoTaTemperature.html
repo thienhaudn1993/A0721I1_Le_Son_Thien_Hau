@@ -8,15 +8,16 @@
 <script>
     class Temperature {
         constructor(doC) {
-            if (doC<-273) {
-                alert('Cần nhập nhiệt độ lớn hơn -273')
-            }
-            else {
                 this.c=doC;
-            }
         }
         nhietDoC(){
-            return this.c;
+            if (this.c<-273) {
+                alert('Cần nhập nhiệt độ lớn hơn -273')
+            }
+        else {
+                return this.c;
+            }
+
         }
         nhietDoF(){
             return 1.8*this.c+32;

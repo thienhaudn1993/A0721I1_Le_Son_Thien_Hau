@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--https://www.hackerrank.com/challenges/solve-me-first/problem-->
+<script>
+    function sum(a,b) {
+        if (a>=1 && a<=1000 && b>=1 && b<=1000){
+            return a+b;
+        }
+        else {
+            return alert("Cân nhập đk 1<=a,b<=1000")
+        }
+    }
+    let num = parseInt(prompt("Nhập số đầu tiên"));
+    let num1 = parseInt(prompt("Nhập số thứ hai"));
+    let result = sum(num,num1);
+    document.write("số thứ nhất nhập vào là "+num+"<br/>");
+    document.write("số thứ nhất nhập vào là "+num1+"<br/>");
+    document.write("Tổng 2 số sẽ là "+result);
+</script>
+</body>
+</html>

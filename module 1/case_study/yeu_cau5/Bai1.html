@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím-->
+<script>
+    let arr = [];
+    let sum = 0
+    for (let i=1; i<4;i++) {
+        arr[i] = Array(3)
+        document.write("Dòng thứ "+i+" có các phần từ<br/>");
+        for (let j=0; j<arr[i].length;j++) {
+            arr[i][j] = Number(prompt("nhap phần từ "+j+" của dòng "+i));
+            document.write(arr[i][j]+"<br/>")
+            if (arr[i][j] %2==0){
+                sum+=arr[i][j]
+            }
+        }
+
+
+    }
+
+    document.write("Tổng các số chẵn có trong ma trận là "+sum)
+</script>
+</body>
+</html>

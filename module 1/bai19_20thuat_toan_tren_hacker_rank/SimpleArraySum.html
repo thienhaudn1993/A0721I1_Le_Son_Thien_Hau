@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--https://www.hackerrank.com/challenges/simple-array-sum/problem-->
+<script>
+    function sumArray(n,arr) {
+        let sum=0
+        for (let i=0;i<n;i++){
+                sum += arr[i];
+        }
+        return sum;
+    }
+    // nhập vào chiều dài chiều dài mảng
+    let n = parseInt(prompt(" Nhập chiều dài của mảng"))
+    let arr = [];
+    let sum
+    for (let i=0; i<n;i++) {
+        arr[i] = parseInt(prompt("Nhập các phần từ có chỉ số "+i+" trong mảng"));
+        if (n>0 && n<=1000 && arr[i]>0 && arr[i]<=1000){
+            arr[i];
+        }
+        else {
+            alert("cần nhập số >=0 và <=1000")
+            break
+        }
+    }
+    sum = sumArray(n,arr)
+    document.write("Mảng bạn vừa nhập là ["+arr+"]<br/>");
+    document.write("Tổng các phần từ trong mảng là "+sum);
+</script>
+</body>
+</html>

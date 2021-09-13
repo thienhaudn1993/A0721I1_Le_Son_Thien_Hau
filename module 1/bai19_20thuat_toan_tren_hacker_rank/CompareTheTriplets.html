@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--https://www.hackerrank.com/challenges/compare-the-triplets/problem-->
+<script>
+    function compare(arr,arr1) {
+        let demArr = 0;
+        let demmArr1 = 0;
+        let result=[];
+        for (let i=0;i<3;i++) {
+            if (arr[i]>arr1[i]) {
+                demArr++;
+            }
+            else if (arr[i]<arr1[i]) {
+                demmArr1++;
+            }
+        }
+        result.push(demArr,demmArr1)
+        return result;
+    }
+    /*let arr = [17,28,9];
+    let arr1 = b = [4,30,8]*/
+    let arr =[];
+    let arr1 =[];
+    for (let i=0;i<3;i++) {
+        arr[i] = prompt("Nhấp phần từ có chỉ số "+i+" của Alice");
+        arr1[i] = prompt("Nhấp phần từ có chỉ số "+i+" của Bob");
+    }
+    let result = compare(arr,arr1);
+    document.write("Mảng của Alice có các phần từ là " +arr+"<br/>");
+    document.write("Mảng của Bob có các phần từ là " +arr1+"<br/>");
+    document.write("So sánh kết quả là " +result)
+</script>
+</body>
+</html>

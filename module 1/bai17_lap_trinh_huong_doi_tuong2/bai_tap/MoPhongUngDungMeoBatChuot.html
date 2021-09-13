@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Animal {
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+
+        say() {
+
+        }
+    }
+
+    class Rat extends Animal {
+        constructor(name, weight, speed, status) {
+            super(name, weight, speed);
+            this.status = status;
+        }
+
+        say(str) {
+            console.log(this.name + str)
+        }
+    }
+
+    class Cat extends Animal {
+        constructor(name, weight, speed) {
+            super(name, weight, speed);
+        }
+
+        say(str) {
+            console.log(this.name + str)
+        }
+
+        eat(mouse) {
+            if (mouse.status == "song") {
+                this.say("còn sông ăn thôi");
+                this.weight += mouse.weight;
+            } else {
+                this.say("chết rồi không ăn")
+            }
+        }
+
+        catch(mouse) {
+            if (this.speed > mouse.speed) {
+                this.say("Bắt được rồi");
+                mouse.say("chết em rồi");
+                this.eat(mouse);
+            } else {
+                this.say("nhanh qus")
+                mouse.say("Đố bắt được")
+            }
+        }
+    }
+
+    // viết chương trình test
+    let jerry1 = new Rat("Jerry1", 1, 0, "chet");
+    let jerry2 = new Rat("Jerry2", 1, 5, "song");
+    let jerry3 = new Rat("Jerry3", 1, 15, "song");
+    let jerry4 = new Rat("Jerry4", 1, 2, "song");
+    let jerry5 = new Rat("Jerry5", 1, 20, "song");
+    let array = [];
+    array.push(jerry1);
+    array.push(jerry2);
+    array.push(jerry3);
+    array.push(jerry4);
+    array.push(jerry5);
+    let tom = new Cat("Tom", 5, 12);
+    for (let jerry of array) {
+        tom.catch(jerry);
+    }
+    console.log(tom.weight);
+
+
+</script>
+</body>
+</html>

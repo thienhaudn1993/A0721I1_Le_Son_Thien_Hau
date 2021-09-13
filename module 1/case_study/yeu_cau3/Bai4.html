@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 4: Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ.
+Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn-->
+ <script>
+     //12345
+   /*  let so= prompt("nhap");
+     document.write("Số nhập vào là "+so+"<br>");
+     document.write("Đổi số thành chữ sẽ là: ");
+     parseFloat()
+     let tachSO =[];
+     while (so!=0) {
+         tachSO = parseInt(so%10);
+            switch (tachSO) {
+                case 0:
+                    document.write("không ");
+                    break;
+                case 1:
+                    document.write("một ");
+                    break;
+                case 2:
+                    document.write("hai ");
+                    break;
+                case 3:
+                    document.write("ba ");
+                    break;
+                case 4:
+                    document.write("bốn ");
+                    break;
+                case 5:
+                    document.write("năm ");
+                    break;
+            }
+
+         so=parseInt(so/10)
+     }*/
+     //12345
+     //1234
+     //123
+     //12
+     //1
+     let so= parseInt(prompt("nhap"));
+     document.write("Số nhập vào là "+so+"<br>");
+     let tachSO =[];
+     for (let i=0;i<10000000;i++) {
+         if (so !=0){
+             tachSO[i] = parseInt(so%10)
+             switch (tachSO[i]) {
+                 case 0:
+                     tachSO[i]="không";
+                     break;
+                 case 1:
+                     tachSO[i]="một ";
+                     break;
+                 case 2:
+                     tachSO[i]="hai ";
+                     break;
+                 case 3:
+                     tachSO[i]="ba ";
+                     break;
+                 case 4:
+                     tachSO[i]="bốn ";
+                     break;
+                 case 5:
+                     tachSO[i]="năm ";
+                     break;
+                 case 6:
+                     tachSO[i]="sáu ";
+                     break;
+                 case 7:
+                     tachSO[i]="bảy ";
+                     break;
+                 case 8:
+                     tachSO[i]="tám ";
+                     break;
+                 case 9:
+                     tachSO[i]="chín ";
+                     break;
+
+             }
+             so=parseInt(so/10)
+             console.log(so)
+         }
+
+     }
+     tachSO.reverse()
+     document.write("Đổi số thành chữ sẽ là: " +tachSO.join(""))
+
+
+
+
+ </script>
+</body>
+</html>

@@ -9,21 +9,19 @@
 Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.
 ⇨	Có 3 kí tự khác nhau là a, b và c.-->
 <script>
-    let s =["cabca"];
-    let dem =0;
-    let differentSymbolsNaive;
-    let flag = false;
-    for (let i=0; i<s.length-1;i++) {
-        for (let j=0;j<s.length;j++){
-            if (s[i][j]==s[i][j+1]) {
-                flag = true
-            }
-            else {
-                flag = false;
-                dem++
+    let nhap = prompt("Nhập vào 1 chuỗi")
+    document.write("Chuổi bạn vừa nhập là : " + nhap + "<br>");
+        nhap = nhap.split("");
+//cab
+    for (let i = 0; i < nhap.length; i++) {
+        for (let j = i + 1; j < nhap.length; j++) {
+            if (nhap[j] == nhap[i]) {
+                nhap.splice(j, 1)
+                console.log(nhap)
             }
         }
     }
+    document.write("Số ký tự khác nhau của chuổi bạn vừa nhập là : " + nhap.length)
 </script>
 </body>
 </html>

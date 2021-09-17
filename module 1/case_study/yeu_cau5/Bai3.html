@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều-->
+<script>
+
+    function checkMin(arr) {
+        let min =arr[0][0];
+        for (let i=0;i<arr.length;i++) {
+            for (let j=1;j<arr[i].length;j++) {
+                if (arr[i][j]<min) {
+                    min=arr[i][j];
+                }
+            }
+        }
+        return min;
+    }
+function checkMax(arr) {
+    let max =arr[0][0];
+    for (let i=0;i<arr.length;i++) {
+        for (let j=1;j<arr[i].length;j++) {
+            if (arr[i][j]>max) {
+                max=arr[i][j];
+            }
+        }
+    }
+    return max;
+}
+    let arr =[[4,3,1,25],[-3,22,11,3],[1,-15,8,14],[21,-9,15,-11]];
+    let max = checkMax(arr);
+    let min = checkMin(arr)
+    document.write("Ta có mảng arr = ["+arr+"]<br/>");
+    document.write("Gía trị lớn nhất trong mảng 2 chiều là "+max+"<br/>");
+    document.write("Gía trị nhỏ nhất trong mảng 2 chiều là "+min);
+</script>
+</body>
+</html>

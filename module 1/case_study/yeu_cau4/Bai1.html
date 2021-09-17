@@ -5,6 +5,42 @@
     <title>Title</title>
 </head>
 <body>
+<!--Bài 1: Viết một hàm chuẩn hóa xâu ký tự: biến đổi xâu ký tự thành xâu, sao cho trong xâu không có 2 dấu cách liền nhau và bắt đầu mỗi từ phải in hoa.
+Ví dụ tRuong    TaN   HAI => Truong Tan Hai.
+Và một hàm tìm từ dài nhất trong 1 xâu ký tự.
+Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím, in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó-->
+<input type="text" id="input">
+<button onclick="chuanXau()">Click</button>
+<p id="result"></p>
+<script>
 
+    function chuanXau(arr){
+        let result ='';
+        arr =[];
+        let str = document.getElementById("input").value;
+        let newStr = str.split(" ");
+
+        for (let i=0; i<newStr.length;i++){
+            if (newStr[i]!=""){
+                arr.push(newStr[i].toLowerCase());
+            }
+        }
+
+        for (let i=0; i<arr.length;i++) {
+            for (let j=0;j<arr[i].length;j++) {
+                if (j===0){
+                    result+=arr[i][j].toUpperCase();
+                }
+                else {
+                    result+=arr[i][j]
+                }
+            }
+            result+= " ";
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+
+
+</script>
 </body>
 </html>

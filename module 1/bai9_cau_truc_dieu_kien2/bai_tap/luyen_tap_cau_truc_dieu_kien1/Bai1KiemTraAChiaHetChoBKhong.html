@@ -6,16 +6,16 @@
 </head>
 <body>
 <script>
-    let a;
-    let b;
-    a=parseInt(prompt('Nhập số a'));
-    b=parseInt(prompt('Nhập số b'));
-    let c = a%b==0;
-    if (c) {
-        alert('a chia hết cho b');
+    let a = prompt("Nhập số a");
+    let b = prompt("Nhập số b");
+    if (a==null || b==null || a=="" || b==""){
+        alert("Vui lòng nhập hợp lệ")
+    }
+    else if (a%b==0){
+        alert(a+ " chia hết cho "+ b);
     }
     else {
-        alert('a không chia hết cho b')
+        alert(a+ " không chia hết cho "+ b)
     }
 </script>
 

@@ -10,20 +10,35 @@ Chú ý các phần tử giống nhau chỉ tính là 1 lần xuất hiện
 Ví dụ:  A=[7,2,5,3,5,3] và B=[7,2,5,4,6,3,5,3] thì kết quả missingValue(A, B) = [4, 6]-->
 
 <script>
-  /*  let b= [7,2,5,4,6,3,5,3];
+    let b= [7,2,5,4,6,3,5,3];
     let a= [7,2,5,3,5,3];
     let missingValue=[];
-    for (let i=0;i<b.length;i++) {
+  /*  for (let i=0;i<b.length;i++) {
+        let flag = false;
         for (let j=0;j<a.length;j++) {
-            if (b[i] == a[j] ) { //b[3]=4
+            if (b[i] == a[j] ) {
+                flag = true;
                 break;
             }
         }
-        if (b[i] != a){
+        if (!flag){
             missingValue.push(b[i]);
         }
     }
     document.write(missingValue)*/
+    for (let i=0;i<b.length;i++) {
+        let flag = true;
+        for (let j=0;j<a.length;j++) {
+            if (b[i] == a[j] ) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag){
+            missingValue.push(b[i]);
+        }
+    }
+    document.write(missingValue)
 </script>
 </body>
 </html>

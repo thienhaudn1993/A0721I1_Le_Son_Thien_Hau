@@ -7,9 +7,43 @@
 <body>
 <!--Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.-->
 <script>
-    let arr =[[2,3,6,5],[3,345,11,3],[1,7,8,14],[21,5,15,9]];
-    let dem =0;
 
+    function lietKe(arr) {
+        let count =0;
+        let daySo ='';
+        for (let i=0;i<arr.length;i++) {
+            for (let j=0;j<arr[i].length;j++) {
+                if (isNumber(arr[i][j])) {
+                    daySo+=arr[i][j]+"," ;
+                    count++;
+                }
+            }
+        }
+        document.write(daySo+"<br>");
+        document.write(count);
+
+    }
+    function isNumber(number) {
+        let count=0;
+        if (number<2){
+            return false;
+        }
+        else {
+            for (let i=2;i<number;i++) {
+                if (number%i===0) {
+                    count++
+                }
+            }
+            if (count===0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+    let arr =[[2,3,6,5],[-3,22,11,3],[1,7,8,14],[21,5,15,9]];
+    lietKe(arr);
 </script>
 </body>
 </html>

@@ -12,7 +12,7 @@ Trong phần này, chúng ta sẽ phát triển một ứng dụng cho phép hi�
     let count=0;
     let daySo ='';
     let num=2;
-
+// Cách 1: đặt flag=true
     while (count<numbers) {
         let flag=true;
         if (num<2) {
@@ -35,6 +35,29 @@ Trong phần này, chúng ta sẽ phát triển một ứng dụng cho phép hi�
     }
 
     document.write(daySo);
+    // Cách 2: đặt flag=false
+    /*while (count<numbers) {
+        let flag=false;
+        if (num<2) {
+            flag=true;
+        }
+        else {
+            for (let i=2; i<num ; i++) {
+                if (num%i==0) {
+                    flag=true;
+                    break;
+                }
+            }
+        }
+        if (!flag) {
+            daySo+= num +',';
+            count++;
+        }
+
+        num++
+    }
+
+    document.write(daySo);*/
 
 
     /*let flag=true;

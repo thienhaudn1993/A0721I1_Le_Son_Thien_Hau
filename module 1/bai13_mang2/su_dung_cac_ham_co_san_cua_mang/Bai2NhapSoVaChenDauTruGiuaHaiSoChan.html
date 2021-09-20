@@ -10,6 +10,7 @@ Ví dụ nếu bạn nhập vào 025468 thì kết quả của chương trình s
 <script>
     let num = window.prompt('Nhập dãy số vào đây');
     let array = num.toString();
+    console.log(array)
     let result = [array[0]];
     for (let i=1; i<array.length; i++) {
         if (array[i-1]%2===0 && array[i]%2===0) {

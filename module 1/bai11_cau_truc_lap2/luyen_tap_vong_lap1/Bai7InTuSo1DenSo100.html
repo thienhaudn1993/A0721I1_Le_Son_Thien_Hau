@@ -9,21 +9,21 @@
 Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó.
 Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".-->
 <script>
-    for (i=1;i<=100;i++) {
-        if (i%3==0 && i%5==0) {
-            document.write(i+'FizzBuzz'+'<br>');
-        }
-        else if (i%3==0) {
-            document.write(i+'Fizz'+'<br>');
+    let day ='';
+    for (let i=1;i<=100;i++){
+        if (i%3==0 && i%5==0){
+            day+="FizzBuzz="
         }
         else if (i%5==0){
-            document.write(i+'Buzz'+'<br>');
+            day+="Buzz="
         }
-        // else {
-        //     document.write('');
-        // }
+        else if (i%3==0) {
+            day+="Fizz="
+        }
+        day+= i+'<br>'
 
     }
+    document.write(day)
 </script>
 </body>
 </html>

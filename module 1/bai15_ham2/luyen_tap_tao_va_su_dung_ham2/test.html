@@ -5,33 +5,16 @@
     <title>Title</title>
 </head>
 <body>
-<!--Luyện tập cấu trúc điều kiện 01-->
-<!--tính cước điện thoại bàn cho một hộ gia đình với các thông số như sau ( đơn vị ngàn VNĐ ):-->
-<!--Phí thuê bao bắt buộc là 25 nghìn.-->
-<!--600 đồng cho mỗi gọi của 50 phút đầu tiên.-->
-<!--400 đồng cho mỗi phút gọi của 150 phút tiếp theo.-->
-<!--200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.-->
-<p id="rs"></p>
-<p id="rs1"></p>
+<!--Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.-->
 <script>
-let soPhut = prompt("NHập số phút bạn đã gọi");
-const phiThueBao = 25000;
-let phiCuoc;
-if (soPhut>200){
-    phiCuoc = phiThueBao + (soPhut-200)*200+400*150+600*50;
-    document.getElementById("rs").innerHTML="Số phút đã gọi là: " +soPhut;
-    document.getElementById("rs1").innerHTML="Tổng phí cược điện thoại bằng phải trả là: " +phiCuoc;
-}
-else if (soPhut>50){
-    phiCuoc = phiThueBao + (soPhut-50)*400+600*50;
-    document.getElementById("rs").innerHTML="Số phút đã gọi là: " +soPhut;
-    document.getElementById("rs1").innerHTML="Tổng phí cược điện thoại bằng phải trả là: " +phiCuoc;
-}
-else {
-    phiCuoc = phiThueBao + 600*50;
-    document.getElementById("rs").innerHTML="Số phút đã gọi là: " +soPhut;
-    document.getElementById("rs1").innerHTML="Tổng phí cược điện thoại bằng phải trả là: " +phiCuoc;
-}
+    function changeValuePassByValue(funcNum) {
+        funcNum = 1;
+    }
+
+    let num = 24;
+    changeValuePassByValue(num);
+    console.log("Result " + num);
+
 
 </script>
 </body>

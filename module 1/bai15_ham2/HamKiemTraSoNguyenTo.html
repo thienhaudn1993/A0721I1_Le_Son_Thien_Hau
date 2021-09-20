@@ -6,6 +6,7 @@
 </head>
 <body>
 <script>
+    //Cách 1:
 /*    function isNumber(number) {
         let count=0;
         while (true) {
@@ -24,6 +25,27 @@
             }
         }
     }*/
+//Cách 2:
+/*function checkPrime(number) {
+    let flag = true;
+    if (number < 2) {
+        flag = false;
+    } else {
+        for (let i = 2; i < number; i++) {
+            if (number % i == 0) {
+                flag = false
+            }
+        }
+        if (flag) {
+            alert(number + " la so nguyento")
+        } else {
+            alert(number + " khong phai la so nguyento")
+        }
+    }
+}
+let num=parseInt(prompt("nhap so nguyen"));
+result= checkPrime(num);*/
+    //Cách 3:
 function isNumber(number) {
     let count=0;
     if (number<2){

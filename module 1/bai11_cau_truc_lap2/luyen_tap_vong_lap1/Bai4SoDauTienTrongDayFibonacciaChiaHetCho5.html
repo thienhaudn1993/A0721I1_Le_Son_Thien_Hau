@@ -13,16 +13,16 @@
     let f=f0+f1;
     let result=f0+' '+f1+' ';
     for (let i=0; i<20; i++) {
+        result+=f+' ';
         if (f%5==0) {
-            alert('Số chia hết cho 5 đầu tiên trong dẫy Fibonacci là ' +f)
+            alert('Số chia hết cho 5 đầu tiên trong dãy Fibonacci là ' +f)
             break;
         }
-        result+=f+' ';
         f0=f1;
         f1=f;
         f=f0+f1;
     }
-
+    document.write("ta co day fibonacci tuong ung la "+result)
     //Cách 2
     /*let fibonacci="";
     let so = new Array();

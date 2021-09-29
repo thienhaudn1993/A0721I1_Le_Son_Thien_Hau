@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-    class Temperature {
+   /* class Temperature {
         constructor(doC) {
                 this.c=doC;
         }
@@ -23,28 +23,42 @@
             if (nhietDoC) {
                 return 1.8*this.c+32;
             }
-           else {
-               return undefined
-            }
         }
         doKenvin(){
             if (nhietDoC){
                 return this.c+273.15
             }
-            else {
-                return undefined
-            }
         }
-    }
+    }*/
+   class Temperature {
+       constructor(doC) {
+           this.c=doC;
+       }
+       nhietDoC(){
+           return this.c;
+       }
+       nhietDoF(){
+           return 1.8*this.c+32;
+       }
+       doKenvin(){
+           return this.c+273.15
+       }
+   }
     let num = parseInt(prompt("Nhập nhiệt độ C bạn muốn đổi"))
     let temperature = new Temperature(num);
     let nhietDoC = temperature.nhietDoC();
     let nhietDoF = temperature.nhietDoF();
     let doKenvin = temperature.doKenvin();
-    document.write("Nhiệt độ C là "+nhietDoC+" độ C <br/>");
-    document.write("Đổi ra nhiệt độ F và độ Kenvin ta sẽ đươc là:<br/>");
-    document.write("+/Nhiệt độ F là "+nhietDoF+" độ F <br/>");
-    document.write("+/Nhiệt độ Kenvin là "+doKenvin+" độ K");
+    if (nhietDoC>-273){
+        document.write("Nhiệt độ C là "+nhietDoC+" độ C <br/>");
+        document.write("Đổi ra nhiệt độ F và độ Kenvin ta sẽ đươc là:<br/>");
+        document.write("+/Nhiệt độ F là "+nhietDoF+" độ F <br/>");
+        document.write("+/Nhiệt độ Kenvin là "+doKenvin+" độ K");
+    }
+    else {
+        alert('Cần nhập nhiệt độ lớn hơn -273')
+    }
+
 
 </script>
 </body>

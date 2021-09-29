@@ -38,7 +38,7 @@ Mảng b được tạo ra: [1, 1 + 2, 1 + 2 + 3] = [1, 3, 6]-->
     let b=[];
     b[0]=a[0]
     b[1]= b[0]+a[1];
-    for (let n=1;n<a.length;n++) {
+    for (let n=2;n<a.length;n++) {
         b[n] = b[n-1]+a[n];
     }
     document.write("Mảng prefixSums b=["+b+"]");

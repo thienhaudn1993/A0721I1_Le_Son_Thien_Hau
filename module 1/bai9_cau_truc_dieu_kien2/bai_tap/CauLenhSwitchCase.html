@@ -5,34 +5,30 @@
     <title>Tính số ngày trong một tháng</title>
 </head>
 <body>
-<input id="inp" type="text" name="month" value=""/>
+<input id="inp" type="number" name="month" value=""/>
 <button type="button" onclick="test()">Tính số ngày</button>
 <h1 id="rs"></h1>
 <script>
     function test() {
         let input = parseInt(document.getElementById('inp').value);
         switch (input) {
-            case 1:
+            case 1: 
             case 3:
             case 5:
             case 7:
             case 8:
             case 10:
             case 12:
-                document.getElementById("rs").innerHTML ="Có 31 ngày trong tháng " +input;
+                document.getElementById("rs").innerHTML = "Có 31 ngày trong tháng " + input;
                 break;
-        }
-        switch (input) {
             case 4:
             case 6:
             case 9:
             case 11:
-                document.getElementById("rs").innerHTML ="Có 30 ngày trong tháng " +input;
+                document.getElementById("rs").innerHTML = "Có 30 ngày trong tháng " + input;
                 break;
-        }
-        switch (input) {
             case 2:
-                document.getElementById("rs").innerHTML ="Có 28 ngày trong tháng " +input;
+                document.getElementById("rs").innerHTML = "Có 28 ngày trong tháng " + input;
                 break;
         }
     }

@@ -15,16 +15,17 @@
         }
     }
     //Vẽ một hình tròn đơn giản với kích thước cố định
-   /* function createCircle() {
+    function createCircle() {
         let canvas=document.getElementById("myCanvas");
         let ctx = canvas.getContext("2d");
-        let circle = new Circle(750,325,80);
+        let circle = new Circle(750,325,200);
         ctx.beginPath();
         ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI*2);
+        ctx.fillStyle="navy";
         ctx.fill();
 
     }
-    createCircle()*/
+    createCircle()
     //Vẽ hình tròn với bán kính ngẫu nhiên
   /*  function createCircle() {
         let canvas=document.getElementById("myCanvas");
@@ -115,7 +116,7 @@
     createCircle()*/
 
     // Tạo rất nhiều hình tròn.
-    function getRandomHex() {
+    /*function getRandomHex() {
         return Math.floor(Math.random()*255);
 
     }
@@ -143,7 +144,7 @@
             createCircle()
         }
     }
-    createMultiCircle()
+    createMultiCircle()*/
 </script>
 </body>
 </html>

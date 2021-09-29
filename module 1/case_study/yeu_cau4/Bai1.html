@@ -14,12 +14,12 @@ Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím,
 <p id="result"></p>
 <script>
 
-    function chuanXau(arr){
+    function chuanXau(){
         let result ='';
         arr =[];
         let str = document.getElementById("input").value;
         let newStr = str.split(" ");
-
+        console.log(newStr)
         for (let i=0; i<newStr.length;i++){
             if (newStr[i]!=""){
                 arr.push(newStr[i].toLowerCase());

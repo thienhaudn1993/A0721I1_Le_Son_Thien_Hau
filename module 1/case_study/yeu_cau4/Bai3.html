@@ -20,7 +20,7 @@ Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s
             let bien_kiemtra = b.indexOf(a[i]);
             if (bien_kiemtra !== -1) {
                 b.splice(bien_kiemtra, 1);
-                count = count + 1;
+                count++;
             }
         }
     document.write("Số ký tự giống nhau của chuỗi a và b là :" + count);

@@ -1,17 +1,17 @@
 package bai6_ke_thua.bai_tap.lop_point_va_moveablepoint;
 
-public class MovablePoint extends  Point {
+public class MoveablePoint extends  Point {
     private float xSpeed = 0.0f;
     private float ySpeed = 0.0f;
-    public MovablePoint(){
+    public MoveablePoint(){
 
     }
-    public MovablePoint(float xSpeed, float ySpeed) {
+    public MoveablePoint(float xSpeed, float ySpeed) {
         this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
     }
 
-    public MovablePoint(float x, float y, float xSpeed, float ySpeed) {
+    public MoveablePoint(float x, float y, float xSpeed, float ySpeed) {
         super(x, y);
         this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
@@ -46,11 +46,11 @@ public class MovablePoint extends  Point {
         return super.toString() +
                 "(speed){xs="+getxSpeed()+", ys="+getySpeed()+"}";
     }
-    public MovablePoint move(){
+    public MoveablePoint move(){
         super.setX(super.getX()+this.xSpeed);
-        super.setX(super.getY()+this.ySpeed);
-        // dưới bị sai? vì sao?
-        /*super.getX()+=this.xSpeed;
+        super.setY(super.getY()+this.ySpeed);
+        // dưới bị sai? vì sao? Vì chỉ làm vậy khi getX() là biến, còn hàm thì ko được
+       /* super.getX()+=this.xSpeed;
         super.getY()+=this.ySpeed;*/
         return this;
     }

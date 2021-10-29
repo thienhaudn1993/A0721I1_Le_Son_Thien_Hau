@@ -1,6 +1,8 @@
 package demo_manager_student.model;
 
-public class Student extends Person {
+import java.util.Objects;
+
+public class Student extends Person implements Comparable<Student>{
     private double point;
     private String subject;
 
@@ -32,12 +34,29 @@ public class Student extends Person {
     @Override
     public String toString() {
         return "Student{" +
-                ", id=" + id +
+                " id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", address='" + address + '\'' +
                 ", subject='" + subject + '\'' +
                 ", point=" + point +
                 '}';
+    }
+
+   /* @Override
+    public boolean equals(Object o) {
+        return ((Student)o).getName().equals(this.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return 12;
+    }*/
+ @Override
+    public int compareTo(Student o) {
+//        if (this.getName().compareTo(o.getName())==0){
+//            return this.getAge()-o.getAge();
+//        }
+        return this.getName().compareTo(o.getName());
     }
 }

@@ -1,6 +1,7 @@
 package bai12_map_tree.bai_tap.quan_li_san_pham.arraylist;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class ProductManager {
@@ -8,11 +9,12 @@ public class ProductManager {
     public static ArrayList<Product> productArrayList = new ArrayList<>();
     static int id=1;
     static {
-        productArrayList.add(new Product(id++,"Apple Watch",150));
         productArrayList.add(new Product(id++,"Macbook Air",1500));
         productArrayList.add(new Product(id++,"Macbook Pro",2200));
+        productArrayList.add(new Product(id,"Apple Watch",150));
     }
     public void add(){
+        id++;
         System.out.println("Nhập tên của máy");
         String name = scanner.nextLine();
         System.out.println("Nhập giá sản phẩm");
@@ -32,18 +34,16 @@ public class ProductManager {
         int id = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < productArrayList.size(); i++) {
             if (productArrayList.get(i).getId() == id) {
-                System.out.println("Tên sản phẩm hiện tại là: ");
-                System.out.println(productArrayList.get(i).getName());
-                System.out.println("Giá sản phẩm hiện tại là: ");
-                System.out.println(productArrayList.get(i).getPrice());
+                System.out.println("Tên sản phẩm hiện tại là: "+ productArrayList.get(i).getName());
+                System.out.println("Giá sản phẩm hiện tại là: "+ productArrayList.get(i).getPrice() +" $");
                 System.out.println("Tên sản phẩm muốn đổi là: ");
                 String editName = scanner.nextLine();
                 productArrayList.get(i).setName(editName);
-                System.out.println("Tên sản phẩm sau khi đổi là: "+productArrayList.get(i));
+                System.out.println("Tên sản phẩm sau khi đổi là: "+productArrayList.get(i).getName());
                 System.out.println("Nhập giá cần đổi");
                 double editPrice = Double.parseDouble(scanner.nextLine());
                 productArrayList.get(i).setPrice(editPrice);
-                System.out.println("Giá sau khi đổi là: "+productArrayList.get(i));
+                System.out.println("Giá sau khi đổi là: "+productArrayList.get(i).getPrice() +" $");
             }
         }
 
@@ -69,7 +69,8 @@ public class ProductManager {
         return flag;
     }
     public void sort(){
-
+        System.out.println("Sắp xếp giá tăng dần");
+        Collections.sort(productArrayList, new CompareProduct());
     }
 
 }

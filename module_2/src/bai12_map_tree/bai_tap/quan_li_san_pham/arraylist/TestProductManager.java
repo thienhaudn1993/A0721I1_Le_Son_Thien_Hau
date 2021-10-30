@@ -9,13 +9,13 @@ public class TestProductManager {
         boolean flag=true;
         do {
             System.out.println("Chọn chức năng cần thực hiên" +
-                    "\n1.add" +
-                    "\n2.display" +
-                    "\n3.edit" +
-                    "\n4.delete"+
-                    "\n5.find"+
-                    "\n6.sort"+
-                    "\n7.exit");
+                    "\n1.Add" +
+                    "\n2.Display" +
+                    "\n3.Edit" +
+                    "\n4.Delete"+
+                    "\n5.Find"+
+                    "\n6.Sort ascending"+
+                    "\n7.Exit");
             int input = scanner.nextInt();
             switch (input){
                 case 1:
@@ -35,6 +35,7 @@ public class TestProductManager {
                     break;
                 case 6:
                     productManager.sort();
+                    productManager.display();
                     break;
                 case 7:
                     System.exit(0);

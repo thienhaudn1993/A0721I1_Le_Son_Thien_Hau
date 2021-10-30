@@ -31,7 +31,7 @@ public class TestProductManager {
                     productManager.delete();
                     break;
                 case 5:
-                    productManager.find();
+                    System.out.println(productManager.find());
                     break;
                 case 6:
                     productManager.sort();

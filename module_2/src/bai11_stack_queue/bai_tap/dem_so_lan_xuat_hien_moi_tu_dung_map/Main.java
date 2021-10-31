@@ -10,14 +10,25 @@ public class Main {
     public static void main(String[] args) {
         Map<String,Integer> treeMap = new TreeMap<>();
         Scanner scanner = new Scanner(System.in);
-        int count =1;
+
         System.out.println("Nhập chuỗi cần đếm kí tự");
         String src = scanner.nextLine();
         // chuyển chuỗi về chữ thường
         src = src.toLowerCase();
         String[] arr = src.split("");
+        System.out.println(Arrays.toString(arr));
+
         for (int i = 0; i < arr.length; i++) {
-            treeMap.put(arr[i],count);
+            int count =1;
+            if (treeMap.containsKey(arr[i])) {
+                count+=treeMap.get(arr[i]);
+            }
+            if (!arr[i].equals(" ")) {
+                treeMap.put(arr[i],count);
+            }
+        }
+        for (Map.Entry<String, Integer> entry: treeMap.entrySet()) {
+            System.out.println(entry);
         }
     }
 }

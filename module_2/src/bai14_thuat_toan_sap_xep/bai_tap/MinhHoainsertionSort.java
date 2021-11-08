@@ -1,11 +1,11 @@
-package bai14_thuat_toan_sap_xep.demo_bai_hoc;
+package bai14_thuat_toan_sap_xep.bai_tap;
 
 import java.util.Arrays;
 
-public class SapXepChen {
+public class MinhHoainsertionSort {
     public static void main(String[] args) {
         int[] arr = {12,4,15};
-        int[] arr1 = {1,5,3,4,6,-2,7};
+        int[] arr1 = {1,5,8,4,6,-2,7};
         insertSort(arr1);
     }
     public static void insertSort(int[] array){
@@ -20,6 +20,5 @@ public class SapXepChen {
             array[pos]=x;
             System.out.println(Arrays.toString(array));
         }
-//        System.out.println(Arrays.toString(array));
     }
 }

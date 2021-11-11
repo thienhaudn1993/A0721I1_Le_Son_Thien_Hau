@@ -33,8 +33,7 @@ public class Student extends Person implements Comparable<Student>{
 
     @Override
     public String toString() {
-        return "Student{" +
-                " id=" + id +
+        return " id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", address='" + address + '\'' +
@@ -58,5 +57,8 @@ public class Student extends Person implements Comparable<Student>{
 //            return this.getAge()-o.getAge();
 //        }
         return this.getName().compareTo(o.getName());
+    }
+    public String getInfoToCSV(){
+     return this.name+","+ this.age+","+this.id+","+this.address+","+this.point+","+this.subject;
     }
 }

@@ -6,7 +6,6 @@ import demo_manager_student.service.StudentService;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         StudentService studentService = new StudentService();
         Scanner scanner = new Scanner(System.in);

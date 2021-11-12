@@ -1,0 +1,2 @@
+Hello world
+Total charater in file: 10

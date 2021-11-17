@@ -1,5 +1,7 @@
 package case_study_furama_resort.controllers;
 
+import case_study_furama_resort.services.impl.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
 public class FuramaController {
@@ -41,6 +43,7 @@ public class FuramaController {
     }
     public static void displayEmployeeManagement() {
         boolean flag = true;
+        EmployeeServiceImpl employeeServiceimpl = new EmployeeServiceImpl();
         do {
             System.out.println(
                     "\n1.Display list employees" +
@@ -50,10 +53,13 @@ public class FuramaController {
             int input = scanner.nextInt();
             switch (input) {
                 case 1:
+                    employeeServiceimpl.display();
                     break;
                 case 2:
+                    employeeServiceimpl.add();
                     break;
                 case 3:
+                    employeeServiceimpl.edit();
                     break;
                 case 4:
                     displayMainMenu();

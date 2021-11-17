@@ -40,11 +40,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.println("Nhập lương nhân viên");
         double salary = Double.parseDouble(scanner.nextLine());
         employeeList.add(new Employee(id, name, age, gender, cmnd, phone, email, levelGrade, jobPosition, salary));
-        display();
+        System.out.println("Đã thêm mới thành công");
     }
 
     @Override
     public void edit() {
+        display();
         System.out.println("Nhập id nhân viên cần chỉnh sửa");
         String id = scanner.nextLine();
         boolean check = false;
@@ -71,6 +72,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 System.out.println("Nhập lương nhân viên cần sửa");
                 double salary = Double.parseDouble(scanner.nextLine());
                 employeeList.add(i, new Employee(idEdit, name, age, gender, cmnd, phone, email, levelGrade, jobPosition, salary));
+                employeeList.remove(i+1);
                 check=true;
             }
         }

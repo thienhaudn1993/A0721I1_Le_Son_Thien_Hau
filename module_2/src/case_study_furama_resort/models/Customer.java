@@ -28,4 +28,13 @@ public class Customer extends People {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                super.toString()+
+                "typeCustomer='" + typeCustomer + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }

@@ -42,7 +42,7 @@ public class Employee extends People {
     @Override
     public String toString() {
         return "Employee{" +
-                super.toString()
+                super.toString()+
                 "levelGrade='" + levelGrade + '\'' +
                 ", jobPosition='" + jobPosition + '\'' +
                 ", salary=" + salary +

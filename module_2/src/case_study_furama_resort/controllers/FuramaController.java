@@ -1,6 +1,8 @@
 package case_study_furama_resort.controllers;
 
+import case_study_furama_resort.services.impl.CustomerServiceImpl;
 import case_study_furama_resort.services.impl.EmployeeServiceImpl;
+import case_study_furama_resort.services.impl.FacilityServiceImpl;
 
 import java.util.Scanner;
 
@@ -68,6 +70,7 @@ public class FuramaController {
         }while (flag);
     }
     public static void displayCustomerManagement(){
+        CustomerServiceImpl customerServiceImpl = new CustomerServiceImpl();
         boolean flag=true;
         do {
             System.out.println(
@@ -78,10 +81,13 @@ public class FuramaController {
             int input = scanner.nextInt();
             switch (input){
                 case 1:
+                    customerServiceImpl.display();
                     break;
                 case 2:
+                    customerServiceImpl.add();
                     break;
                 case 3:
+                    customerServiceImpl.edit();
                     break;
                 case 4:
                     displayMainMenu();
@@ -90,6 +96,7 @@ public class FuramaController {
         }while (flag);
     }
     public static void displayFacilityManagement(){
+        FacilityServiceImpl facilityServiceImpl = new FacilityServiceImpl();
         boolean flag=true;
         do {
             System.out.println(
@@ -100,10 +107,13 @@ public class FuramaController {
             int input = scanner.nextInt();
             switch (input){
                 case 1:
+                    facilityServiceImpl.display();
                     break;
                 case 2:
+                    newDisplayFacility();
                     break;
                 case 3:
+                    facilityServiceImpl.displayMaintance();
                     break;
                 case 4:
                     displayMainMenu();
@@ -111,6 +121,37 @@ public class FuramaController {
             }
         }while (flag);
     }
+
+    public static void newDisplayFacility(){
+        FacilityServiceImpl facilityServiceImpl = new FacilityServiceImpl();
+        boolean flag=true;
+        do {
+            System.out.println(
+                            "\n1.Add New Villa"+
+                            "\n2.Add New House"+
+                            "\n3.Add New Room "+
+                            "\n4.Back to menu");
+            int input = scanner.nextInt();
+            switch (input){
+                case 1:
+                    facilityServiceImpl.addNewVilla();
+                    displayFacilityManagement();
+                    break;
+                case 2:
+                    facilityServiceImpl.addNewHouse();
+                    displayFacilityManagement();
+                    break;
+                case 3:
+                    facilityServiceImpl.addNewRoom();
+                    displayFacilityManagement();
+                    break;
+                case 4:
+                    displayFacilityManagement();
+                    break;
+            }
+        }while (flag);
+    }
+
     public static void displayBookingManagement(){
         boolean flag=true;
         do {

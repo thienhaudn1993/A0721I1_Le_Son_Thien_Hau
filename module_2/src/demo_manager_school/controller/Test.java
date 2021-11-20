@@ -32,7 +32,8 @@ public class Test {
         }while (choose <= 0 || choose > 8);
         switch (choose){
             case 1:
-                studentService.create();
+                displayTeacherOrStudent();
+//                studentService.create();
                 break;
             case 2:
                 studentService.show();
@@ -57,6 +58,27 @@ public class Test {
                 break;
         }
         backToMenu();
+    }
+    public static void displayTeacherOrStudent(){
+        String tmp="";
+        int choose = 0;
+        do {
+            System.out.println("Chọn đối tượng cần tạo "+
+                    "\n1.Student" +
+                    "\n2.Teacher" );
+            System.out.println(tmp.isEmpty()?"Nhập đối tượng cần thực hiện":"Vui lòng nhập số từ 1-2");
+            tmp = scanner.nextLine();
+            if (validateNumber(tmp)) {
+                choose = Integer.parseInt(tmp);
+            }
+        }while (choose <= 0 || choose > 2);
+        switch (choose){
+            case 1:
+                studentService.create();
+                break;
+            case 2:
+                break;
+        }
     }
 
     public static void backToMenu(){

@@ -4,9 +4,7 @@ import demo_manager_school.model.Student;
 import demo_manager_school.util.CSVHepler;
 
 import java.awt.font.FontRenderContext;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class StudentService {
     private static List<Student> studentList = new ArrayList<>();
@@ -107,13 +105,20 @@ public class StudentService {
                 System.out.println(student.studentInf());
             }
         }
-
-
     }
-    public void searchByAge(){
 
+    public void searchByAge(){
+        System.out.println("Nhập tuổi cần tìm kiếm");
+        int age = Integer.parseInt(scanner.nextLine());
+        for (Student student:studentList) {
+            if (student.getAge()==age){
+                System.out.println(student.studentInf());
+            }
+        }
     }
     public void sort(){
-
+        Collections.sort(studentList, Comparator.comparing(Student::getName));
+        show();
+        System.out.println("Đã sắp xếp theo tên thành công");
     }
 }

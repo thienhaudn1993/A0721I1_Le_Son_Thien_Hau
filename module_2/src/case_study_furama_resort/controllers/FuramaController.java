@@ -1,8 +1,6 @@
 package case_study_furama_resort.controllers;
 
-import case_study_furama_resort.services.impl.CustomerServiceImpl;
-import case_study_furama_resort.services.impl.EmployeeServiceImpl;
-import case_study_furama_resort.services.impl.FacilityServiceImpl;
+import case_study_furama_resort.services.impl.*;
 
 import java.util.Scanner;
 
@@ -153,6 +151,8 @@ public class FuramaController {
     }
 
     public static void displayBookingManagement(){
+        BookingServiceImpl bookingServiceImpl = new BookingServiceImpl();
+        ContractServiceImpl contractServiceImpl = new ContractServiceImpl();
         boolean flag=true;
         do {
             System.out.println(
@@ -165,14 +165,19 @@ public class FuramaController {
             int input = scanner.nextInt();
             switch (input){
                 case 1:
+                    bookingServiceImpl.addBooking();
                     break;
                 case 2:
+                    bookingServiceImpl.displayListBooking();
                     break;
                 case 3:
+                    contractServiceImpl.createNewContract();
                     break;
                 case 4:
+                    contractServiceImpl.displayListContract();
                     break;
                 case 5:
+
                     break;
                 case 6:
                     displayMainMenu();

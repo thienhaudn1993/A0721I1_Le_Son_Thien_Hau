@@ -58,6 +58,8 @@ public class Student extends Person implements Comparable<Student>{
 //        }
         return this.getName().compareTo(o.getName());
     }
+    //note cái này
+
     public String getInfoToCSV(){
      return this.name+","+ this.age+","+this.id+","+this.address+","+this.point+","+this.subject;
     }

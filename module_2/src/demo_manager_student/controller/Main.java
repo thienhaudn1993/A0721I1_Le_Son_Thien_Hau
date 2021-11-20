@@ -1,13 +1,15 @@
 package demo_manager_student.controller;
 
 
-import demo_manager_student.service.StudentService;
+//import demo_manager_student.service.StudentService;
+import demo_manager_student.service.StudentServiceNew;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        StudentService studentService = new StudentService();
+//        StudentService studentService = new StudentService();
+        StudentServiceNew studentService = new StudentServiceNew();
         Scanner scanner = new Scanner(System.in);
         boolean flag=true;
         do {

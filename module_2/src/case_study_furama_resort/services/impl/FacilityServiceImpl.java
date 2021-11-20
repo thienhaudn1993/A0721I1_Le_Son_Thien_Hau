@@ -28,6 +28,8 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public void addNewVilla() {
+        System.out.println("Nhập mã số dịch vụ");
+        String isFacility = scanner.nextLine();
         System.out.println("Nhập tên dịch vụ");
         String nameService = scanner.nextLine();
         System.out.println("Nhập diện tích phòng");
@@ -44,7 +46,7 @@ public class FacilityServiceImpl implements FacilityService {
         double poolArea = Double.parseDouble(scanner.nextLine());
         System.out.println("Nhập số tầng");
         int numberOfFloors = Integer.parseInt(scanner.nextLine());
-        Villa villa = new Villa(nameService,area,price,qualityMaxPeople,typeRent,roomStandard,poolArea,numberOfFloors);
+        Villa villa = new Villa(isFacility,nameService,area,price,qualityMaxPeople,typeRent,roomStandard,poolArea,numberOfFloors);
         facilityIntegerMap.put(villa,0);
         System.out.println("Đã thêm mới villa thành công");
 
@@ -52,6 +54,8 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public void addNewHouse() {
+        System.out.println("Nhập mã số dịch vụ");
+        String isFacility = scanner.nextLine();
         System.out.println("Nhập tên dịch vụ");
         String nameService = scanner.nextLine();
         System.out.println("Nhập diện tích phòng");
@@ -66,13 +70,15 @@ public class FacilityServiceImpl implements FacilityService {
         String roomStandard = scanner.nextLine();
         System.out.println("Nhập số tầng");
         int numberOfFloors = Integer.parseInt(scanner.nextLine());
-        House house = new House(nameService,area,price,qualityMaxPeople,typeRent,roomStandard,numberOfFloors);
+        House house = new House(isFacility,nameService,area,price,qualityMaxPeople,typeRent,roomStandard,numberOfFloors);
         facilityIntegerMap.put(house,0);
         System.out.println("Đã thêm mới house thành công");
     }
 
     @Override
     public void addNewRoom() {
+        System.out.println("Nhập mã số dịch vụ");
+        String isFacility = scanner.nextLine();
         System.out.println("Nhập tên dịch vụ");
         String nameService = scanner.nextLine();
         System.out.println("Nhập diện tích phòng");
@@ -85,8 +91,8 @@ public class FacilityServiceImpl implements FacilityService {
         String typeRent = scanner.nextLine();
         System.out.println("Nhập dịch vụ free kèm theo");
         String freeServiceIncluded = scanner.nextLine();
-        Room room = new Room(nameService,area,price,qualityMaxPeople,typeRent,freeServiceIncluded);
-        facilityIntegerMap.put(room,0)
+        Room room = new Room(isFacility,nameService,area,price,qualityMaxPeople,typeRent,freeServiceIncluded);
+        facilityIntegerMap.put(room,0);
         System.out.println("Đã thêm mới room thành công");
     }
 }

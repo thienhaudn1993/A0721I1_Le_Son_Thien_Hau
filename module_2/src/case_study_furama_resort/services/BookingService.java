@@ -1,4 +1,7 @@
 package case_study_furama_resort.services;
 
-public interface BookingService extends Service {
+public interface BookingService{
+    void addBooking();
+    void displayListBooking();
+
 }

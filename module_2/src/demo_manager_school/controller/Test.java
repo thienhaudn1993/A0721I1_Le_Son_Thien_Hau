@@ -2,12 +2,14 @@ package demo_manager_school.controller;
 
 import demo_manager_school.model.Student;
 import demo_manager_school.service.StudentService;
+import demo_manager_school.service.TeacherService;
 
 import java.util.Scanner;
 
 public class Test {
     private static Scanner scanner = new Scanner(System.in);
     private static StudentService studentService = new StudentService();
+    private static TeacherService teacherService = new TeacherService();
     public static void main(String[] args) {
         displayMenu();
     }
@@ -32,26 +34,25 @@ public class Test {
         }while (choose <= 0 || choose > 8);
         switch (choose){
             case 1:
-                displayTeacherOrStudent();
-//                studentService.create();
+                createTeacherOrStudent();
                 break;
             case 2:
-                studentService.show();
+                displayTeacherOrStudent();
                 break;
             case 3:
-                studentService.edit();
+                editTeacherOrStudent();
                 break;
             case 4:
-                studentService.delete();
+                deleteTeacherOrStudent();
                 break;
             case 5:
-                studentService.searchByName();
+                searchByNameTeacherOrStudent();
                 break;
             case 6:
-                studentService.searchByAge();
+                searchByAgeTeacherOrStudent();
                 break;
             case 7:
-                studentService.sort();
+                sortTeacherOrStudent();
                 break;
             case 8:
                 System.exit(0);
@@ -59,11 +60,11 @@ public class Test {
         }
         backToMenu();
     }
-    public static void displayTeacherOrStudent(){
+    public static void createTeacherOrStudent(){
         String tmp="";
         int choose = 0;
         do {
-            System.out.println("Chọn đối tượng cần tạo "+
+            System.out.println("Chọn đối tượng cần tạo: "+
                     "\n1.Student" +
                     "\n2.Teacher" );
             System.out.println(tmp.isEmpty()?"Nhập đối tượng cần thực hiện":"Vui lòng nhập số từ 1-2");
@@ -77,12 +78,149 @@ public class Test {
                 studentService.create();
                 break;
             case 2:
+                teacherService.create();
                 break;
         }
     }
 
+    public static void displayTeacherOrStudent(){
+        String tmp="";
+        int choose = 0;
+        do {
+            System.out.println("Chọn đối tượng cần hiển thị: "+
+                    "\n1.Student" +
+                    "\n2.Teacher" );
+            System.out.println(tmp.isEmpty()?"Nhập đối tượng cần thực hiện":"Vui lòng nhập số từ 1-2");
+            tmp = scanner.nextLine();
+            if (validateNumber(tmp)) {
+                choose = Integer.parseInt(tmp);
+            }
+        }while (choose <= 0 || choose > 2);
+        switch (choose){
+            case 1:
+                studentService.show();
+                break;
+            case 2:
+                teacherService.show();
+                break;
+        }
+    }
+
+    public static void editTeacherOrStudent(){
+        String tmp="";
+        int choose = 0;
+        do {
+            System.out.println("Chọn đối tượng cần chỉnh sửa "+
+                    "\n1.Student" +
+                    "\n2.Teacher" );
+            System.out.println(tmp.isEmpty()?"Nhập đối tượng cần thực hiện":"Vui lòng nhập số từ 1-2");
+            tmp = scanner.nextLine();
+            if (validateNumber(tmp)) {
+                choose = Integer.parseInt(tmp);
+            }
+        }while (choose <= 0 || choose > 2);
+        switch (choose){
+            case 1:
+                studentService.edit();
+                break;
+            case 2:
+                teacherService.edit();
+                break;
+        }
+    }
+
+    public static void deleteTeacherOrStudent(){
+        String tmp="";
+        int choose = 0;
+        do {
+            System.out.println("Chọn đối tượng cần xóa: "+
+                    "\n1.Student" +
+                    "\n2.Teacher" );
+            System.out.println(tmp.isEmpty()?"Nhập đối tượng cần thực hiện":"Vui lòng nhập số từ 1-2");
+            tmp = scanner.nextLine();
+            if (validateNumber(tmp)) {
+                choose = Integer.parseInt(tmp);
+            }
+        }while (choose <= 0 || choose > 2);
+        switch (choose){
+            case 1:
+                studentService.delete();
+                break;
+            case 2:
+                teacherService.delete();
+                break;
+        }
+    }
+
+    public static void searchByNameTeacherOrStudent(){
+        String tmp="";
+        int choose = 0;
+        do {
+            System.out.println("Chọn đối tượng cần tìm kiếm theo tên: "+
+                    "\n1.Student" +
+                    "\n2.Teacher" );
+            System.out.println(tmp.isEmpty()?"Nhập đối tượng cần thực hiện":"Vui lòng nhập số từ 1-2");
+            tmp = scanner.nextLine();
+            if (validateNumber(tmp)) {
+                choose = Integer.parseInt(tmp);
+            }
+        }while (choose <= 0 || choose > 2);
+        switch (choose){
+            case 1:
+                studentService.searchByName();
+                break;
+            case 2:
+                teacherService.searchByName();
+                break;
+        }
+    }
+
+    public static void searchByAgeTeacherOrStudent(){
+        String tmp="";
+        int choose = 0;
+        do {
+            System.out.println("Chọn đối tượng cần tìm kiếm theo tuổi: "+
+                    "\n1.Student" +
+                    "\n2.Teacher" );
+            System.out.println(tmp.isEmpty()?"Nhập đối tượng cần thực hiện":"Vui lòng nhập số từ 1-2");
+            tmp = scanner.nextLine();
+            if (validateNumber(tmp)) {
+                choose = Integer.parseInt(tmp);
+            }
+        }while (choose <= 0 || choose > 2);
+        switch (choose){
+            case 1:
+                studentService.searchByAge();
+                break;
+            case 2:
+                teacherService.searchByAge();
+                break;
+        }
+    }
+    public static void sortTeacherOrStudent(){
+        String tmp="";
+        int choose = 0;
+        do {
+            System.out.println("Chọn đối tượng cần sắp xếp: "+
+                    "\n1.Student" +
+                    "\n2.Teacher" );
+            System.out.println(tmp.isEmpty()?"Nhập đối tượng cần thực hiện":"Vui lòng nhập số từ 1-2");
+            tmp = scanner.nextLine();
+            if (validateNumber(tmp)) {
+                choose = Integer.parseInt(tmp);
+            }
+        }while (choose <= 0 || choose > 2);
+        switch (choose){
+            case 1:
+                studentService.sort();
+                break;
+            case 2:
+                teacherService.sort();
+                break;
+        }
+    }
     public static void backToMenu(){
-        System.out.println("Bạn có muốn quay lại menu (Y/N)");
+        System.out.println("Bạn có muốn quay lại menu (Y/N): ");
         String input = scanner.nextLine();
         if (input.equalsIgnoreCase("Y")){
             displayMenu();

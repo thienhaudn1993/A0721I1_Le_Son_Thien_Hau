@@ -48,7 +48,7 @@ public class StudentService {
         System.out.println("Nhập địa chỉ");
         String address = scanner.nextLine();
         System.out.println("Nhập Point");
-        int point = Integer.parseInt(scanner.nextLine());
+        double point = Double.parseDouble(scanner.nextLine());
         System.out.println("Nhập môn học");
         String subject = scanner.nextLine();
         Student student = new Student(id,name,age,address,point,subject);

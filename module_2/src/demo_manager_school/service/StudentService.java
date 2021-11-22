@@ -41,8 +41,13 @@ public class StudentService {
     }
 
     public void inputAndSave(int id){
-        System.out.println("Nhập tên SV");
-        String name = scanner.nextLine();
+        boolean check;
+        String name;
+        do {
+            System.out.println("Nhập tên học sinh (viết hoa chữ cái đầu) ");
+            name = scanner.nextLine();
+            check = name.matches("^[A-Z][a-z0-9]+$");
+        }while (!check);
         System.out.println("Nhập tên tuổi");
         int age = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhập địa chỉ");

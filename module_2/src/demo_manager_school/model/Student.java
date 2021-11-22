@@ -42,7 +42,7 @@ public class Student extends People {
                 ", name='" + getName() + "\'" +
                 ", age=" + getAge() +"\'" +
                 ", address='" + getAddress() + "\'" +
-                "point=" + point + "\'" +
+                ", point=" + point + "\'" +
                 ", subject='" + subject +  "\'" +
                 '}';
     }

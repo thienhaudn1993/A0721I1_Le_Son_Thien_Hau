@@ -229,7 +229,7 @@ public class Test {
         }
     }
 ///dsdsdsdsds
-//    ssdsdsd
+//    ssdsdsd/asdasdasd/asdsad
     public static boolean validateNumber(String choose){
         String regex = "^[1-8]$";
         return choose.matches(regex);

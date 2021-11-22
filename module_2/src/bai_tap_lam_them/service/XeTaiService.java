@@ -44,8 +44,15 @@ public class XeTaiService {
         show(xeTaiList);
     }
     public void create(){
-        System.out.println("Nhập biển kiểm soát xe");
-        String bienKiemSoat = scanner.nextLine();
+        boolean check;
+        String bienKiemSoat;
+        do {
+            System.out.println("Nhập biển kiểm soát xe");
+            bienKiemSoat = scanner.nextLine();
+            check = bienKiemSoat.matches("^[0-9]{2}C-[0-9]{3}.[0-9]{2}$");
+            System.out.println(check?"Bạn đã nhập đúng":"Bạn đã nhập sai định dạng biển số xe, vui lòng nhập lại");
+        }while (!check);
+
         System.out.println("Hãng sản xuất xe");
         String hangXe = scanner.nextLine();
         System.out.println("Năm sản xuất xe");

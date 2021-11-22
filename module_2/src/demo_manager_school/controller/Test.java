@@ -32,8 +32,7 @@ public class Test {
         }while (choose <= 0 || choose > 8);
         switch (choose){
             case 1:
-                displayTeacherOrStudent();
-//                studentService.create();
+                createForTeacherOrStudent();
                 break;
             case 2:
                 studentService.show();
@@ -59,7 +58,7 @@ public class Test {
         }
         backToMenu();
     }
-    public static void displayTeacherOrStudent(){
+    public static void createForTeacherOrStudent(){
         String tmp="";
         int choose = 0;
         do {

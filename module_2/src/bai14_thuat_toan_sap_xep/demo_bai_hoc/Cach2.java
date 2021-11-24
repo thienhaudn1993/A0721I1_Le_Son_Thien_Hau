@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Cach2 {
     public static void main(String[] args) {
-        int[] arr= {30,80,5,84,1,23,7,9};
+        int[] arr= {8,6,34,22,11};
 
         bubbleSort(arr);
 //        selectionSort(arr);
@@ -67,7 +67,7 @@ public class Cach2 {
                 }
             }
 
-            if(isSorted) break;
+//            if(isSorted) break;
             System.out.println(Arrays.toString(arr));
         }
 

@@ -21,8 +21,6 @@ public class XeTai extends Vehicle{
 
     @Override
     public String toString() {
-        return "XeTai{" +
-                "trongTai='" + trongTai + '\'' +
-                '}';
+        return getBienKiemSoat()+","+getHangXe()+","+getNamSanXuat()+","+getChuSoHuu()+","+getTrongTai();
     }
 }

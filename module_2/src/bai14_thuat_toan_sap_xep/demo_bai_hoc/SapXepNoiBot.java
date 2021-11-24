@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SapXepNoiBot {
     public static void main(String[] args) {
-        int[] arr = {12,2,8,5,-1,15,4,6}; // 8 phần tử
+        int[] arr = {1, 2, 4, 3};
         int[] arr1 = {1,-2,4,5,3,8,7};
         bubbleSort(arr);
     }

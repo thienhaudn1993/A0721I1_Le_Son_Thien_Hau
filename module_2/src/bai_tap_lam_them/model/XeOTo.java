@@ -31,9 +31,6 @@ public class XeOTo extends Vehicle {
 
     @Override
     public String toString() {
-        return "XeOTo{" +
-                "soChoNgoi=" + soChoNgoi +
-                ", kieuXe='" + kieuXe + '\'' +
-                '}';
+        return getBienKiemSoat()+","+getHangXe()+","+getNamSanXuat()+","+getChuSoHuu()+","+getSoChoNgoi()+","+getKieuXe();
     }
 }

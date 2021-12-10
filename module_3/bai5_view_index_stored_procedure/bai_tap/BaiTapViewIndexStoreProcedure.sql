@@ -68,10 +68,27 @@ select * from products;
 
 -- Tạo store procedure sửa thông tin sản phẩm theo id
 DELIMITER //
-create procedure edit_product_by_id(in id int)
+create procedure edit_product_by_id(
+in id_edit int,
+in productCode varchar(50), 
+in productName varchar(70),
+in productPrice double,
+in productAmount int,
+in productDescription varchar(155),
+in productStatus varchar(70)
+)
 BEGIN
 set SQL_SAFE_UPDATES = 0;
-update products set productName ="Hau" where Id =1;
+update products set 
+productCode=productCode, 
+productName=productName, 
+productPrice=productPrice,
+productAmount=productAmount,
+productDescription=productDescription,
+productStatus =productStatus
+where Id =id_edit;
 set SQL_SAFE_UPDATES = 1;
 END //
 DELIMITER ;
+call edit_product_by_id(5,"code5","SamSung Note",2500,20,"chống nước","New");
+select * from products;

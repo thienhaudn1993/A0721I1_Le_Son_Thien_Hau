@@ -108,7 +108,7 @@ group by(hop_dong.ma_khach_hang) order by  so_lan_dat_phong asc;
 		-- cho tất cả các khách hàng đã từng đặt phòng. (những khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
         
  select khach_hang.ma_khach_hang, khach_hang.ho_ten, loai_khach.ten_loai_khach, hop_dong.ma_hop_dong, dich_vu.ten_dich_vu, hop_dong.ngay_lam_hd, hop_dong.ngay_ket_thuc, 
- sum(dich_vu.chi_phi_thue + hop_dong_chi_tiet.so_luong * dich_vu_di_kem.gia) as "tong_tien"
+ sum(dich_vu.chi_phi_thue +hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia) as "tong_tien"
  from khach_hang 
  left join loai_khach on khach_hang.ma_loai_khach = loai_khach.ma_loai_khach
  left join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang
@@ -117,12 +117,45 @@ group by(hop_dong.ma_khach_hang) order by  so_lan_dat_phong asc;
  left join dich_vu_di_kem on dich_vu_di_kem.ma_dich_vu_di_kem = hop_dong_chi_tiet.ma_dich_vu_di_kem
  group by(hop_dong.ma_hop_dong);
  
+ 
+ select khach_hang.ma_khach_hang, khach_hang.ho_ten, loai_khach.ten_loai_khach, hop_dong.ma_hop_dong, dich_vu.ten_dich_vu, hop_dong.ngay_lam_hd, hop_dong.ngay_ket_thuc, 
+ (dich_vu.chi_phi_thue + hop_dong_chi_tiet.so_luong * dich_vu_di_kem.gia) as "tong_tien"
+ from khach_hang 
+ left join loai_khach on khach_hang.ma_loai_khach = loai_khach.ma_loai_khach
+ left join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang
+ left join dich_vu on dich_vu.ma_dich_vu = hop_dong.ma_dich_vu
+ left join hop_dong_chi_tiet on hop_dong_chi_tiet.ma_hop_dong = hop_dong.ma_hop_dong
+ left join dich_vu_di_kem on dich_vu_di_kem.ma_dich_vu_di_kem = hop_dong_chi_tiet.ma_dich_vu_di_kem;
+ 
  -- Câu 6.	Hiển thị ma_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, ten_loai_dich_vu 
 	 -- của tất cả các loại dịch vụ chưa từng được khách hàng thực hiện đặt từ quý 1 của năm 2021 (Quý 1 là tháng 1, 2, 3).
- select dich_vu.ma_dich_vu, dich_vu.ten_dich_vu, dich_vu.dien_tich, dich_vu.chi_phi_thue, loai_dich_vu.ten_loai_dich_vu      
+ select dich_vu.ma_dich_vu, dich_vu.ten_dich_vu, dich_vu.dien_tich, dich_vu.chi_phi_thue, loai_dich_vu.ten_loai_dich_vu from dich_vu 
+ inner join loai_dich_vu on dich_vu.ma_loai_dich_vu = loai_dich_vu.ma_loai_dich_vu
+ where not exists (select hop_dong.ma_hop_dong from hop_dong where (hop_dong.ngay_lam_hd between "2021-01-01" and "2021-03-31") and hop_dong.ma_dich_vu = dich_vu.ma_dich_vu);
+  
+  -- Câu 7.	Hiển thị thông tin ma_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue, ten_loai_dich_vu 
+  -- của tất cả các loại dịch vụ đã từng được khách hàng đặt phòng trong năm 2020 nhưng chưa từng được khách hàng đặt phòng trong năm 2021.
         
-        
-        
+select dich_vu.ma_dich_vu, dich_vu.ten_dich_vu, dich_vu.dien_tich, dich_vu.so_nguoi_toi_da, dich_vu.chi_phi_thue, loai_dich_vu.ten_loai_dich_vu from dich_vu 
+inner join loai_dich_vu on dich_vu.ma_loai_dich_vu = loai_dich_vu.ma_loai_dich_vu
+where exists(select hop_dong.ma_hop_dong from hop_dong where year(hop_dong.ngay_lam_hd) ="2020" and hop_dong.ma_dich_vu = dich_vu.ma_dich_vu)     
+and not exists(select hop_dong.ma_hop_dong from hop_dong where year(hop_dong.ngay_lam_hd) ="2021" and hop_dong.ma_dich_vu = dich_vu.ma_dich_vu);
+--  Câu 8.	Hiển thị thông tin ho_ten khách hàng có trong hệ thống, với yêu cầu ho_ten không trùng nhau.
+		 -- Học viên sử dụng theo 3 cách khác nhau để thực hiện yêu cầu trên.
+         
+-- Cách 1: dùng group by
+  select khach_hang.ho_ten from khach_hang group by(ho_ten); 
+-- Cách 2: Từ khóa distinct trả về cột không trùng nhau
+select distinct khach_hang.ho_ten from khach_hang;
+-- Cách 3: Dùng union để trả về kết quả k trùng nhau
+select khach_hang.ho_ten from khach_hang union select khach_hang.ho_ten from khach_hang;
+
+-- Câu 9.	Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2021 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
+
+select month(hop_dong.ngay_lam_hd) as thang, count(month(hop_dong.ngay_lam_hd)) as so_khach_hang from hop_dong where year(hop_dong.ngay_lam_hd) ="2021"
+group by thang order by thang ;
+
+
         
         
         

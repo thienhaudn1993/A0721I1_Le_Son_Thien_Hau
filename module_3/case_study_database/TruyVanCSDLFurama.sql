@@ -177,4 +177,12 @@ and khach_hang.dia_chi like "%Vinh%" or khach_hang.dia_chi like "%Quảng Ngãi%
 -- ten_dich_vu, so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem), tien_dat_coc 
 -- của tất cả các dịch vụ đã từng được khách hàng đặt vào 3 tháng cuối năm 2020 nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2021.
 
-select hop_dong.ma_hop_dong, nhan_vien.ho_ten, khach_hang.ho_ten, khach_hang.so_dien_thoai, 
+select hop_dong.ma_hop_dong, nhan_vien.ho_ten as ho_ten_nhan_vien, khach_hang.ho_ten as ho_ten_khach_hang, khach_hang.so_dien_thoai, dich_vu.ten_dich_vu, sum(hop_dong_chi_tiet.so_luong) as "so_luong_dich_vu_di_kem", hop_dong.tien_dat_coc
+from hop_dong
+inner join nhan_vien on hop_dong.ma_nhan_vien = nhan_vien.ma_nhan_vien
+inner join khach_hang on hop_dong.ma_khach_hang = khach_hang.ma_khach_hang
+inner join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu
+inner join hop_dong_chi_tiet on hop_dong_chi_tiet.ma_hop_dong = hop_dong.ma_hop_dong 
+where not exists(select hop_dong.ma_hop_dong from hop_dong where (hop_dong.ngay_lam_hd between "2021-01-01" and "2021-06-31") and hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong)
+and exists (select hop_dong.ma_hop_dong from hop_dong where (hop_dong.ngay_lam_hd between "2020-10-01" and "2020-12-31") and hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong)
+group by hop_dong.ma_hop_dong;

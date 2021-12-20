@@ -1,0 +1,13 @@
+#color-dodgerblue{
+    color: dodgerblue;
+}
+span{
+    color: blue;
+}
+sup{
+    font-size: 8px;
+}
+div {
+    width: 1000px;
+    text-align: justify; /*căn đều 2 bên text*/
+}

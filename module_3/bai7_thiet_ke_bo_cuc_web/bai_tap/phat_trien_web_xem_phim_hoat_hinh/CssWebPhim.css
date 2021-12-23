@@ -32,4 +32,64 @@
 }
 nav ul li {
     display: inline-block;
+    padding: 10px;
+}
+body {
+    font-family: Arial;
+    font-size: 15px;
+}
+header, nav{
+    background-color: #CDCDCD;
+    margin: 5px;
+}
+header img {
+    padding: 10px 0px 10px 0px;
+}
+nav li a {
+    text-decoration: none;
+    color: black;
+}
+nav li a:hover {
+    color: white;
+    font-weight: bold;
+}
+p {
+    font-weight: bold;
+    color: gray;
+}
+h4, p {
+    margin: 5px;
+}
+.footer {
+    background-color: #CDCDCD;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+@media screen and (max-width: 1000px) {
+    [class*="col-"] {
+        width: 50%;
+    }
+    [class*="col-12"] {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+    body {
+        font-size: 80%;
+    }
+    nav li a {
+        padding: 0px;
+    }
+    nav ul li {
+        display: inline;
+        padding: 0px;
+    }
+    ul {
+        padding: 0px;
+    }
 }

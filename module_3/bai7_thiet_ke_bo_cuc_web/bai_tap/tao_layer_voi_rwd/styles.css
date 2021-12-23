@@ -102,11 +102,20 @@ hr {
     color: white;
     padding: 20px;
 }
-@media screen and(max-width: 768px) {
+@media screen and (max-width: 768px) {
     [class*="col-"] {
         width: 100%;
     }
     header {
         background-color: blue;
+    }
+    header li a {
+        font-size: 15px;
+    }
+    .left {
+        height: 150px;
+    }
+    .right {
+        height: 250px;
     }
 }

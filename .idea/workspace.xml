@@ -20,7 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38afa92a-f4f4-4124-84bc-5a543989ba18" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/module_2/src/testdasdasdasd/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_3/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_3/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_3/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_3/bai8_bootstrap/thuc_hanh/SuDungBootstrapXayDungFormLogin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_3/bai8_bootstrap/thuc_hanh/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_3/bai8_bootstrap/thuc_hanh/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_3/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/module_3/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module_3/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +78,8 @@
       <workItem from="1627308254468" duration="775000" />
       <workItem from="1627388863200" duration="932000" />
       <workItem from="1636622850389" duration="143000" />
+      <workItem from="1640694580994" duration="74000" />
+      <workItem from="1640694682301" duration="6000" />
     </task>
     <servers />
   </component>
@@ -98,9 +108,14 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="605" y="212" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1636622885262" />
-    <state x="805" y="312" key="FileChooserDialogImpl" timestamp="1636622993006">
+    <state x="805" y="312" key="FileChooserDialogImpl" timestamp="1640694687137">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
+    <state x="805" y="312" key="FileChooserDialogImpl/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1640694687137" />
     <state x="805" y="312" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1636622993006" />
+    <state x="721" y="382" key="com.intellij.ide.util.TipDialog" timestamp="1640694682915">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="721" y="382" key="com.intellij.ide.util.TipDialog/0.0.2048.1112/2560.0.1920.1040@0.0.2048.1112" timestamp="1640694682915" />
   </component>
 </project>

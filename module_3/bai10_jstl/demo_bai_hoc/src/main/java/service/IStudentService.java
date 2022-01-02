@@ -9,4 +9,6 @@ public interface IStudentService {
 
 
     Student findById(String id);
+
+    void save(String id, String name, String grade);
 }

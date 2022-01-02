@@ -8,4 +8,6 @@ public interface IStudentRepositpry {
     List<Student> findAll();
 
     Student findById(String id);
+
+    void save(String id, String name, String grade);
 }

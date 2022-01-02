@@ -20,11 +20,23 @@ public class StudentRepository implements IStudentRepositpry {
 
     @Override
     public Student findById(String id) {
+        Integer temp = Integer.parseInt(id);
         for (Student student: studentList) {
-            if (student.getId().equals(id)) {
+            if (student.getId().equals(temp)) {
                 return student;
             }
         }
         return null;
+    }
+
+    @Override
+    public void save(String id, String name, String grade) {
+        Integer temp = Integer.parseInt(id);
+        for (Student student: studentList) {
+            if (student.getId().equals(temp)) {
+                student.setName(name);
+                student.setGrade(Double.valueOf(grade));
+            }
+        }
     }
 }

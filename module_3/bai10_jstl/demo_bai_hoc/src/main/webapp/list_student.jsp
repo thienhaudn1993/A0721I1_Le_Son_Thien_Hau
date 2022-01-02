@@ -13,6 +13,8 @@
 </head>
 <body>
 <h2>List Student</h2>
+<a href="/student?action=create">Creat new Student</a>
+<br><br><br>
 <table style="width: 700px;" border="1">
     <tr>
         <th>ID</th>

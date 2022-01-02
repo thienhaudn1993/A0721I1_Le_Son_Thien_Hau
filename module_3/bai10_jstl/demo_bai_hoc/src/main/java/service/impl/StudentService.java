@@ -18,4 +18,12 @@ public class StudentService implements IStudentService {
     public Student findById(String id) {
         return iStudentRepositpry.findById(id);
     }
+
+    @Override
+    public void save(String id, String name, String grade) {
+        if(!name.matches("^[A-Za-z ]{4,}$")) {
+
+        }
+        iStudentRepositpry.save(id, name, grade);
+    }
 }

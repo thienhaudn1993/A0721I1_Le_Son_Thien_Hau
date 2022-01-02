@@ -17,7 +17,19 @@ public class StudentServiceServlet extends HttpServlet {
     // trước interface, phía sau thì class ( ép kiểu ngầm định - theo cơ chế DI được học ở module 4)
     private IStudentService iStudentService = new StudentService();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String action = request.getParameter("action");
+        if (action == null) {
+            action="";
+        }
+        switch (action) {
+            case "update": {
+                String id = request.getParameter("id");
+                String name = request.getParameter("name");
+                String grade = request.getParameter("grade");
+                iStudentService.save(id,name,grade);
+                response.sendRedirect("/student");
+            }
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,6 +44,10 @@ public class StudentServiceServlet extends HttpServlet {
             action="";
         }
         switch (action) {
+            case "create" : {
+                request.getRequestDispatcher("/create_student.jsp").forward(request,response);
+                // phút 34_video bai 11
+            }
             case "update" : {
                 String id = request.getParameter("id");
                 Student student = iStudentService.findById(id);

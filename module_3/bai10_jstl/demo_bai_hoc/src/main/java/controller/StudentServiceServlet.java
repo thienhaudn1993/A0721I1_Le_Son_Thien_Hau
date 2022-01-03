@@ -22,12 +22,42 @@ public class StudentServiceServlet extends HttpServlet {
             action="";
         }
         switch (action) {
+            case "create": {
+                String id = request.getParameter("id");
+                String name = request.getParameter("name");
+                String dateOfBirth = request.getParameter("dateOfBirth");
+                String gender = request.getParameter("gender");
+                String grade = request.getParameter("grade");
+                Student student = new Student(Integer.parseInt(id),name,dateOfBirth,Integer.parseInt(gender),Double.parseDouble(grade));
+                if (iStudentService.createStudent(student)) {
+                    request.setAttribute("msg", "Thêm mới thành công");
+                    List<Student> studentList = iStudentService.findAll();
+                    request.setAttribute("studentList", studentList);
+                    request.getRequestDispatcher("/list_student.jsp").forward(request, response);
+                }else {
+                    request.setAttribute("msg", "Thêm mới thất bại");
+                    request.getRequestDispatcher("/create_student.jsp").forward(request, response);
+                }
+            }
             case "update": {
                 String id = request.getParameter("id");
                 String name = request.getParameter("name");
                 String grade = request.getParameter("grade");
                 iStudentService.save(id,name,grade);
                 response.sendRedirect("/student");
+            }
+            case "delete": {
+                String id = request.getParameter("id");
+                String name = request.getParameter("name");
+                String dateOfBirth = request.getParameter("dateOfBirth");
+                String gender = request.getParameter("gender");
+                String grade = request.getParameter("grade");
+                Student student = new Student(Integer.parseInt(id),name,dateOfBirth,Integer.parseInt(gender),Double.parseDouble(grade));
+                iStudentService.remove(student);
+                request.setAttribute("msgDelete", "Xóa thành công");
+                List<Student> studentList = iStudentService.findAll();
+                request.setAttribute("studentList", studentList);
+                request.getRequestDispatcher("/list_student.jsp").forward(request, response);
             }
         }
     }
@@ -44,6 +74,12 @@ public class StudentServiceServlet extends HttpServlet {
             action="";
         }
         switch (action) {
+            case "delete" : {
+                String id = request.getParameter("id");
+                Student student = iStudentService.findById(id);
+                request.setAttribute("student", student);
+                request.getRequestDispatcher("/delete_student.jsp").forward(request, response);
+            }
             case "create" : {
                 request.getRequestDispatcher("/create_student.jsp").forward(request,response);
                 // phút 34_video bai 11

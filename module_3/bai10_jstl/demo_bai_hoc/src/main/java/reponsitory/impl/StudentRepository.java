@@ -39,4 +39,14 @@ public class StudentRepository implements IStudentRepositpry {
             }
         }
     }
+
+    @Override
+    public void createStudent(Student student) {
+        studentList.add(student);
+    }
+
+    @Override
+    public void remove(Student student) {
+        studentList.remove(student);
+    }
 }

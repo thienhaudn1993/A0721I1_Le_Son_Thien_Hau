@@ -10,4 +10,8 @@ public interface IStudentRepositpry {
     Student findById(String id);
 
     void save(String id, String name, String grade);
+
+    void createStudent(Student student);
+
+    void remove(Student student);
 }

@@ -26,4 +26,27 @@ public class StudentService implements IStudentService {
         }
         iStudentRepositpry.save(id, name, grade);
     }
+
+    @Override
+    public boolean createStudent(Student student) {
+        Student student1 = findById(student.getId().toString());
+        if (student1 != null) {
+            return false;
+        } else {
+            iStudentRepositpry.createStudent(student);
+            return true;
+        }
+    }
+
+    @Override
+    public boolean remove(Student student) {
+        Student student1 = findById(student.getId().toString());
+        if (student1 == null) {
+            return false;
+        }
+        else {
+            iStudentRepositpry.remove(student);
+            return true;
+        }
+    }
 }

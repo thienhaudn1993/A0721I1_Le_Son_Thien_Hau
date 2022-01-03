@@ -12,6 +12,8 @@
     <title>Title</title>
 </head>
 <body>
+<p style="color: blue">${msg}</p>
+<p style="color: blue">${msgDelete}</p>
 <h2>List Student</h2>
 <a href="/student?action=create">Creat new Student</a>
 <br><br><br>
@@ -23,7 +25,8 @@
         <th>Gender</th>
         <th>Grade</th>
         <th>Degree</th>
-        <th>Action</th>
+        <th>Update</th>
+        <th>Delete</th>
     </tr>
     <c:forEach var="student" items="${studentList}">
     <tr>
@@ -49,6 +52,9 @@
             </td>
         <td>
             <a href="/student?action=update&id=${student.id}">Update</a>
+        </td>
+        <td>
+            <a href="/student?action=delete&id=${student.id}">Delete</a>
         </td>
     </tr>
     </c:forEach>

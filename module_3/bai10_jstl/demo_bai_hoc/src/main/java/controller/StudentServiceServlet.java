@@ -39,6 +39,7 @@ public class StudentServiceServlet extends HttpServlet {
                     request.getRequestDispatcher("/create_student.jsp").forward(request, response);
                 }
             }
+            break;
             case "update": {
                 String id = request.getParameter("id");
                 String name = request.getParameter("name");
@@ -46,6 +47,7 @@ public class StudentServiceServlet extends HttpServlet {
                 iStudentService.save(id,name,grade);
                 response.sendRedirect("/student");
             }
+            break;
             case "delete": {
                 String id = request.getParameter("id");
                 String name = request.getParameter("name");
@@ -59,6 +61,7 @@ public class StudentServiceServlet extends HttpServlet {
                 request.setAttribute("studentList", studentList);
                 request.getRequestDispatcher("/list_student.jsp").forward(request, response);
             }
+            break;
         }
     }
 
@@ -80,21 +83,25 @@ public class StudentServiceServlet extends HttpServlet {
                 request.setAttribute("student", student);
                 request.getRequestDispatcher("/delete_student.jsp").forward(request, response);
             }
+            break;
             case "create" : {
                 request.getRequestDispatcher("/create_student.jsp").forward(request,response);
                 // phút 34_video bai 11
             }
+            break;
             case "update" : {
                 String id = request.getParameter("id");
                 Student student = iStudentService.findById(id);
                 request.setAttribute("student", student);
                 request.getRequestDispatcher("/update_student.jsp").forward(request,response);
             }
+            break;
             default: {
                 List<Student> studentList = iStudentService.findAll();
                 request.setAttribute("studentList", studentList);
                 request.getRequestDispatcher("/list_student.jsp").forward(request,response);
             }
+            break;
         }
     }
 }

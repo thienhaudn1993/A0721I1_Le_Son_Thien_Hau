@@ -53,11 +53,12 @@ public class StudentServiceServlet extends HttpServlet {
                 String gender = request.getParameter("gender");
                 String grade = request.getParameter("grade");
                 Student student = new Student(Integer.parseInt(id),name,dateOfBirth,Integer.parseInt(gender),Double.parseDouble(grade));
-                iStudentService.remove(student);
-                request.setAttribute("msgDelete", "Xóa thành công");
-                List<Student> studentList = iStudentService.findAll();
-                request.setAttribute("studentList", studentList);
-                request.getRequestDispatcher("/list_student.jsp").forward(request, response);
+                if (iStudentService.remove(student)) {
+                    request.setAttribute("msgDelete", "Xóa thành công");
+                    List<Student> studentList = iStudentService.findAll();
+                    request.setAttribute("studentList", studentList);
+                    request.getRequestDispatcher("/list_student.jsp").forward(request, response);
+                }
             }
         }
     }

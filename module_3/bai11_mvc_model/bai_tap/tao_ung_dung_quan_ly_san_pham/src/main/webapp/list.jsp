@@ -27,7 +27,7 @@
  <c:forEach var="product" items='${requestScope["productList"]}'>
      <tr>
       <td><c:out value="${product.id}"></c:out></td>
-      <td><c:out value="${product.name}"></c:out></td>
+      <td><a href="products?action=view&id=${product.id}"><c:out value="${product.name}"></c:out></a></td>
       <td><c:out value="${product.brand}"></c:out></td>
       <td><c:out value="${product.quatity}"></c:out></td>
       <td><c:out value="${product.status}"></c:out></td>

@@ -23,6 +23,8 @@ dependencies {
     tasks.withType(JavaCompile) {
         options.encoding = 'UTF-8'
     }
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
 
 
 

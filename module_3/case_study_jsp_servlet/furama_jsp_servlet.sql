@@ -18,7 +18,7 @@ customer_type_id int primary key,
 customer_type_name varchar(45)
 );
 create table service_type(
-service_type_id int primary key,
+service_type_id int primary key ,
 service_type_name varchar(45)
 );
 create table rent_type(
@@ -34,7 +34,7 @@ attach_service_unit int,
 attach_service_status varchar(45)
 );
 create table employee(
-employee_id int primary key,
+employee_id int primary key auto_increment, -- lưu ý xót auto_increment thì khi create Employee sẽ gặp lỗi exception not Default employee_id
 employee_name varchar(45),
 employee_birthday date,
 employee_id_card varchar(45),
@@ -50,7 +50,7 @@ foreign key(education_degree_id) references education_degree(education_degree_id
 foreign key(division_id) references division(division_id)
 );
 create table customer(
-customer_id int primary key,
+customer_id int primary key auto_increment,
 customer_name varchar(45),
 customer_birthday date,
 customer_gender bit(1),

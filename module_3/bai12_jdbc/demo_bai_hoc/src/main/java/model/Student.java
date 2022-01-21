@@ -61,7 +61,7 @@ public class Student {
         this.grade = grade;
     }
 
-    @Override
+  /*  @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -72,6 +72,6 @@ public class Student {
     @Override
     public int hashCode() {
         return Objects.hash(id);
-    }
+    }*/
 }
 

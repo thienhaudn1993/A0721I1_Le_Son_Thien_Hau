@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
   <head>
     <title>$Title$</title>
@@ -16,9 +15,9 @@
   <header>
     <ul>
       <li><a href="#">Home</a></li>
-      <li><a href="#">Employee</a></li>
-      <li><a href="/customer/list_customer.jsp"">Customer</a></li>
-      <li><a href="#">Service</a></li>
+      <li><a href="/employee">Employee</a></li>
+      <li><a href="/customer">Customer</a></li>
+      <li><a href="/service">Service</a></li>
       <li><a href="#">Contract</a></li>
       <li><input type="search" name="search" value="search"></li>
     </ul>

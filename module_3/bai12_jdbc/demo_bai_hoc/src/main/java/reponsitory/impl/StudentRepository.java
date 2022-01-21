@@ -52,7 +52,7 @@ public class StudentRepository implements IStudentRepositpry {
         try {
             PreparedStatement preparedStatement = this.baseRepository.getConnection().prepareStatement("select * from student where id=?");
             preparedStatement.setString(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery(       );
+            ResultSet resultSet = preparedStatement.executeQuery();
             Student student = null;
             while (resultSet.next()) {
                 student = new Student();
@@ -110,5 +110,14 @@ public class StudentRepository implements IStudentRepositpry {
     @Override
     public void remove(Student student) {
 //        studentList.remove(student);
+        try {
+            PreparedStatement preparedStatement = this.baseRepository.getConnection().prepareStatement("delete from student where id = ?");
+            preparedStatement.setInt(1,student.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }

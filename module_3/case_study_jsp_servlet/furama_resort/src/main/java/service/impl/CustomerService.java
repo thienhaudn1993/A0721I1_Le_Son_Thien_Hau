@@ -16,21 +16,41 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Customer findById(String id) {
+        return iCustomerRepository.findById(id);
+    }
+
+    @Override
+    public void save(String id, String name, String email, String address) {
+         iCustomerRepository.save(id,name,email,address);
+    }
+
+
+    @Override
+    public boolean createCustomer(Customer customer) {
+        Customer customer1 =  findById(String.valueOf(customer.getCustomer_id()));
+        if (customer1 != null) {
+            return false;
+        }
+        else {
+            iCustomerRepository.createCustomer(customer);
+            return true;
+        }
+    }
+
+    @Override
+    public boolean remove(String id) {
+        Customer customer1 =  findById(id);
+        if (customer1 == null) {
+            return false;
+        }else {
+            iCustomerRepository.remove(id);
+            return true;
+        }
+    }
+
+    @Override
+    public Customer findByName(String Name) {
         return null;
     }
 
-    @Override
-    public void save(int id, String name, String birthday, int gender, String customer_id_card, String phone, String email, String address) {
-
-    }
-
-    @Override
-    public boolean createStudent(Customer student) {
-        return false;
-    }
-
-    @Override
-    public boolean remove(Customer student) {
-        return false;
-    }
 }

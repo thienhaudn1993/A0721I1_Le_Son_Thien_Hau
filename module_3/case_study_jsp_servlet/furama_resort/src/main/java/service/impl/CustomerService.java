@@ -49,8 +49,9 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Customer findByName(String Name) {
-        return null;
+    public List<Customer> findByName(String name) {
+        return iCustomerRepository.findByName(name);
     }
+
 
 }

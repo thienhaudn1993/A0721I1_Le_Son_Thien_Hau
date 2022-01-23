@@ -16,6 +16,6 @@ public interface ICustomerService {
 
     boolean remove(String id);
 
-    Customer findByName(String Name);
 
+    List<Customer> findByName(String name);
 }

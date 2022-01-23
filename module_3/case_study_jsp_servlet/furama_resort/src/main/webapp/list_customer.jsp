@@ -14,7 +14,12 @@
 <body>
 <h2><a href="/">Quay trở lại Menu</a></h2>
 <h2><a href="/customer?action=create">Create new Customer</a></h2>
-<h2>Search: <input type="search" name="search"> </h2>
+<form method="get" action="/customer">
+    <input type="hidden" name="action" value="search">
+    <input type="text" name="searchByName">
+    <button type="submit">Search</button>
+</form>
+
 <p style="color: blue">${msg}</p>
 <p style="color: green">${msgDelete}</p>
 <h2>List Customer</h2>

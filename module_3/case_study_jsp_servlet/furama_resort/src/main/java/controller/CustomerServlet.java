@@ -72,7 +72,11 @@ public class CustomerServlet extends HttpServlet {
         }
         switch (action) {
             case "search": {
-                String name = request.getParameter("search");
+                String name = request.getParameter("searchByName");
+                List<Customer> customerList = iCustomerService.findByName(name);
+                request.setAttribute("customerList", customerList);
+                request.getRequestDispatcher("/list_customer.jsp").forward(request,response);
+
             }
             break;
             case "create": {

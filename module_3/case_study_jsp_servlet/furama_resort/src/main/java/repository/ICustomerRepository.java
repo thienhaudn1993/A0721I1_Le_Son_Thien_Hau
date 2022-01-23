@@ -14,4 +14,7 @@ public interface ICustomerRepository {
     void createCustomer(Customer customer);
 
     void remove(String id);
+
+
+    List<Customer> findByName(String name);
 }

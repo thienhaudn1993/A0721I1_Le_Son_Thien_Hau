@@ -18,6 +18,19 @@
 <p style="color: green">${msgDelete}</p>
 
 <h2>List Employee</h2>
+<form method="get" action="/employee">
+    <input type="hidden" name="action" value="search">
+    <input type="text" name="name" placeholder="search name">
+    <input type="text" name="email" placeholder="search email">
+    Division
+    <select name="divisionId">
+        <option value="">Chọn Division</option>
+        <c:forEach var="devision" items="${devisionEmployeeList}">
+            <option value="${devision.devision_id}">${devision.devision_name}</option>
+        </c:forEach>
+    </select>
+    <button type="submit">Search</button>
+</form>
 <table style="width: 1500px;" border="1">
     <tr>
         <th>ID</th>

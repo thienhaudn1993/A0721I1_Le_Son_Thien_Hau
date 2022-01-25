@@ -1,8 +1,11 @@
 package controller;
 
 import model.Customer;
+import model.DevisionEmployee;
 import model.Employee;
+import service.IDevisionEmployeeService;
 import service.IEmployeeService;
+import service.impl.DevisionEmployeeService;
 import service.impl.EmployeeService;
 
 import javax.servlet.ServletException;
@@ -11,11 +14,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "EmployeeServlet", urlPatterns = "/employee")
 public class EmployeeServlet extends HttpServlet {
     private IEmployeeService iEmployeeService = new EmployeeService();
+    private IDevisionEmployeeService iDevisionEmployeeService = new DevisionEmployeeService();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
@@ -74,6 +79,15 @@ public class EmployeeServlet extends HttpServlet {
             action="";
         }
         switch (action) {
+            case "search": {
+                List<Employee> employeeList = new ArrayList<>();
+                String name = request.getParameter("name");
+                String email = request.getParameter("email");
+                String divisionId = request.getParameter("divisionId");
+                employeeList = iEmployeeService.search(name,email,divisionId);
+
+            }
+            break;
             case "create": {
                 request.getRequestDispatcher("/create_employee.jsp").forward(request,response);
             }
@@ -95,6 +109,8 @@ public class EmployeeServlet extends HttpServlet {
             default: {
                 List<Employee> employeeList = iEmployeeService.findAll();
                 request.setAttribute("employeeList", employeeList);
+                List<DevisionEmployee> devisionEmployeeList = iDevisionEmployeeService.findByAll();
+                request.setAttribute("devisionEmployeeList", devisionEmployeeList);
                 request.getRequestDispatcher("/list_employee.jsp").forward(request, response);
             }
         }

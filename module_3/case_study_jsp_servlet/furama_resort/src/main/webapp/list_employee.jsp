@@ -18,6 +18,10 @@
 <p style="color: green">${msgDelete}</p>
 
 <h2>List Employee</h2>
+<%--mess bên hàm search--%>
+<c:if test="${mess!=null}">
+<h3 style="color: red">${mess}</h3>
+</c:if>
 <form method="get" action="/employee">
     <input type="hidden" name="action" value="search">
     <input type="text" name="name" placeholder="search name">
@@ -25,6 +29,11 @@
     Division
     <select name="divisionId">
         <option value="">Chọn Division</option>
+        <%--<option value="1">Sale-Marketing</option>
+        <option value="2">Hành chính</option>
+        <option value="3">Phục vụ</option>
+        <option value="4">Quản lý</option>--%>
+
         <c:forEach var="devision" items="${devisionEmployeeList}">
             <option value="${devision.devision_id}">${devision.devision_name}</option>
         </c:forEach>

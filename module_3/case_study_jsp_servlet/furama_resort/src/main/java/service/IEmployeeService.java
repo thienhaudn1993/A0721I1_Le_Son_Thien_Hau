@@ -17,4 +17,6 @@ public interface IEmployeeService {
 
 
     boolean remove(String id);
+
+    List<Employee> search(String name, String email, String divisionId);
 }

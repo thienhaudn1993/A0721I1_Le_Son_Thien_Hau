@@ -117,4 +117,39 @@ public class EmployeeRepository implements IEmployeeRepository {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public List<Employee> search(String name, String email, String divisionId) {
+        List<Employee> employeeList = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = this.baseRepository.getConnection()
+                    .prepareStatement("select * from employee where employee_name like ? and employee_email like ? and division_id like ?");
+            String name1 = "%"+name+"%";
+            String email1 = "%"+email+"%";
+            String divisionId1 = "%"+divisionId+"%";
+            preparedStatement.setString(1, name1);
+            preparedStatement.setString(2, email1);
+            preparedStatement.setString(3, divisionId1);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            Employee employee;
+            while (resultSet.next()) {
+                employee = new Employee();
+                employee.setEmployee_id(resultSet.getInt("employee_id"));
+                employee.setEmployee_name(resultSet.getString("employee_name"));
+                employee.setEmployee_birthday(resultSet.getString("employee_birthday"));
+                employee.setEmployee_id_card(resultSet.getString("employee_id_card"));
+                employee.setEmployee_salary(resultSet.getDouble("employee_salary"));
+                employee.setEmployee_phone(resultSet.getString("employee_phone"));
+                employee.setEmployee_email(resultSet.getString("employee_email"));
+                employee.setEmployee_address(resultSet.getString("employee_address"));
+                employee.setPosition_id(resultSet.getInt("position_id"));
+                employee.setEducation_degree_id(resultSet.getInt("education_degree_id"));
+                employee.setDivision_id(resultSet.getInt("division_id"));
+                employeeList.add(employee);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return employeeList;
+    }
 }

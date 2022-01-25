@@ -14,4 +14,6 @@ public interface IEmployeeRepository {
     void save(String id,String name, String email, String address);
 
     void remove(String id);
+
+    List<Employee> search(String name, String email, String divisionId);
 }

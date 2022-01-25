@@ -86,6 +86,17 @@ public class EmployeeServlet extends HttpServlet {
                 String divisionId = request.getParameter("divisionId");
                 employeeList = iEmployeeService.search(name,email,divisionId);
 
+
+
+                if (employeeList.size()!=0) {
+                    request.setAttribute("employeeList", employeeList);
+                }
+                else {
+                    request.setAttribute("mess","không có dữ liệu nào tìm thấy");
+                }
+                List<DevisionEmployee> devisionEmployeeList = iDevisionEmployeeService.findByAll();
+                request.setAttribute("devisionEmployeeList", devisionEmployeeList);
+                request.getRequestDispatcher("/list_employee.jsp").forward(request, response);
             }
             break;
             case "create": {

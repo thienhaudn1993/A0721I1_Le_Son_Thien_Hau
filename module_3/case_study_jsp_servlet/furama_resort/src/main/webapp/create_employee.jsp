@@ -13,6 +13,7 @@
     <title>Title</title>
 </head>
 <body>
+<h2><a href="/employee">Back employee list</a></h2>
 <form method="post">
     <p style="color: red">${msg}</p>
     <%--<p>Id: </p>

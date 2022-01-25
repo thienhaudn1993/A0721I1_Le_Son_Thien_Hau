@@ -46,4 +46,9 @@ public class EmployeeService implements IEmployeeService {
             return true;
         }
     }
+
+    @Override
+    public List<Employee> search(String name, String email, String divisionId) {
+        return iEmployeeRepository.search(name,email,divisionId);
+    }
 }

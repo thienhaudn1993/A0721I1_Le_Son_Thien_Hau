@@ -40,6 +40,7 @@
     </select>
     <button type="submit">Search</button>
 </form>
+
 <table style="width: 1500px;" border="1">
     <tr>
         <th>ID</th>

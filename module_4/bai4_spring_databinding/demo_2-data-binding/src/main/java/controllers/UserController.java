@@ -16,7 +16,7 @@ import java.util.List;
 public class UserController {
     IUserService userService = new UserServiceImpl();
 
-    @GetMapping("")
+    @GetMapping()
     public String getUserListPage(Model model){
         List<User> userList = userService.getAllUser();
         model.addAttribute("listUser", userList);

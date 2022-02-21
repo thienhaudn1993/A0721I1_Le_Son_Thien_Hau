@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="demo_khoi_tao_spring" />
+        <module name="demo_khoi_tao_spring_bang_maven" />
       </profile>
     </annotationProcessing>
   </component>

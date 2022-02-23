@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*css 200 dòng*/
+    </style>
+</head>
+<body>
+<div th:replace="~{layout::nav}"></div>
+<h1>List Customer</h1>
+<table>
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer, iterStart : ${customers}">
+        <td th:text="${iterStart.count}"></td>
+        <td th:text="${customer.id}" th:if="${iterStart.even}" style="font-weight: bold"></td>
+        <td th:text="${customer.id}" th:if="${iterStart.odd}"></td>
+        <td th:text="${customer.name}"></td>
+        <td th:text="${customer.email}"></td>
+        <td th:text="${customer.address}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<div th:replace="~{layout::footer}"></div>
+</body>
+</html>

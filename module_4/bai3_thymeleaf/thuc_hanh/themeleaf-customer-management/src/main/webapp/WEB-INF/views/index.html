@@ -6,6 +6,11 @@
 </head>
 <body>
 <h3>Customers</h3>
+<div class="notify">
+    <div th:if="${success}">
+        <span th:text="${success}"></span>
+    </div>
+</div>
 <p>
     <a th:href="@{/customer/create}">Add new customer</a>
 </p>

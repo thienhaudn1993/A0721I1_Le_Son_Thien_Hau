@@ -17,6 +17,8 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
     private IProductService productService= new ProductService();
+
+
     @GetMapping("")
     public String index(Model model){
         List<Product> productList = productService.findAll();

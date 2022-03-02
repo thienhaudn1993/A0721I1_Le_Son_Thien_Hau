@@ -4,11 +4,14 @@ import com.codegym.managercustomer.model.Customer;
 import com.codegym.managercustomer.service.CustomerSerive;
 import com.codegym.managercustomer.service.ProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.Optional;
 
 @Controller
 @RequestMapping("list")
@@ -19,8 +22,11 @@ public class CustomerController {
     private ProvinceService provinceService;
 
     @GetMapping("")
-    public ModelAndView list(){
-        return new ModelAndView("list","customers", customerSerive.findAll());
+    public ModelAndView list(@RequestParam(name = "search") Optional<String> search, Pageable pageable){
+        if (search.isPresent()){
+            return new ModelAndView("list","customers", customerSerive.findAllByFirstNameContaining(search.get(), pageable));
+        }
+        return new ModelAndView("list","customers", customerSerive.findAll(pageable));
     }
     @GetMapping("/create-customer")
     public ModelAndView create(Model model){

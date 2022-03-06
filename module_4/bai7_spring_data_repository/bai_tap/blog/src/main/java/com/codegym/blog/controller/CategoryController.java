@@ -49,5 +49,4 @@ public class CategoryController {
         redirect.addFlashAttribute("message","Delete Success");
         return "redirect:/category";
     }
-
 }

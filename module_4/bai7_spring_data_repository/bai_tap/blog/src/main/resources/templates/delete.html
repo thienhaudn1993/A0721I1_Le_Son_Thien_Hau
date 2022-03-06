@@ -11,10 +11,12 @@
 <form th:action="@{/list/delete}" th:object="${blog}" method="post">
     <input th:type="hidden" name="id" th:field="*{id}">
     <h2>Do you want delete?</h2>
-    <p>Title:</p>
+    <p style="font-weight: bold">Title: </p>
     <p th:text="${blog.nameBlog}">
-    <p>Content:</p>
+    <p style="font-weight: bold">Content: </p>
     <textarea th:text="${blog.content}" style="width: 100%;height: 500px" ></textarea>
+    <p style="font-weight: bold">Category: </p>
+    <p th:text="${blog.category.name}"></p>
     <input type="submit" value="Delete">
 </form>
 </body>

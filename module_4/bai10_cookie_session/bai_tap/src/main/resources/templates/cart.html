@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2><a th:href="@{/shop}">Quay lại danh sách sản phẩm</a></h2>
+<h2>GIỎ HÀNG</h2>
+<hr>
+<form th:object="${cart}" method="post">
+<table th:each="product : ${cart.products}">
+    <!--<tr>
+        <td th:if="${cart.products.}" ><img src="/anh1.png" style="height: 200px;width: 200px"></td>
+        <td th:if="${product.id==2}" ><img src="/anh2.png" style="height: 200px;width: 200px"></td>
+        <td th:if="${product.id==3}" ><img src="/anh3.png" style="height: 200px;width: 200px"></td>
+        <td th:if="${product.id==4}" ><img src="/anh4.png" style="height: 200px;width: 200px"></td>
+    </tr>-->
+    <tr >
+        <td rowspan="2" th:if="${product.getKey().id==1}" ><img src="/anh1.png" style="height: 200px;width: 200px"></td>
+        <td rowspan="2" th:if="${product.getKey().id==2}" ><img src="/anh2.png" style="height: 200px;width: 200px"></td>
+        <td rowspan="2" th:if="${product.getKey().id==3}" ><img src="/anh3.png" style="height: 200px;width: 200px"></td>
+        <td rowspan="2" th:if="${product.getKey().id==4}" ><img src="/anh4.png" style="height: 200px;width: 200px"></td>
+    </tr>
+    <tr>
+        <td>
+            <p th:text="${product.getKey().name}"></p>
+            <p>Mã SP: <span th:text="${product.getKey().id}"></span></p>
+            <p>Đơn giá: <span th:text="${product.getKey().price}"></span></p>
+            <p>Số lượng: <span th:text="${product.getValue()}"></span></p>
+            <a th:href="@{/add/__${product.getKey().id}__(action='show')}"
+               th:text="${'+'}"></a>
+        </td>
+    </tr>
+</table>
+    <hr>
+    <h2>Tổng cộng: <span th:text="${cart.countTotalPayment()}"></span></h2>
+
+</form>
+</body>
+</html>

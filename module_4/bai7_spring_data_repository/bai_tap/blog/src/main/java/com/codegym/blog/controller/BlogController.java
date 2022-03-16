@@ -22,11 +22,10 @@ public class BlogController {
     private CategoryService categoryService;
 
     @GetMapping("")
-    public ModelAndView list(@RequestParam(name = "search") Optional<String> search,@RequestParam(name = "sort") Optional<String> sort,Pageable pageable){
+    public ModelAndView list(@RequestParam(name = "search") Optional<String> search,Pageable pageable, Model model){
+        model.addAttribute("categorys",categoryService.findAll());
         if (search.isPresent()){
             return new ModelAndView("list","blogs",blogService.findAllByNameBlogContaining(search.get(), pageable));
-        } else if (sort.isPresent()){
-            return new ModelAndView("list","blogs",blogService.sortTime(pageable));
         }
         return new ModelAndView("list","blogs",blogService.findAll(pageable));
     }

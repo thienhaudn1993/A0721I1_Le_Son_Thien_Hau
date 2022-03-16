@@ -15,5 +15,5 @@ public interface BlogService {
 
     Blog findBlogById(Long id);
     Page<Blog> findAllByNameBlogContaining(String nameBlog,Pageable pageable);
-    Page<Blog> sortTime(Pageable pageable);
+//    Page<Blog> sortTime(Pageable pageable);
 }

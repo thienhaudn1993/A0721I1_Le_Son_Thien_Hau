@@ -1,5 +1,7 @@
 package com.codegym.blogajax.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -9,6 +11,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @JsonBackReference // chặn vòng lặp vô tận
     @OneToMany(mappedBy = "category")
     Set<Blog> blogs;
 

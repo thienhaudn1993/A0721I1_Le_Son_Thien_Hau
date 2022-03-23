@@ -9,7 +9,7 @@ import java.util.List;
 public interface BlogService {
     Page<Blog> findAll(Pageable pageable);
 
-    void saveBlog(Blog blog);
+    Blog saveBlog(Blog blog);
 
     void deleteBlog(Long id);
 

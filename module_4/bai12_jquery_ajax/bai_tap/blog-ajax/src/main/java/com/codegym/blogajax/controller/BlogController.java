@@ -1,5 +1,6 @@
 package com.codegym.blogajax.controller;
 
+import com.codegym.blogajax.dto.BlogDTO;
 import com.codegym.blogajax.model.Blog;
 import com.codegym.blogajax.service.IBlogService;
 import com.codegym.blogajax.service.ICategoryService;
@@ -20,10 +21,10 @@ public class BlogController {
     IBlogService blogService;
     @Autowired
     ICategoryService categoryService;
-    @PostMapping
+    /*@PostMapping
     public ResponseEntity<Blog> createBlog(@RequestBody Blog blog){
         return new ResponseEntity<>(blogService.saveBlog(blog), HttpStatus.CREATED);
-    }
+    }*/
     @GetMapping("/list")
     public ModelAndView getAllBlog(Model model){
         model.addAttribute("categorys",categoryService.findAll());
@@ -35,6 +36,19 @@ public class BlogController {
     @GetMapping
     public ResponseEntity<List<Blog>> allBlog() {
         return new ResponseEntity<>(blogService.findAll(),HttpStatus.OK);
+    }
+    @PostMapping
+    public ResponseEntity<BlogDTO> saveBlog(@RequestBody BlogDTO blogDTO){
+        blogService.saveBlogDTO(blogDTO);
+        return new ResponseEntity<>(blogDTO, HttpStatus.CREATED);
+    }
+    @GetMapping("/search/{name}")
+    public ResponseEntity<List<Blog>> searchBlog(@PathVariable String name){
+        List<Blog>blogs = blogService.searchByNameBlog(name);
+        if (blogs.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(blogs, HttpStatus.OK);
     }
 
 }

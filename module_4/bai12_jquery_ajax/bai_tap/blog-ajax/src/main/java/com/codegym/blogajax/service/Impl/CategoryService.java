@@ -30,4 +30,9 @@ public class CategoryService implements ICategoryService {
     public Category findCategoryById(Long id) {
         return categoryRepository.findById(id).orElse(null);
     }
+
+//    @Override
+//    public Category changeCategory(Long id) {
+//        return categoryRepository.changeCategory(id);
+//    }
 }

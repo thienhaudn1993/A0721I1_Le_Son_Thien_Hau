@@ -17,6 +17,7 @@
                 date:date,
                 category: category
             };
+            console.log(newBlogOnJson)
             // goi ajax
             $.ajax({
                 headers: {
@@ -32,7 +33,7 @@
             event.preventDefault();
         }
         function getBlog(blog) {
-            return `<tr><td>${blog.id}</td><td>${blog.nameBlog}</td><td>${blog.content}</td><td>${blog.date}</td><td>${blog.category}</td></tr>`;
+            return `<tr><td>${blog.id}</td><td>${blog.nameBlog}</td><td>${blog.content}</td><td>${blog.date}</td><td>${blog.category.name}</td></tr>`;
 
         }
         function successHandler() {
@@ -56,6 +57,48 @@
                 }
             });
         }
+        function searchNameBlog() {
+            // lay du lieu
+            let nameBlog =$('#searchByName').val();
+            /*let searchBlog = {
+                nameBlog: nameBlog,
+            };*/
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "GET",
+                data: JSON.stringify(nameBlog),
+                url: "/blog/search/{nameBlog}",
+                success: successHandler
+            })
+            function getBlog(blog) {
+                return `<tr><td>${blog.id}</td><td>${blog.nameBlog}</td><td>${blog.content}</td><td>${blog.date}</td><td>${blog.category.name}</td></tr>`;
+
+            }
+            function successHandler() {
+                $.ajax({
+                    type: "GET",
+                    //ten API
+                    url: "/blog",
+                    //xử lý khi thành công
+                    success: function (data) {
+                        let content = '<tr>\n' +
+                            '<td>ID</td>\n' +
+                            '<td>Blog Name</td>\n' +
+                            '<td>Content</td>\n' +
+                            '<td>Date</td>\n' +
+                            '<td>Category</td>\n' +
+                            '</tr>';
+                        for (let i=0;i<data.length;i++) {
+                            content += getBlog(data[i]);
+                        }
+                        document.getElementById('blogList').innerHTML = content;
+                    }
+                });
+            }
+        }
     </script>
 
 </head>
@@ -72,13 +115,13 @@
         </tr>
         <tr>
             <td>Date</td>
-            <td><input type="text" id="date" placeholder="Date"></td>
+            <td><input type="date" id="date" placeholder="Date"></td>
         </tr>
         <tr>
             <td>Category:</td>
             <td>
-                <select th:field="*{category}" >
-                    <option id="categoryId" th:each="category:${categorys}" th:text="${category.name}" th:value="${category.id}"></option>
+                <select th:field="*{category}" id="categoryId">
+                    <option  th:each="category:${categorys}" th:text="${category.name}" th:value="${category.id}"></option>
                 </select>
             </td>
         </tr>
@@ -88,6 +131,13 @@
         </tr>
     </table>
 </form>
+
+<form>
+    <P>Search By Name Blog:</P>
+    <input type="text" id="searchByName" placeholder="Search">
+    <input type="submit" value="Search" onclick="searchNameBlog()">
+</form>
+
 <h1>Blog List</h1>
 <table id="blogList" border="1px">
     <tr>

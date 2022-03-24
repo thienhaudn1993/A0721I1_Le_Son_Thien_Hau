@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59baf301-33b7-460a-8f5d-852e22d2e847" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../demo_customer_managerment/src/main/java/com/codegym/customer_managerment/model/Province.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/java/login/demo/config/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/java/login/demo/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/java/login/demo/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/resources/message.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/resources/message_haw.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/resources/templates/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/resources/templates/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai12_jquery_ajax/bai_tap/blog-ajax/src/main/java/com/codegym/blogajax/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai12_jquery_ajax/bai_tap/blog-ajax/src/main/java/com/codegym/blogajax/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai12_jquery_ajax/bai_tap/blog-ajax/src/main/resources/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai12_jquery_ajax/bai_tap/blog-ajax/src/main/resources/templates/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai12_jquery_ajax/thuc_hanh/quan-li-dien-thoai/src/main/java/com/codegym/managerphone/controller/SmartphoneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai12_jquery_ajax/thuc_hanh/quan-li-dien-thoai/src/main/java/com/codegym/managerphone/controller/SmartphoneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai12_jquery_ajax/thuc_hanh/quan-li-dien-thoai/src/main/resources/templates/phones/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai12_jquery_ajax/thuc_hanh/quan-li-dien-thoai/src/main/resources/templates/phones/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +59,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo_customer_managerment" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="CustomerManagermentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -73,6 +84,7 @@
       <workItem from="1645795507260" duration="3049000" />
       <workItem from="1646052628372" duration="5330000" />
       <workItem from="1646214421704" duration="466000" />
+      <workItem from="1648135389831" duration="10000" />
     </task>
     <servers />
   </component>

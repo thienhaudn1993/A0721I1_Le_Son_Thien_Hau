@@ -42,8 +42,8 @@ public class BlogController {
         blogService.saveBlogDTO(blogDTO);
         return new ResponseEntity<>(blogDTO, HttpStatus.CREATED);
     }
-    @GetMapping("/search/{name}")
-    public ResponseEntity<List<Blog>> searchBlog(@PathVariable String name){
+    @GetMapping("/search")
+    public ResponseEntity<List<Blog>> searchBlog(String name){
         List<Blog>blogs = blogService.searchByNameBlog(name);
         if (blogs.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

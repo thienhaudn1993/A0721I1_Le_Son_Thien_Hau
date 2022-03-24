@@ -34,7 +34,8 @@
         }
         function getSmartphone(smartphone) {
             return `<tr><td >${smartphone.producer}</td><td >${smartphone.model}</td><td >${smartphone.price}</td>` +
-                `<td><a class="deleteSmartphone" href="${smartphone.id}">Delete</a></td></tr>`;
+                `<td><a class="deleteSmartphone" href="${smartphone.id}">Delete</a></td></tr>`+
+                `<td><a class="updateSmartphone" href="${smartphone.id}">Update</a></td></tr>`;
         }
         function successHandler() {
             $.ajax({
@@ -49,6 +50,7 @@
                         '        <td>Model</td>\n' +
                         '        <td>Price</td>\n' +
                         '        <td>Delete</td>\n' +
+                        '        <td>Update</td>\n' +
                         '    </tr>';
                     for (let i = 0; i < data.length; i++) {
                         content += getSmartphone(data[i]);
@@ -71,6 +73,29 @@
                     //xử lý khi thành công
                     success: function (data) {
                         a.parent().parent().remove();
+                    }
+
+                });
+                //chặn sự kiện mặc định của thẻ
+                event.preventDefault();
+            });
+        })
+        $(document).ready(function () {
+            //sư kiện nào thực hiện Ajax
+            $('.updateSmartphone').click(function (event) {
+                //lay du lieu
+                let a = $(this);
+                let smartphoneId = a.attr("href");
+                // goi ajax
+                $.ajax({
+                    type: "PUT",
+                    //tên API
+                    url: `/smartphones/${smartphoneId}`,
+                    //xử lý khi thành công
+                    success: function (data) {
+                        $('#producer').val(data.producer);
+                        $('#model').val(data.model);
+                        $('#price').val(data.price);
                     }
 
                 });
@@ -108,6 +133,7 @@
         <td>Model</td>
         <td>Price</td>
         <td>Delete</td>
+        <td>Update</td>
     </tr>
     <th:block th:each="smartphone: ${smartphones}">
         <tr>
@@ -115,6 +141,7 @@
             <td th:text="${smartphone.model}"></td>
             <td th:text="${smartphone.price}"></td>
             <td><a class="deleteSmartphone" th:href="${smartphone.getId()}">Delete</a></td>
+            <td><a class="updateSmartphone" th:href="${smartphone.getId()}">Update</a></td>
         </tr>
     </th:block>
 </table>

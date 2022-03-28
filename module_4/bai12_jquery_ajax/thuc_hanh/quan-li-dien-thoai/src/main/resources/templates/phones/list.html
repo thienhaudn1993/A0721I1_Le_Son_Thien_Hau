@@ -7,10 +7,12 @@
     <script type="text/javascript">
         function addNewSmartPhone() {
         //lay du lieu
+            let id = $('#id').val(); // cho chức năng update ( cần phải có id )
             let producer = $('#producer').val();
             let model = $('#model').val();
             let price = $('#price').val();
             let newSmartphone = {
+                id : id,
                 producer: producer,
                 model: model,
                 price: price
@@ -86,13 +88,16 @@
                 //lay du lieu
                 let a = $(this);
                 let smartphoneId = a.attr("href");
+                console.log(smartphoneId)
                 // goi ajax
                 $.ajax({
-                    type: "PUT",
+                    type: "GET",
                     //tên API
                     url: `/smartphones/${smartphoneId}`,
                     //xử lý khi thành công
                     success: function (data) {
+
+                        $('#id').val(data.id);
                         $('#producer').val(data.producer);
                         $('#model').val(data.model);
                         $('#price').val(data.price);
@@ -106,9 +111,11 @@
     </script>
 </head>
 <body>
+<!--cho chức năng update ( cần phải có id )-->
 <form id="add-smartphone">
     <table>
         <tr>
+            <input type="hidden" id="id">
             <td>Producer:</td>
             <td><input type="text" id="producer" placeholder="producer"></td>
         </tr>

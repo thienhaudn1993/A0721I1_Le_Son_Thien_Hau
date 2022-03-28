@@ -72,8 +72,7 @@
                     'Content-Type': 'application/json'
                 },*/
                 type: "GET",
-                data: {textS:nameBlog},
-                url: '/blog/search',
+                url: '/blog/search?name='+nameBlog,
                 success: function (data) {
                     let content = '<tr>\n' +
                         '<td>ID</td>\n' +

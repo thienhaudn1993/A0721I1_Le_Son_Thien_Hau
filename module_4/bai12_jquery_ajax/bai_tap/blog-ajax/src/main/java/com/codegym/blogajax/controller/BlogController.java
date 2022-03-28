@@ -43,7 +43,7 @@ public class BlogController {
         return new ResponseEntity<>(blogDTO, HttpStatus.CREATED);
     }
     @GetMapping("/search")
-    public ResponseEntity<List<Blog>> searchBlog(String name){
+    public ResponseEntity<List<Blog>> searchBlog(@RequestParam("name") String name){
         List<Blog>blogs = blogService.searchByNameBlog(name);
         if (blogs.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

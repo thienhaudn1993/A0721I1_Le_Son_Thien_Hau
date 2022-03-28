@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59baf301-33b7-460a-8f5d-852e22d2e847" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/java/login/demo/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/java/login/demo/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/java/login/demo/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/resources/message.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/resources/message_haw.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/resources/templates/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai13_I8N/thuc_hanh/login/src/main/resources/templates/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/model/AttachService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/model/RentType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/model/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/model/ServiceType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../bai12_jquery_ajax/bai_tap/blog-ajax/src/main/java/com/codegym/blogajax/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai12_jquery_ajax/bai_tap/blog-ajax/src/main/java/com/codegym/blogajax/controller/BlogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../bai12_jquery_ajax/bai_tap/blog-ajax/src/main/resources/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai12_jquery_ajax/bai_tap/blog-ajax/src/main/resources/templates/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../bai12_jquery_ajax/thuc_hanh/quan-li-dien-thoai/src/main/java/com/codegym/managerphone/controller/SmartphoneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai12_jquery_ajax/thuc_hanh/quan-li-dien-thoai/src/main/java/com/codegym/managerphone/controller/SmartphoneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../bai12_jquery_ajax/thuc_hanh/quan-li-dien-thoai/src/main/resources/templates/phones/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai12_jquery_ajax/thuc_hanh/quan-li-dien-thoai/src/main/resources/templates/phones/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai14-spring-security/demo-bai-hoc/demo" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai14-spring-security/demo-bai-hoc/demo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai9_aop_exception/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai9_aop_exception/thuc_hanh/customer-management" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +83,7 @@
       <workItem from="1646052628372" duration="5330000" />
       <workItem from="1646214421704" duration="466000" />
       <workItem from="1648135389831" duration="10000" />
+      <workItem from="1648217687920" duration="5000" />
     </task>
     <servers />
   </component>

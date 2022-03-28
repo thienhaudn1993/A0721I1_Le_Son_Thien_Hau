@@ -1,26 +1,38 @@
 package com.codegym.casestudy.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "attach_service")
 public class AttachService {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int attach_service_id;
+    private Long attach_service_id;
     private String attach_service_name;
     private double attach_service_cost;
     private int attach_service_unit;
     private String attach_service_status;
 
+    @OneToMany(mappedBy = "attachService")
+    Set<ContractDetail> contractDetailSet;
+
+    public Set<ContractDetail> getContractDetailSet() {
+        return contractDetailSet;
+    }
+
+    public void setContractDetailSet(Set<ContractDetail> contractDetailSet) {
+        this.contractDetailSet = contractDetailSet;
+    }
+
     public AttachService() {
     }
 
-    public int getAttach_service_id() {
+    public Long getAttach_service_id() {
         return attach_service_id;
     }
 
-    public void setAttach_service_id(int attach_service_id) {
+    public void setAttach_service_id(Long attach_service_id) {
         this.attach_service_id = attach_service_id;
     }
 

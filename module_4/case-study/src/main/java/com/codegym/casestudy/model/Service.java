@@ -1,6 +1,7 @@
 package com.codegym.casestudy.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 
@@ -31,6 +32,17 @@ public class Service {
     @ManyToOne(targetEntity = ServiceType.class)
     @JoinColumn(name="service_type_id", nullable=false)
     private ServiceType serviceType;
+
+    @OneToMany(mappedBy = "service")
+    Set<Contract> contractSet;
+
+    public Set<Contract> getContractSet() {
+        return contractSet;
+    }
+
+    public void setContractSet(Set<Contract> contractSet) {
+        this.contractSet = contractSet;
+    }
 
     public ServiceType getServiceType() {
         return serviceType;

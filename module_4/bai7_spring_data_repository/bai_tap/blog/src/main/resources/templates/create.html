@@ -17,7 +17,7 @@
     <p>Content Blog: </p>
     <textarea th:field="*{content}" style="width: 100%;height: 500px"></textarea>
     <input type="datetime-local" th:field="*{date}">
-    <select th:field="*{category}">
+    <select th:field="*{categotry}">
         <option th:each="category: ${categorys}" th:text="${category.name}" th:value="${category.id}"></option>
     </select>
     <input type="submit" value="Submit">

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Customer</title>
+</head>
+<body>
+<h2>Are You Delete?</h2>
+<div>
+    <a th:href="@{/customer}">Back To Customer List</a>
+</div>
+
+<form th:object="${customer}" th:action="@{/customer/delete}" method="post">
+    <input type="hidden" th:field="${customer.customer_id}">
+    <p>Name Customer: </p>
+    <input type="text" th:field="${customer.customer_name}">
+    <p>Birthday Customer: </p>
+    <input type="date" th:field="${customer.customer_birthday}">
+    <p>Gender Customer: </p>
+    <input type="text" th:field="${customer.customer_gender}">
+    <p>Customer Id Card: </p>
+    <input type="text" th:field="${customer.customer_id_card}">
+    <p>Phone Customer: </p>
+    <input type="text" th:field="${customer.customer_phone}">
+    <p>Email Customer: </p>
+    <input type="text" th:field="${customer.customer_email}">
+    <p>Address Customer: </p>
+    <input type="text" th:field="${customer.customer_address}">
+    <p>Customer Type</p>
+    <select th:field="${customer.customerType}">
+        <option th:each="customertype: ${customerType}" th:text="${customertype.customer_type_name}" th:value="${customertype.customer_type_id}"></option>
+    </select>
+    <br>
+    <button>Delete</button>
+</form>
+</body>
+</html>

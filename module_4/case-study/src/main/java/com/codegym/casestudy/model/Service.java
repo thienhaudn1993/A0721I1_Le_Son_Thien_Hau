@@ -1,6 +1,9 @@
 package com.codegym.casestudy.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Entity
@@ -9,10 +12,16 @@ public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long service_id;
+    @NotEmpty(message = "Khong duoc de trong")
+    @Size(min = 1, max = 54, message ="ten phai toi da 54 ki tu" )
     private String service_name;
+    @NotEmpty(message = "Khong duoc de trong")
     private double service_area;
+    @NotEmpty(message = "Khong duoc de trong")
     private double service_cost;
+    @NotEmpty(message = "Khong duoc de trong")
     private int service_max_people;
+
     private String standard_rom;
     private String description_other_convenience;
     private double pool_area;

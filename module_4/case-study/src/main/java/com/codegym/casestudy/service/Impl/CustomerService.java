@@ -19,7 +19,7 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Customer findCustomerById(Long id) {
-        return customerRepository.findById(id);
+        return customerRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -34,6 +34,6 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Page<Customer> searchCustomerByName(String name, Pageable pageable) {
-        return customerRepository;
+        return customerRepository.searchCustomerByName(name,pageable);
     }
 }

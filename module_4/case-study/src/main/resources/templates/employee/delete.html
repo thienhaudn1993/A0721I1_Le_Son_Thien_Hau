@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Employee</title>
+</head>
+<body>
+<div>
+    <a th:href="@{/employee}">Back To Employee List</a>
+</div>
+<h2>Delete Employee?</h2>
+<form th:object="${employee}" th:action="@{/employee/delete}" method="post">
+    <input type="hidden" th:field="${employee.employee_id}">
+    <p>Name Employee: </p>
+    <p th:text="${employee.employee_name}"></p>
+    <p>Birthday Employee: </p>
+    <p th:text="${employee.employee_birthday}"></p>
+    <p>Employee Id Card: </p>
+    <p th:text="${employee.employee_id_card}"></p>
+    <p>Salary: </p>
+    <p th:text="${employee.employee_salary}"></p>
+    <p>Phone Employee: </p>
+    <p th:text="${employee.employee_phone}"></p>
+    <p>Email Employee: </p>
+    <p th:text="${employee.employee_email}"></p>
+    <p>Address Employee: </p>
+    <p th:text="${employee.employee_address}"></p>
+    <p>Position:</p>
+    <p th:text="${employee.position.position_name}"></p>
+    <p>Edutcation Degree:</p>
+    <p th:text="${employee.educationDegree.getEducation_degree_name()}"></p>
+    <p>Devision:</p>
+    <p th:text="${employee.devision.getDevision_name()}"></p>
+    <p>Username:</p>
+    <p th:text="${employee.user.getUserName()}"></p>
+    <input type="submit" value="Delete">
+</form>
+</body>
+</html>

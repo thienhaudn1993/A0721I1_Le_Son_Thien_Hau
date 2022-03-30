@@ -5,5 +5,5 @@ import com.codegym.casestudy.model.ServiceType;
 import java.util.List;
 
 public interface IServiceTypeService {
-    List<ServiceType> findAllSearchType();
+    List<ServiceType> findAllServiceType();
 }

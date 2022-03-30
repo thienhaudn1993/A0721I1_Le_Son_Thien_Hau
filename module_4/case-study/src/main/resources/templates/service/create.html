@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Service</title>
+</head>
+<body>
+<form th:action="@{/service/update}" method="post" th:object="${service}">
+    <p>Rent Type:</p>
+    <select th:field="${service.rentType}">
+        <option th:each="renttype: ${rentType}" th:text="${renttype.rent_type_name}" th:value="${renttype.rent_type_id}"></option>
+    </select>
+    <p>Service Type:</p>
+    <select th:field="${service.serviceType}">
+        <option th:each="servicetype: ${serviceType}" th:text="${servicetype.getService_type_name()}" th:value="${servicetype.getService_type_id()}"></option>
+    </select>
+    <input type="hidden" th:field="*{service_id}">
+    <p>Service Name:</p>
+    <input type="text" th:field="*{service_name}">
+    <p>Service Area( Only Villa ):</p>
+    <input type="text" th:field="*{service_area}">
+    <p>Service Cost:</p>
+    <input type="text" th:field="*{service_cost}">
+    <p>Service Max People:</p>
+    <input type="text" th:field="*{service_max_people}">
+    <p>Standard Room:</p>
+    <input type="text" th:field="*{standard_room}">
+    <p>Description Other Convenience:</p>
+    <input type="text" th:field="*{description_other_convenience}">
+    <p>Pool Area:</p>
+    <input type="text"  th:field="*{pool_area}">
+    <p>Number Of Floors(Don't have with Service Type is Room):</p>
+    <input type="text"  th:field="*{number_of_floors}">
+    <input type="submit" value="Create">
+</form>
+</body>
+</html>

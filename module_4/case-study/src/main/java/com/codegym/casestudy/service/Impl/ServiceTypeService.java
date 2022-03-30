@@ -12,7 +12,7 @@ public class ServiceTypeService implements IServiceTypeService {
     @Autowired
     IServiceTypeRepository serviceTypeRepository;
     @Override
-    public List<ServiceType> findAllSearchType() {
+    public List<ServiceType> findAllServiceType() {
         return serviceTypeRepository.findAll();
     }
 }

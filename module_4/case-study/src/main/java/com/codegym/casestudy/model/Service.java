@@ -2,7 +2,6 @@ package com.codegym.casestudy.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Set;
 
@@ -15,14 +14,14 @@ public class Service {
     @NotEmpty(message = "Khong duoc de trong")
     @Size(min = 1, max = 54, message ="ten phai toi da 54 ki tu" )
     private String service_name;
-    @NotEmpty(message = "Khong duoc de trong")
+
     private double service_area;
-    @NotEmpty(message = "Khong duoc de trong")
+
     private double service_cost;
-    @NotEmpty(message = "Khong duoc de trong")
+
     private int service_max_people;
 
-    private String standard_rom;
+    private String standard_room;
     private String description_other_convenience;
     private double pool_area;
     private int number_of_floors;
@@ -104,12 +103,12 @@ public class Service {
         this.service_max_people = service_max_people;
     }
 
-    public String getStandard_rom() {
-        return standard_rom;
+    public String getStandard_room() {
+        return standard_room;
     }
 
-    public void setStandard_rom(String standard_rom) {
-        this.standard_rom = standard_rom;
+    public void setStandard_room(String standard_rom) {
+        this.standard_room = standard_rom;
     }
 
     public String getDescription_other_convenience() {

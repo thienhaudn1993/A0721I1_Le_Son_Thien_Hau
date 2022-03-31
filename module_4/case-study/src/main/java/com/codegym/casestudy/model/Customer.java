@@ -1,6 +1,9 @@
 package com.codegym.casestudy.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import java.util.Set;
 
 @Entity
@@ -8,12 +11,22 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long customer_id;
+    @NotEmpty(message = "Không được để trống")
     private String customer_name;
+    @NotEmpty(message = "Không được để trống")
     private String customer_birthday;
+    @NotEmpty(message = "Không được để trống")
     private String customer_gender;
+    @NotEmpty(message = "Không được để trống")
+    @Pattern(regexp = "^^([0-9]{9})|([0-9]{12})$$", message = "CMND nhap khong dung")
     private String customer_id_card;
+    @NotEmpty(message = "Không được để trống")
+    @Pattern(regexp = "^(090|091|(\\+8490)|(\\+8491))+[0-9]{7}$", message = "Phone nhập không hợp lệ")
     private String customer_phone;
+    @NotEmpty(message = "Không được để trống")
+    @Email(message = "email chua dung")
     private String customer_email;
+    @NotEmpty(message = "Không được để trống")
     private String customer_address;
     @ManyToOne(targetEntity = CustomerType.class)
     @JoinColumn(name="customer_type_id", nullable=false)

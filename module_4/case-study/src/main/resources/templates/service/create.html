@@ -31,6 +31,7 @@
     <input type="text"  th:field="*{pool_area}">
     <p>Number Of Floors(Don't have with Service Type is Room):</p>
     <input type="text"  th:field="*{number_of_floors}">
+    <p style="color: red" th:if="${#fields.hasErrors('number_of_floors')}" th:errors="*{number_of_floors}">Error Phone</p>
     <input type="submit" value="Create">
 </form>
 </body>

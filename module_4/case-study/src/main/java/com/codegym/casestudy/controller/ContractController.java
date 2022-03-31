@@ -10,11 +10,14 @@ import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.naming.Binding;
 import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -43,7 +46,13 @@ public class ContractController {
         return new ModelAndView("contract/create","contract", new Contract());
     }
     @PostMapping("/update")
-    public String create(@ModelAttribute Contract contract, RedirectAttributes redirectAttributes){
+    public String create(@Validated @ModelAttribute Contract contract, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model){
+        if (bindingResult.hasFieldErrors()){
+            model.addAttribute("employees",employeeService.findAll());
+            model.addAttribute("customers",customerService.findAll());
+            model.addAttribute("services",serviceOfService.findAllService());
+            return "contract/create";
+        }
         contractService.saveContract(contract);
         redirectAttributes.addFlashAttribute("message","Create Contract Success");
         return "redirect:/contract";

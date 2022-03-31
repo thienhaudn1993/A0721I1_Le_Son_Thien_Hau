@@ -1,6 +1,7 @@
 package com.codegym.casestudy.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import java.util.Date;
 import java.util.Set;
 
@@ -87,7 +88,7 @@ public class Contract {
     public void setContract_end_date(String contract_end_date) {
         this.contract_end_date = contract_end_date;
     }
-
+    @Min(value = 1, message = "Tien coc phai la so duong")
     public double getContract_deposit() {
         return contract_deposit;
     }
@@ -95,7 +96,7 @@ public class Contract {
     public void setContract_deposit(double contract_deposit) {
         this.contract_deposit = contract_deposit;
     }
-
+    @Min(value = 1, message = "Tien tien phai la so duong")
     public double getContract_total_money() {
         return contract_total_money;
     }

@@ -13,18 +13,25 @@
     <input type="hidden" th:field="${employee.employee_id}">
     <p>Name Employee: </p>
     <input type="text" th:field="${employee.employee_name}">
+    <p style="color: red" th:if="${#fields.hasErrors('employee_name')}" th:errors="*{employee_name}">Error Name</p>
     <p>Birthday Employee: </p>
     <input type="date" th:field="${employee.employee_birthday}">
+    <p style="color: red" th:if="${#fields.hasErrors('employee_birthday')}" th:errors="*{employee_birthday}">Error employee_birthday</p>
     <p>Employee Id Card: </p>
     <input type="text" th:field="${employee.employee_id_card}">
+    <p style="color: red" th:if="${#fields.hasErrors('employee_id_card')}" th:errors="*{employee_id_card}">Error Phone</p>
     <p>Salary: </p>
     <input type="text" th:field="${employee.employee_salary}">
+    <p style="color: red" th:if="${#fields.hasErrors('employee_salary')}" th:errors="*{employee_salary}">Error Salary</p>
     <p>Phone Employee: </p>
     <input type="text" th:field="${employee.employee_phone}">
+    <p style="color: red" th:if="${#fields.hasErrors('employee_phone')}" th:errors="*{employee_phone}">Error Phone</p>
     <p>Email Employee: </p>
     <input type="text" th:field="${employee.employee_email}">
+    <p style="color: red" th:if="${#fields.hasErrors('employee_email')}" th:errors="*{employee_email}">Error Phone</p>
     <p>Address Employee: </p>
     <input type="text" th:field="${employee.employee_address}">
+    <p style="color: red" th:if="${#fields.hasErrors('employee_address')}" th:errors="*{employee_address}">Error Phone</p>
 
     <p>Position:</p>
     <select th:field="${employee.position}">

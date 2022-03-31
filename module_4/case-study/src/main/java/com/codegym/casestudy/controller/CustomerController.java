@@ -7,10 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.naming.Binding;
 import java.util.Optional;
 
 @Controller
@@ -34,7 +37,11 @@ public class CustomerController {
         return new ModelAndView("customer/create","customer", new Customer());
     }
     @PostMapping("/create")
-    public String saveCustomer(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes){
+    public String saveCustomer(@Validated @ModelAttribute Customer customer, BindingResult bindingResult, RedirectAttributes redirectAttributes,Model model){
+       if (bindingResult.hasFieldErrors()){
+           model.addAttribute("customerType",customerTypeService.findAllCustomerType());
+           return "customer/create";
+       }
         customerService.save(customer);
         redirectAttributes.addFlashAttribute("message","Create Success");
         return "redirect:/customer";
@@ -46,7 +53,11 @@ public class CustomerController {
         return new ModelAndView("/customer/edit","customer",customer);
     }
     @PostMapping("/update")
-    public String update(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes){
+    public String update(@Validated @ModelAttribute Customer customer,BindingResult bindingResult ,RedirectAttributes redirectAttributes, Model model){
+        if (bindingResult.hasFieldErrors()){
+            model.addAttribute("customerType",customerTypeService.findAllCustomerType());
+            return "/customer/edit";
+        }
         customerService.save(customer);
         redirectAttributes.addFlashAttribute("message","Update Success");
         return "redirect:/customer";

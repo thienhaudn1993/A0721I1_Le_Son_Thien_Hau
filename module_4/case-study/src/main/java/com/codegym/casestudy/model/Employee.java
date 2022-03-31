@@ -1,6 +1,9 @@
 package com.codegym.casestudy.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.Set;
 
 @Entity
@@ -8,12 +11,23 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long employee_id;
+    @NotEmpty(message = "Không được để trống")
     private String employee_name;
+    @NotEmpty(message = "Không được để trống")
     private String employee_birthday;
+    @NotEmpty(message = "Không được để trống")
+    @Pattern(regexp = "^^([0-9]{9})|([0-9]{12})$$", message = "CMND nhap khong dung")
     private String employee_id_card;
+    @NotEmpty(message = "Không được để trống")
+    @Pattern(regexp = "^(090|091|(\\+8490)|(\\+8491))+[0-9]{7}$", message = "Phone nhập không hợp lệ")
+//    @Pattern(regexp = "(((\\+|)|84)|0)(3|5|7|8|9)+([0-9]{8})\\b", message = "Phone nhập không hợp lệ")
     private String employee_phone;
+    @NotEmpty(message = "Không được để trống")
+    @Email(message = "Email nhap chua dung dinh dang")
     private String employee_email;
+    @Min(value = 1,message = "Luong phai lon hon 0")
     private double employee_salary;
+    @NotEmpty(message = "Không được để trống")
     private String employee_address;
 
     public Employee() {

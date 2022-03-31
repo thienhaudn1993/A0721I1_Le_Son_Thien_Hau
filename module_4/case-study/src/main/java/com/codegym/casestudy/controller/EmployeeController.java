@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -42,7 +44,15 @@ public class EmployeeController {
         return new ModelAndView("employee/create","employee", new Employee());
     }
     @PostMapping("/create")
-    public String saveEmployee(@ModelAttribute Employee employee, RedirectAttributes redirectAttributes){
+    public String saveEmployee(@Validated  Employee employee, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model){
+        if (bindingResult.hasFieldErrors()){
+            model.addAttribute("employeePosition",positionService.findAllPosition());
+            model.addAttribute("employeeDevision",devisionService.findAllDevision());
+            model.addAttribute("employeeEducationDegree",educationDegreeService.findAll());
+            model.addAttribute("employeeUser",userService.findAllUser());
+//            model.addAttribute("employee", new Employee());
+            return "employee/create";
+        }
         employeeService.save(employee);
         redirectAttributes.addFlashAttribute("message","Create Success");
         return "redirect:/employee";
@@ -57,7 +67,14 @@ public class EmployeeController {
         return new ModelAndView("/employee/edit","employee",employee);
     }
     @PostMapping("/update")
-    public String update(@ModelAttribute Employee employee, RedirectAttributes redirectAttributes){
+    public String update(@Validated @ModelAttribute Employee employee, BindingResult bindingResult ,RedirectAttributes redirectAttributes,Model model){
+        if (bindingResult.hasFieldErrors()){
+            model.addAttribute("employeePosition",positionService.findAllPosition());
+            model.addAttribute("employeeDevision",devisionService.findAllDevision());
+            model.addAttribute("employeeEducationDegree",educationDegreeService.findAll());
+            model.addAttribute("employeeUser",userService.findAllUser());
+            return "/employee/edit";
+        }
         employeeService.save(employee);
         redirectAttributes.addFlashAttribute("message","Update Success");
         return "redirect:/employee";

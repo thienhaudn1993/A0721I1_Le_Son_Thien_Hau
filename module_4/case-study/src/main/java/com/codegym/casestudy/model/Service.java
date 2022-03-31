@@ -1,6 +1,7 @@
 package com.codegym.casestudy.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.Set;
@@ -24,6 +25,7 @@ public class Service {
     private String standard_room;
     private String description_other_convenience;
     private double pool_area;
+    @Min(value = 1,message = "nhap vao so nguyen duong")
     private int number_of_floors;
 
     @ManyToOne(targetEntity = RentType.class)

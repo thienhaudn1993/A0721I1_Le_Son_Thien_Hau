@@ -1,11 +1,14 @@
 package com.codegym.casestudy.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+
 @Entity
 public class ContractDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long contract_detail_id;
+    @Min(value = 1,message = "nhap vao so nguyen duong")
     private int quantity;
 
     @ManyToOne(targetEntity = Contract.class)

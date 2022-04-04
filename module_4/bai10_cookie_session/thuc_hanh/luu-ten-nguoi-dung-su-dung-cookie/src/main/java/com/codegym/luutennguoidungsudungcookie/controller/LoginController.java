@@ -17,14 +17,19 @@ public class LoginController {
         return new User();
     }
     @RequestMapping("/login")
-    public String Index(@CookieValue(value = "setUser", defaultValue = "") String setUser, Model model) {
+    public String Index(@CookieValue(value = "setUser", defaultValue = "") String setUser,
+                        @CookieValue(value = "setPass",defaultValue = "") String setPass  ,Model model) {
         Cookie cookie = new Cookie("setUser", setUser);
+        Cookie cookie1 = new Cookie("setUser", setPass);
         model.addAttribute("cookieValue", cookie);
+        model.addAttribute("cookieValue1", cookie1);
         return "/login";
     }
 
     @PostMapping("/dologin")
-    public String doLogin(@ModelAttribute("user") User user, Model model, @CookieValue(value = "setUser", defaultValue = "") String setUser,
+    public String doLogin(@ModelAttribute("user") User user, Model model,
+                          @CookieValue(value = "setUser", defaultValue = "") String setUser,
+
                           HttpServletResponse response, HttpServletRequest request) {
         //implement business logic
         if (user.getEmail().equals("admin@gmail.com") && user.getPassword().equals("12345")) {
@@ -51,6 +56,7 @@ public class LoginController {
                 }
             }
             model.addAttribute("message", "Login success. Welcome ");
+            return "/home";
         } else {
             user.setEmail("");
             Cookie cookie = new Cookie("setUser", setUser);

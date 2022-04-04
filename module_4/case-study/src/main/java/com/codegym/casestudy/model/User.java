@@ -17,6 +17,13 @@ public class User {
             inverseJoinColumns = @JoinColumn(name="role_id"))
     private Set<Role> roles;
 
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
     public Set<Employee> getEmployeeSet() {
         return employeeSet;

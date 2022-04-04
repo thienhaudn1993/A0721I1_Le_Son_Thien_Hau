@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e7c37569-f99d-4b30-a48b-ded9ac792e67" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../bai10_cookie_session/thuc_hanh/luu-ten-nguoi-dung-su-dung-cookie/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/gradle_wrapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/UserDetail/MyUserDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/controller/SecurityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/repository/IRoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/service/IRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/service/Impl/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/ultil/EncrypPasswordUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/resources/templates/authentication/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/resources/templates/authentication/admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/resources/templates/authentication/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10_cookie_session/thuc_hanh/luu-ten-nguoi-dung-su-dung-cookie/src/main/java/com/codegym/luutennguoidungsudungcookie/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai10_cookie_session/thuc_hanh/luu-ten-nguoi-dung-su-dung-cookie/src/main/java/com/codegym/luutennguoidungsudungcookie/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10_cookie_session/thuc_hanh/luu-ten-nguoi-dung-su-dung-cookie/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai10_cookie_session/thuc_hanh/luu-ten-nguoi-dung-su-dung-cookie/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo" beforeDir="false" afterPath="$PROJECT_DIR$/demo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/demo/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/demo/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/config/DataSeedingListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/config/DataSeedingListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/controller/SecurityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/controller/SecurityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/repository/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/ultil/EncrypPasswordUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/trungdoan/demosecurity/ultil/EncrypPasswordUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/authentication/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/authentication/403.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/authentication/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/authentication/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/authentication/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/authentication/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/homeAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/homeAdmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/layout/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/layout/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/layout/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/layout/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/layout/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/layout/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/repository/IEmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/repository/IEmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/repository/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/repository/IUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/service/Impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/service/Impl/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/resources/templates/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/demo" />
+  </component>
+  <component name="ProjectId" id="279mPCDnGQ9XNzg87vkIhbp9CpN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e7c37569-f99d-4b30-a48b-ded9ac792e67" name="Default Changelist" comment="" />
+      <created>1648740650214</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648740650214</updated>
+      <workItem from="1648740651554" duration="295000" />
+      <workItem from="1649072594315" duration="935000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -11,7 +11,7 @@ public class ContractDetail {
     @Min(value = 1,message = "nhap vao so nguyen duong")
     private int quantity;
 
-    @ManyToOne(targetEntity = Contract.class)
+    @ManyToOne(targetEntity = Contract.class,cascade = CascadeType.ALL)
     @JoinColumn(name="contract_id", nullable=false)
     private Contract contract;
 
@@ -31,7 +31,7 @@ public class ContractDetail {
         this.attachService = attachService;
     }
 
-    @ManyToOne(targetEntity = AttachService.class)
+    @ManyToOne(targetEntity = AttachService.class,cascade = CascadeType.ALL)
     @JoinColumn(name="attach_service_id", nullable=false)
     private AttachService attachService;
 

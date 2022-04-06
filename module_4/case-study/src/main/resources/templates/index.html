@@ -190,7 +190,11 @@
     </div>
     <div class="col-10">
         <div>
-                <h2 th:if="${session.username != null}"  th:text="${session.username}"></h2>
+            <div sec:authorize="isAuthenticated()">
+                <h1>Hi</h1>
+                <p th:text="${session.user.employee_name}"></p>
+                <a th:href="@{/logout}">Logout</a>
+            </div>
 
             <h2>Information Furama Resort</h2>
         </div>

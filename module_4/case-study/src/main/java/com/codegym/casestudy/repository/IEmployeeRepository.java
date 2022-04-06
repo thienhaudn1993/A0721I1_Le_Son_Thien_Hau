@@ -13,6 +13,6 @@ public interface IEmployeeRepository extends JpaRepository<Employee,Long> {
     @Query(value = "select * from Employee where employee_name like %?1%",nativeQuery = true)
     Page<Employee> searchEmployeeByName(String name, Pageable pageable);
 
-    @Query(value = "select * from Employee where Employee.username =?1",nativeQuery = true)
+    @Query(value = "select * from Employee where employee_name=?1",nativeQuery = true)
     Employee getEmployeeByUser(String username);
 }

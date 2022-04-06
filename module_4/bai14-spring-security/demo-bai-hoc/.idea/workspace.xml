@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7c37569-f99d-4b30-a48b-ded9ac792e67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../bai10_cookie_session/thuc_hanh/luu-ten-nguoi-dung-su-dung-cookie/src/main/resources/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gradle_wrapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/UserDetail/MyUserDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/controller/SecurityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/repository/IRoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/service/IRoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/service/Impl/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/ultil/EncrypPasswordUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/resources/templates/authentication/403.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/resources/templates/authentication/admin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case-study/src/main/resources/templates/authentication/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bai10_cookie_session/thuc_hanh/luu-ten-nguoi-dung-su-dung-cookie/src/main/java/com/codegym/luutennguoidungsudungcookie/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai10_cookie_session/thuc_hanh/luu-ten-nguoi-dung-su-dung-cookie/src/main/java/com/codegym/luutennguoidungsudungcookie/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bai10_cookie_session/thuc_hanh/luu-ten-nguoi-dung-su-dung-cookie/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai10_cookie_session/thuc_hanh/luu-ten-nguoi-dung-su-dung-cookie/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo" beforeDir="false" afterPath="$PROJECT_DIR$/demo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/demo/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/demo/gradlew.bat" afterDir="false" />
@@ -49,14 +30,7 @@
       <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/layout/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/layout/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/layout/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/layout/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/layout/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/layout/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../case-study/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/repository/IEmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/repository/IEmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/repository/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/repository/IUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/service/Impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/service/Impl/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/src/main/java/com/codegym/casestudy/model/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

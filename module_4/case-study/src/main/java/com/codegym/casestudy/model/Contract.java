@@ -14,19 +14,19 @@ public class Contract {
     private String contract_end_date;
     private double contract_deposit;
     private double contract_total_money;
-    @ManyToOne(targetEntity = Employee.class)
+    @ManyToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
     @JoinColumn(name="employee_id", nullable=false)
     private Employee employee;
 
-    @ManyToOne(targetEntity = Customer.class)
+    @ManyToOne(targetEntity = Customer.class,cascade = CascadeType.ALL)
     @JoinColumn(name="customer_id", nullable=false)
     private Customer customer;
 
-    @ManyToOne(targetEntity = Service.class)
+    @ManyToOne(targetEntity = Service.class,cascade = CascadeType.ALL)
     @JoinColumn(name="service_id", nullable=false)
     private Service service;
 
-    @OneToMany(mappedBy = "contract")
+    @OneToMany(mappedBy = "contract",cascade = CascadeType.ALL)
     Set<ContractDetail> contractDetailSet;
 
 

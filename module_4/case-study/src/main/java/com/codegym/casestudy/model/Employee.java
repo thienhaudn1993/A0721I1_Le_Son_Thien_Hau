@@ -47,7 +47,7 @@ public class Employee {
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name="username", nullable=false)
     private User user;
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(mappedBy = "employee",cascade = CascadeType.ALL)
     Set<Contract> contractSet;
 
     public Set<Contract> getContractSet() {

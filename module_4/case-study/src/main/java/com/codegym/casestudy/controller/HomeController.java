@@ -16,12 +16,7 @@ public class HomeController {
     @Autowired
     IEmployeeRepository iEmployeeRepository;
     @GetMapping("")
-    public String homePage(Model model , HttpSession session){
-        if(session.getAttribute("username") == null) {
-            return "authentication/login";
-        }
-
-        model.addAttribute("info",session.getAttribute("username"));
+    public String homePage(){
         return "index" ;
     }
 }

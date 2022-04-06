@@ -48,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("userName")
                 .passwordParameter("passWord")
                 //Nếu authentication thành công
-                .defaultSuccessUrl("/")
+                .defaultSuccessUrl("/user")
                 //Nếu authentication thất bại
                 .failureUrl("/login?error")
                 //Nếu authentication thành công nhưng vào trang không đúng role

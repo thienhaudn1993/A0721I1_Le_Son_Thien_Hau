@@ -32,7 +32,7 @@ public class Customer {
     @JoinColumn(name="customer_type_id", nullable=false)
     private CustomerType customerType;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     Set<Contract> contractSet;
 
     public Set<Contract> getContractSet() {

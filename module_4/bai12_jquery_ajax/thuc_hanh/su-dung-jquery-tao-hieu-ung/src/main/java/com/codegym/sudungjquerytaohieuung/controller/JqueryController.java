@@ -7,11 +7,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class JqueryController {
     @GetMapping("")
-    public String view(){
+    public String view() {
         return "list";
     }
+
     @GetMapping("/animate")
-    public String animation(){
+    public String animation() {
         return "animate";
     }
 }

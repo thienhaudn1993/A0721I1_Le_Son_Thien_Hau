@@ -6,6 +6,7 @@ import com.codegym.repository.CustomerRepository;
 import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.util.List;
+
 @Transactional
 public class CustomerRepositoryImpl implements CustomerRepository {
     @PersistenceContext

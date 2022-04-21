@@ -6,13 +6,13 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript">
         function addNewSmartPhone() {
-        //lay du lieu
+            //lay du lieu
             let id = $('#id').val(); // cho chức năng update ( cần phải có id )
             let producer = $('#producer').val();
             let model = $('#model').val();
             let price = $('#price').val();
             let newSmartphone = {
-                id : id,
+                id: id,
                 producer: producer,
                 model: model,
                 price: price
@@ -34,11 +34,13 @@
             //chặn sự kiện mặc định của thẻ
             event.preventDefault();
         }
+
         function getSmartphone(smartphone) {
             return `<tr><td >${smartphone.producer}</td><td >${smartphone.model}</td><td >${smartphone.price}</td>` +
-                `<td><a class="deleteSmartphone" href="${smartphone.id}">Delete</a></td></tr>`+
+                `<td><a class="deleteSmartphone" href="${smartphone.id}">Delete</a></td></tr>` +
                 `<td><a class="updateSmartphone" href="${smartphone.id}">Update</a></td></tr>`;
         }
+
         function successHandler() {
             $.ajax({
                 type: "GET",
@@ -61,6 +63,7 @@
                 }
             });
         }
+
         $(document).ready(function () {
             //sư kiện nào thực hiện Ajax
             $('.deleteSmartphone').click(function (event) {

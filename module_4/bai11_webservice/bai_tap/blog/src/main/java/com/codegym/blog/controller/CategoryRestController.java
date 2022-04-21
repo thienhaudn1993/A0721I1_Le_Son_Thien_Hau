@@ -21,18 +21,20 @@ public class CategoryRestController {
     CategoryService categoryService;
     @Autowired
     BlogService blogService;
+
     @GetMapping("")
-    public ResponseEntity<List<Category>> finAllCategory(){
+    public ResponseEntity<List<Category>> finAllCategory() {
         List<Category> categories = categoryService.findAll();
-        if (categories.isEmpty()){
+        if (categories.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(categories,HttpStatus.OK);
+        return new ResponseEntity<>(categories, HttpStatus.OK);
     }
+
     @GetMapping("/{id}")
-    public ResponseEntity<Category> findByIdCategory(@PathVariable Long id){
+    public ResponseEntity<Category> findByIdCategory(@PathVariable Long id) {
         Category category = categoryService.findCategoryById(id);
-        if (category == null){
+        if (category == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
 //            Blog blogList = blogService.findBlogById(id);

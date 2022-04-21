@@ -4,55 +4,90 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style th:fragment="css">
-        .col-1 {width: 8.33%}
-        .col-2 {width: 16.66%}
-        .col-3 {width: 25%}
-        .col-4 {width: 33.3%}
-        .col-5 {width: 41.66%}
-        .col-6 {width: 50%}
-        .col-7 {width: 58.33%}
+        .col-1 {
+            width: 8.33%
+        }
+
+        .col-2 {
+            width: 16.66%
+        }
+
+        .col-3 {
+            width: 25%
+        }
+
+        .col-4 {
+            width: 33.3%
+        }
+
+        .col-5 {
+            width: 41.66%
+        }
+
+        .col-6 {
+            width: 50%
+        }
+
+        .col-7 {
+            width: 58.33%
+        }
+
         .col-8 {
-            width: 66.66%;}
+            width: 66.66%;
+        }
+
         .col-9 {
             width: 75px;
         }
+
         .col-10 {
-            width: 83.33%;}
+            width: 83.33%;
+        }
+
         .col-11 {
             width: 91.66%;
         }
+
         .col-12 {
             width: 100%;
         }
-        *{
+
+        * {
             box-sizing: border-box;
         }
+
         .row {
             content: "";
             display: block;
             clear: both;
         }
+
         [class*="col-"] {
             float: left;
             padding: 0px 5px 0px 5px;
         }
+
         body {
             font-family: Arial;
         }
+
         nav ul, nav li {
-            padding:0;
-            margin:0;
+            padding: 0;
+            margin: 0;
         }
+
         nav {
             padding: 20px 20px 20px 0px;
             margin: 5px 5px 0px 5px;
             background-color: #161605;
             color: white;
         }
-        nav ul li{
+
+        nav ul li {
             display: inline;
             padding: 10px;
         }
+
         nav li a {
             text-decoration: none;
             text-align: center;
@@ -61,21 +96,25 @@
             font-size: 20px;
 
         }
-        nav li a:hover{
+
+        nav li a:hover {
             /*background-color: black;*/
             color: white;
         }
+
         .left {
             text-align: center;
             background-color: #CDCDCD;
             height: 600px;
         }
+
         footer {
             text-align: center;
             background-color: grey;
             color: white;
             padding: 20px;
         }
+
         header {
             text-align: center;
             background-color: grey;
@@ -97,11 +136,13 @@
             <div class="dropdown">
                 <div sec:authorize="!isAuthenticated()">
                     <!--                                    <i class="fas fa-ellipsis-h mr-1" style="font-size: 25px;"></i>-->
-                    <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown"
                             style="background-color: #fc9807;">Thêm
                         <span class="caret" style="font-size: 16px; color: white; "></span>
                     </button>
-                    <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton" style="background-color: #fc9807; width: 100%;">
+                    <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton"
+                        style="background-color: #fc9807; width: 100%;">
                         <li class="text-center">
                             <i class="fa fa-user-circle mr-1" aria-hidden="true"
                                style="color: white;"></i>
@@ -128,36 +169,36 @@
                         <span sec:authentication="name">Username</span>
                         <span class="caret" style="font-size: 14px; color: white; "></span>
                     </button>
-<!--                    <ul style="background-color: #fc9807; width: 100%">-->
-<!--                        <li class="text-center">-->
-<!--                            <i class="fas fa-plus-circle mr-1" style="color: white;"-->
-<!--                               aria-hidden="true"></i>-->
-<!--                            <a th:href="@{/posts/add}" style="color: black; font-size: 16px;">-->
-<!--                                Đăng Tin-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="text-center">-->
-<!--                            <i class="fas fa-edit mr-1" style="color: white;"-->
-<!--                               aria-hidden="true"></i>-->
-<!--                            <a th:href="@{/user/editUser}" style="color: black; font-size: 16px;">-->
-<!--                                Chỉnh sửa thông tin-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="text-center">-->
-<!--                            <i class="fas fa-key mr-1" style="color: white;"-->
-<!--                               aria-hidden="true"></i>-->
-<!--                            <a th:href="@{/user/changePassword}" style="color: black; font-size: 16px;">-->
-<!--                                Đổi mật khẩu-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                        <li class="text-center">-->
-<!--                            <i class="fa fa-sign-in mr-1" style="color: white;"-->
-<!--                               aria-hidden="true"></i>-->
-<!--                            <a th:href="@{/logout}" style="color: black; font-size: 16px;">-->
-<!--                                Đăng xuất-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
+                    <!--                    <ul style="background-color: #fc9807; width: 100%">-->
+                    <!--                        <li class="text-center">-->
+                    <!--                            <i class="fas fa-plus-circle mr-1" style="color: white;"-->
+                    <!--                               aria-hidden="true"></i>-->
+                    <!--                            <a th:href="@{/posts/add}" style="color: black; font-size: 16px;">-->
+                    <!--                                Đăng Tin-->
+                    <!--                            </a>-->
+                    <!--                        </li>-->
+                    <!--                        <li class="text-center">-->
+                    <!--                            <i class="fas fa-edit mr-1" style="color: white;"-->
+                    <!--                               aria-hidden="true"></i>-->
+                    <!--                            <a th:href="@{/user/editUser}" style="color: black; font-size: 16px;">-->
+                    <!--                                Chỉnh sửa thông tin-->
+                    <!--                            </a>-->
+                    <!--                        </li>-->
+                    <!--                        <li class="text-center">-->
+                    <!--                            <i class="fas fa-key mr-1" style="color: white;"-->
+                    <!--                               aria-hidden="true"></i>-->
+                    <!--                            <a th:href="@{/user/changePassword}" style="color: black; font-size: 16px;">-->
+                    <!--                                Đổi mật khẩu-->
+                    <!--                            </a>-->
+                    <!--                        </li>-->
+                    <!--                        <li class="text-center">-->
+                    <!--                            <i class="fa fa-sign-in mr-1" style="color: white;"-->
+                    <!--                               aria-hidden="true"></i>-->
+                    <!--                            <a th:href="@{/logout}" style="color: black; font-size: 16px;">-->
+                    <!--                                Đăng xuất-->
+                    <!--                            </a>-->
+                    <!--                        </li>-->
+                    <!--                    </ul>-->
 
                 </div>
             </div>

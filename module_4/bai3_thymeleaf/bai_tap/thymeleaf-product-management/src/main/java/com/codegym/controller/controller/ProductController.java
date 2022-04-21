@@ -16,50 +16,57 @@ import java.util.List;
 @Controller
 @RequestMapping("/product")
 public class ProductController {
-    private IProductService productService= new ProductService();
+    private IProductService productService = new ProductService();
 
 
     @GetMapping("")
-    public String index(Model model){
+    public String index(Model model) {
         List<Product> productList = productService.findAll();
         model.addAttribute("products", productList);
         return "index";
     }
+
     @GetMapping("/create")
-    public String create(Model model){
-        model.addAttribute("product",new Product());
+    public String create(Model model) {
+        model.addAttribute("product", new Product());
         return "create";
     }
+
     @PostMapping("/save")
-    public String save(Product product, RedirectAttributes redirect){
+    public String save(Product product, RedirectAttributes redirect) {
         productService.save(product);
-        redirect.addFlashAttribute("message","Add Success");
+        redirect.addFlashAttribute("message", "Add Success");
         return "redirect:/product";
     }
+
     @GetMapping("/{id}/edit")
-    public String edit(@PathVariable int id, Model model){
-        model.addAttribute("product",productService.findById(id));
+    public String edit(@PathVariable int id, Model model) {
+        model.addAttribute("product", productService.findById(id));
         return "edit";
     }
+
     @PostMapping("/update")
-    public String update(Product product){
-        productService.update(product.getId(),product);
+    public String update(Product product) {
+        productService.update(product.getId(), product);
         return "redirect:/product";
     }
+
     @GetMapping("/{id}/delete")
-    public String delete(@PathVariable int id, Model model){
-        model.addAttribute("product",productService.findById(id));
+    public String delete(@PathVariable int id, Model model) {
+        model.addAttribute("product", productService.findById(id));
         return "delete";
     }
+
     @PostMapping("/delete")
-    public String delete(Product product, RedirectAttributes redirect){
+    public String delete(Product product, RedirectAttributes redirect) {
         productService.remove(product.getId());
-        redirect.addFlashAttribute("message","Delete Success");
+        redirect.addFlashAttribute("message", "Delete Success");
         return "redirect:/product";
     }
+
     @GetMapping("/{id}/view")
-    public String viewDetail(@PathVariable int id, Model model){
-        model.addAttribute("product",productService.findById(id));
+    public String viewDetail(@PathVariable int id, Model model) {
+        model.addAttribute("product", productService.findById(id));
         return "view";
     }
 }

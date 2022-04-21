@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class BlogServiceImpl implements BlogService {
     @Autowired
     private BlogRepository blogRepository;
+
     @Override
     public List<Blog> findAll() {
         return blogRepository.findAll();

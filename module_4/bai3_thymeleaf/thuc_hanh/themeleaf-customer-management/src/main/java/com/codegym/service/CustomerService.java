@@ -8,7 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 public class CustomerService implements ICustomerService {
-    private static final Map<Integer,Customer> customers;
+    private static final Map<Integer, Customer> customers;
+
     static {
         customers = new HashMap<>();
         customers.put(1, new Customer(1, "John", "john@codegym.vn", "Hanoi"));
@@ -18,6 +19,7 @@ public class CustomerService implements ICustomerService {
         customers.put(5, new Customer(5, "Sophia", "sophia@codegym.vn", "Miami"));
         customers.put(6, new Customer(6, "Rose", "rose@codegym.vn", "Newyork"));
     }
+
     @Override
     public List<Customer> findAll() {
         return new ArrayList<>(customers.values());
@@ -37,6 +39,7 @@ public class CustomerService implements ICustomerService {
     public void update(int id, Customer customer) {
         customers.put(id, customer);
     }
+
     @Override
     public void remove(int id) {
         customers.remove(id);

@@ -9,10 +9,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class CustomerSeriveImpl implements CustomerSerive {
     @Autowired
     private CustomerRepository customerRepository;
+
     @Override
     public Page<Customer> findAll(Pageable pageable) {
         return customerRepository.findAll(pageable);

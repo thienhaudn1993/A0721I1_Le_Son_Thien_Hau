@@ -14,6 +14,7 @@ import java.util.List;
 public class ContractDetailService implements IContractDetailService {
     @Autowired
     IContractDetailRepository contractDetailRepository;
+
     @Override
     public Page<ContractDetail> findAllContractDetail(Pageable pageable) {
         return contractDetailRepository.findAll(pageable);

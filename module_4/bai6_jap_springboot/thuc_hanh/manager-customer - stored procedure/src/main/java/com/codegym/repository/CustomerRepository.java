@@ -12,5 +12,6 @@ public interface CustomerRepository {
     void save(Customer customer);
 
     void remove(Long id);
+
     boolean insertWithStoredProcedure(Customer customer);
 }

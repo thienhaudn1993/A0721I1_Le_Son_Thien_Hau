@@ -12,9 +12,9 @@
 </head>
 <body>
 <h3>Save Box Mail:</h3>
-<p>Language:  ${box.languages}</p>
-<p>Page Size:  ${box.pageSize}</p>
-<p>Spams filter:  ${box.spamsFilter}</p>
-<p>Signature:  ${box.signature}</p>
+<p>Language: ${box.languages}</p>
+<p>Page Size: ${box.pageSize}</p>
+<p>Spams filter: ${box.spamsFilter}</p>
+<p>Signature: ${box.signature}</p>
 </body>
 </html>

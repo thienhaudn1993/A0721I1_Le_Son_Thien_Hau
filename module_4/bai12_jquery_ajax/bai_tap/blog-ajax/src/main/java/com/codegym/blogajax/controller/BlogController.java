@@ -21,31 +21,35 @@ public class BlogController {
     IBlogService blogService;
     @Autowired
     ICategoryService categoryService;
+
     /*@PostMapping
     public ResponseEntity<Blog> createBlog(@RequestBody Blog blog){
         return new ResponseEntity<>(blogService.saveBlog(blog), HttpStatus.CREATED);
     }*/
     @GetMapping("/list")
-    public ModelAndView getAllBlog(Model model){
-        model.addAttribute("categorys",categoryService.findAll());
+    public ModelAndView getAllBlog(Model model) {
+        model.addAttribute("categorys", categoryService.findAll());
         ModelAndView modelAndView = new ModelAndView("list");
         modelAndView.addObject("blogs", blogService.findAll());
         modelAndView.addObject("blog", new Blog());
         return modelAndView;
     }
+
     @GetMapping
     public ResponseEntity<List<Blog>> allBlog() {
-        return new ResponseEntity<>(blogService.findAll(),HttpStatus.OK);
+        return new ResponseEntity<>(blogService.findAll(), HttpStatus.OK);
     }
+
     @PostMapping
-    public ResponseEntity<BlogDTO> saveBlog(@RequestBody BlogDTO blogDTO){
+    public ResponseEntity<BlogDTO> saveBlog(@RequestBody BlogDTO blogDTO) {
         blogService.saveBlogDTO(blogDTO);
         return new ResponseEntity<>(blogDTO, HttpStatus.CREATED);
     }
+
     @GetMapping("/search")
-    public ResponseEntity<List<Blog>> searchBlog(@RequestParam("name") String name){
-        List<Blog>blogs = blogService.searchByNameBlog(name);
-        if (blogs.isEmpty()){
+    public ResponseEntity<List<Blog>> searchBlog(@RequestParam("name") String name) {
+        List<Blog> blogs = blogService.searchByNameBlog(name);
+        if (blogs.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(blogs, HttpStatus.OK);

@@ -9,7 +9,7 @@
 <p>
     <a th:href="@{/product}"> Back to Product List</a>
 </p>
-<form th:action="@{/product/save}" th:object="${product}" method="post" novalidate = "novalidate">
+<form th:action="@{/product/save}" th:object="${product}" method="post" novalidate="novalidate">
     <div>
         <label>ID:</label>
         <input type="text" th:field="*{id}">

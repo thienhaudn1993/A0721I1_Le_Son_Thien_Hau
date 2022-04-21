@@ -16,7 +16,7 @@ public class DemoBeforeAdvice {
     }
 
     @Before("execution(* com.codegym.demoaop.controller..*.*(..))")
-    public void writeLogServer(){
+    public void writeLogServer() {
         System.out.println("Đang ghi log vào server");
     }
 

@@ -11,32 +11,33 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("home")
 public class CaculatorController {
     @GetMapping("")
-    public String home(){
+    public String home() {
         return "home";
     }
+
     @PostMapping("/caculator")
     public String caculator(@RequestParam String firstNumber,
                             @RequestParam String secondNumber,
                             @RequestParam String calculator,
-                            Model model){
+                            Model model) {
         if (calculator.equals("adddition")) {
             float result = Float.parseFloat(firstNumber) + Float.parseFloat(secondNumber);
-            model.addAttribute("result","Addition "+result);
+            model.addAttribute("result", "Addition " + result);
             return "home";
-        }else if (calculator.equals("subtraction")) {
+        } else if (calculator.equals("subtraction")) {
             float result = Float.parseFloat(firstNumber) - Float.parseFloat(secondNumber);
-            model.addAttribute("result","Subtraction "+result);
+            model.addAttribute("result", "Subtraction " + result);
             return "home";
-        }else if (calculator.equals("multiplication")) {
+        } else if (calculator.equals("multiplication")) {
             float result = Float.parseFloat(firstNumber) * Float.parseFloat(secondNumber);
-            model.addAttribute("result","Multiplication "+result);
+            model.addAttribute("result", "Multiplication " + result);
             return "home";
-        }else {
+        } else {
             if (Float.parseFloat(secondNumber) == 0) {
-                model.addAttribute("result","Not Calculation");
-            }else {
+                model.addAttribute("result", "Not Calculation");
+            } else {
                 float result = Float.parseFloat(firstNumber) / Float.parseFloat(secondNumber);
-                model.addAttribute("result","Division "+result);
+                model.addAttribute("result", "Division " + result);
                 return "home";
             }
             return "home";

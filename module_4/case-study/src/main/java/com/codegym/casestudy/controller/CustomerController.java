@@ -25,53 +25,59 @@ public class CustomerController {
     ICustomerTypeService customerTypeService;
 
     @GetMapping("")
-    public ModelAndView list(Pageable pageable, @ModelAttribute("searchByCustomerName") Optional<String> search){
-        if (search.isPresent()){
-            return new ModelAndView("customer/view","customers",customerService.searchCustomerByName(search.get(),pageable));
+    public ModelAndView list(Pageable pageable, @ModelAttribute("searchByCustomerName") Optional<String> search) {
+        if (search.isPresent()) {
+            return new ModelAndView("customer/view", "customers", customerService.searchCustomerByName(search.get(), pageable));
         }
-        return new ModelAndView("customer/view","customers",customerService.findAll(pageable));
+        return new ModelAndView("customer/view", "customers", customerService.findAll(pageable));
     }
+
     @GetMapping("/create")
-    public ModelAndView createCustomer(Model model){
-        model.addAttribute("customerType",customerTypeService.findAllCustomerType());
-        return new ModelAndView("customer/create","customer", new Customer());
+    public ModelAndView createCustomer(Model model) {
+        model.addAttribute("customerType", customerTypeService.findAllCustomerType());
+        return new ModelAndView("customer/create", "customer", new Customer());
     }
+
     @PostMapping("/create")
-    public String saveCustomer(@Validated @ModelAttribute Customer customer, BindingResult bindingResult, RedirectAttributes redirectAttributes,Model model){
-       if (bindingResult.hasFieldErrors()){
-           model.addAttribute("customerType",customerTypeService.findAllCustomerType());
-           return "customer/create";
-       }
+    public String saveCustomer(@Validated @ModelAttribute Customer customer, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+        if (bindingResult.hasFieldErrors()) {
+            model.addAttribute("customerType", customerTypeService.findAllCustomerType());
+            return "customer/create";
+        }
         customerService.save(customer);
-        redirectAttributes.addFlashAttribute("message","Create Success");
+        redirectAttributes.addFlashAttribute("message", "Create Success");
         return "redirect:/customer";
     }
+
     @GetMapping("/{id}/edit")
-    public ModelAndView edit(@PathVariable Long id, Model model){
-        model.addAttribute("customerType",customerTypeService.findAllCustomerType());
+    public ModelAndView edit(@PathVariable Long id, Model model) {
+        model.addAttribute("customerType", customerTypeService.findAllCustomerType());
         Customer customer = customerService.findCustomerById(id);
-        return new ModelAndView("/customer/edit","customer",customer);
+        return new ModelAndView("/customer/edit", "customer", customer);
     }
+
     @PostMapping("/update")
-    public String update(@Validated @ModelAttribute Customer customer,BindingResult bindingResult ,RedirectAttributes redirectAttributes, Model model){
-        if (bindingResult.hasFieldErrors()){
-            model.addAttribute("customerType",customerTypeService.findAllCustomerType());
+    public String update(@Validated @ModelAttribute Customer customer, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+        if (bindingResult.hasFieldErrors()) {
+            model.addAttribute("customerType", customerTypeService.findAllCustomerType());
             return "/customer/edit";
         }
         customerService.save(customer);
-        redirectAttributes.addFlashAttribute("message","Update Success");
+        redirectAttributes.addFlashAttribute("message", "Update Success");
         return "redirect:/customer";
     }
+
     @GetMapping("/{id}/delete")
-    public ModelAndView delete(@PathVariable Long id, Model model){
-        model.addAttribute("customerType",customerTypeService.findAllCustomerType());
+    public ModelAndView delete(@PathVariable Long id, Model model) {
+        model.addAttribute("customerType", customerTypeService.findAllCustomerType());
         Customer customer = customerService.findCustomerById(id);
-        return new ModelAndView("/customer/delete","customer",customer);
+        return new ModelAndView("/customer/delete", "customer", customer);
     }
+
     @PostMapping("/delete")
-    public String delete(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes){
+    public String delete(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes) {
         customerService.deleteCustomerById(customer.getCustomer_id());
-        redirectAttributes.addFlashAttribute("message","Delete Success");
+        redirectAttributes.addFlashAttribute("message", "Delete Success");
         return "redirect:/customer";
     }
 }

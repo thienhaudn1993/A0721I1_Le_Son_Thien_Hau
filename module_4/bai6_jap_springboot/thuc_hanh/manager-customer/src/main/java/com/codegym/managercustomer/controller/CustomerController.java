@@ -15,37 +15,43 @@ public class CustomerController {
     private CustomerSerive customerSerive;
 
     @GetMapping("")
-    public ModelAndView list(){
-        return new ModelAndView("list","customers", customerSerive.findAll());
+    public ModelAndView list() {
+        return new ModelAndView("list", "customers", customerSerive.findAll());
     }
+
     @GetMapping("/create-customer")
-    public ModelAndView create(){
-        return new ModelAndView("create","customer", new Customer());
+    public ModelAndView create() {
+        return new ModelAndView("create", "customer", new Customer());
     }
+
     @PostMapping("/create-customer")
-    public String save(Customer customer, RedirectAttributes redirect){
+    public String save(Customer customer, RedirectAttributes redirect) {
         customerSerive.saveCustomer(customer);
-        redirect.addFlashAttribute("message","Create Success");
+        redirect.addFlashAttribute("message", "Create Success");
         return "redirect:/list";
     }
+
     @GetMapping("/{id}/edit")
-    public ModelAndView edit(@PathVariable Long id){
-        return new ModelAndView("edit","customer",customerSerive.findCustomerById(id));
+    public ModelAndView edit(@PathVariable Long id) {
+        return new ModelAndView("edit", "customer", customerSerive.findCustomerById(id));
     }
+
     @PostMapping("/edit-customer")
-    public String update(Customer customer, RedirectAttributes redirect){
+    public String update(Customer customer, RedirectAttributes redirect) {
         customerSerive.saveCustomer(customer);
-        redirect.addFlashAttribute("message","Update Success");
+        redirect.addFlashAttribute("message", "Update Success");
         return "redirect:/list";
     }
+
     @GetMapping("/{id}/delete")
-    public ModelAndView delete(@PathVariable Long id){
-        return new ModelAndView("delete","customer",customerSerive.findCustomerById(id));
+    public ModelAndView delete(@PathVariable Long id) {
+        return new ModelAndView("delete", "customer", customerSerive.findCustomerById(id));
     }
+
     @PostMapping("/delete-customer")
-    public String remove(Customer customer, RedirectAttributes redirect){
+    public String remove(Customer customer, RedirectAttributes redirect) {
         customerSerive.deleteCustomer(customer.getId());
-        redirect.addFlashAttribute("message","Delete Success");
+        redirect.addFlashAttribute("message", "Delete Success");
         return "redirect:/list";
     }
 

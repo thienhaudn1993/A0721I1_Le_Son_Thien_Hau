@@ -14,25 +14,28 @@ public class EmailController {
     private static final String EMAIL_REGEX = "^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
     private static Pattern pattern;
     private Matcher matcher;
-    public EmailController(){
+
+    public EmailController() {
         pattern = Pattern.compile(EMAIL_REGEX);
     }
 
     @GetMapping("/")
-    public String home(){
+    public String home() {
         return "home";
     }
+
     @PostMapping("/validate")
-    public String user(@RequestParam("email") String email, ModelMap modelMap){
+    public String user(@RequestParam("email") String email, ModelMap modelMap) {
         boolean isValid = validate(email);
         if (!isValid) {
-            modelMap.addAttribute("message","Email is invaliad");
+            modelMap.addAttribute("message", "Email is invaliad");
             return "home";
         }
-        modelMap.addAttribute("email",email);
+        modelMap.addAttribute("email", email);
         return "success";
     }
-    public boolean validate(String regex){
+
+    public boolean validate(String regex) {
         matcher = pattern.matcher(regex);
         return matcher.matches();
     }

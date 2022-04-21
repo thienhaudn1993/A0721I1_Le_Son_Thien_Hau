@@ -6,6 +6,7 @@ import com.codegym.repository.HealthRepositoryImpl;
 
 public class HealthServiceImpl implements HealthService {
     private HealthRepository healthRepository = new HealthRepositoryImpl();
+
     @Override
     public void save(HealthDeclaration healthDeclaration) {
         healthRepository.save(healthDeclaration);

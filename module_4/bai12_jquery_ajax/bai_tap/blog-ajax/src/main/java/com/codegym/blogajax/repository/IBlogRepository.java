@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface IBlogRepository extends JpaRepository<Blog,Long> {
-    @Query(value = "select * from blog where nameBlog like %?1%",nativeQuery = true)
+public interface IBlogRepository extends JpaRepository<Blog, Long> {
+    @Query(value = "select * from blog where nameBlog like %?1%", nativeQuery = true)
     List<Blog> searchByNameBlog(String name);
 }

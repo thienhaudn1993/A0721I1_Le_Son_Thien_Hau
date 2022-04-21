@@ -8,7 +8,10 @@ import java.util.List;
 
 public interface CustomerService {
     Page<Customer> findAll(Pageable pageable);
+
     void saveCustomer(Customer customer);
+
     void deleteCustomer(Long id);
+
     Customer findCustomerById(Long id);
 }

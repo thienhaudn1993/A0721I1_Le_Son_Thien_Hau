@@ -28,7 +28,7 @@ public class HomeController {
             , Model model
             , HttpServletResponse response) {
         Cookie cookie = new Cookie("userName", userName);
-        response.addCookie( cookie);
+        response.addCookie(cookie);
         model.addAttribute("cookieUser", cookie.getValue());
         return "getCookie";
     }
@@ -36,7 +36,7 @@ public class HomeController {
     @GetMapping("/deleteCookie")
     public String deleteCookie(@CookieValue(name = "userName") String userName
             , Model model
-            , HttpServletResponse response){
+            , HttpServletResponse response) {
         Cookie cookie = new Cookie("userName", "TranVanThinh");
         cookie.setMaxAge(0);
         response.addCookie(cookie);

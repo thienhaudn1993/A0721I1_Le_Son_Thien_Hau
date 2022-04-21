@@ -18,37 +18,43 @@ public class SongController {
     private SongService songService;
 
     @GetMapping("")
-    public ModelAndView index(){
-        return new ModelAndView("list","songs",songService.findAll());
+    public ModelAndView index() {
+        return new ModelAndView("list", "songs", songService.findAll());
     }
+
     @GetMapping("/create")
-    public ModelAndView create(){
-        return new ModelAndView("create","song", new Song());
+    public ModelAndView create() {
+        return new ModelAndView("create", "song", new Song());
     }
+
     @PostMapping("/save")
-    public String save(Song song, RedirectAttributes redirect){
+    public String save(Song song, RedirectAttributes redirect) {
         songService.save(song);
-        redirect.addFlashAttribute("success","Add new song Success");
+        redirect.addFlashAttribute("success", "Add new song Success");
         return "redirect:/home";
     }
+
     @GetMapping("/{id}/edit")
-    public ModelAndView edit(@PathVariable Long id){
-        return new ModelAndView("edit","song",songService.findById(id));
+    public ModelAndView edit(@PathVariable Long id) {
+        return new ModelAndView("edit", "song", songService.findById(id));
     }
+
     @PostMapping("/update")
-    public String update(Song song, RedirectAttributes redirectAttributes){
+    public String update(Song song, RedirectAttributes redirectAttributes) {
         songService.save(song);
-        redirectAttributes.addFlashAttribute("success","Update success");
+        redirectAttributes.addFlashAttribute("success", "Update success");
         return "redirect:/home";
     }
+
     @GetMapping("/{id}/delete")
     public ModelAndView delete(@PathVariable Long id) {
         return new ModelAndView("delete", "song", songService.findById(id));
     }
+
     @PostMapping("/delete")
-    public String remove(Song song,RedirectAttributes redirectAttributes){
+    public String remove(Song song, RedirectAttributes redirectAttributes) {
         songService.remove(song.getId());
-        redirectAttributes.addFlashAttribute("success","Delete Success");
+        redirectAttributes.addFlashAttribute("success", "Delete Success");
         return "redirect:/home";
     }
 }

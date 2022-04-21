@@ -24,7 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     AppConfig appConfig;
 
 
-//    AppConfig appConfig = new AppConfig();
+    //    AppConfig appConfig = new AppConfig();
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception { // chức nănglogin hiện thị thông tin trên menu, để các trang có thể lấy được thông tin
         auth.userDetailsService(userDetailsService).passwordEncoder(appConfig.passwordEncoder());
@@ -63,12 +63,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .invalidateHttpSession(true)
                 // xóa JSESSIONID và k luuw lại
                 .deleteCookies("JSESSIONID")
-                ;
+        ;
         // rememberMe : lưu cookie dưới client thời gian 24h
         http.authorizeRequests().and() //
                 .rememberMe().tokenRepository(this.persistentTokenRepository()) //
                 .tokenValiditySeconds(1 * 24 * 60 * 60); // 24h
     }
+
     @Bean
     public PersistentTokenRepository persistentTokenRepository() {
         InMemoryTokenRepositoryImpl memory = new InMemoryTokenRepositoryImpl(); // được lưu ở memory tức là thanh ram của service

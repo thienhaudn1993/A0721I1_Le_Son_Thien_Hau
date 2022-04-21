@@ -14,5 +14,6 @@ public interface CustomerSerive {
     void deleteCustomer(Long id);
 
     Customer findCustomerById(Long id);
+
     Page<Customer> findAllByFirstNameContaining(String firstname, Pageable pageable);
 }

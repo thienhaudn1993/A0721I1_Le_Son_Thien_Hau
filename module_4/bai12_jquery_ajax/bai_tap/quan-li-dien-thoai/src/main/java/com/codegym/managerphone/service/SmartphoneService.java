@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+
 @Service
 public class SmartphoneService implements ISmartphoneService {
     @Autowired
     ISmartphoneRepository smartphoneRepository;
+
     @Override
     public Iterable<Smartphone> findAll() {
         return smartphoneRepository.findAll();

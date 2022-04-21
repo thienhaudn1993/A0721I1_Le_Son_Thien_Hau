@@ -16,25 +16,30 @@
     <p style="color: red" th:if="${#fields.hasErrors('customer_name')}" th:errors="*{customer_name}">Error Name</p>
     <p>Birthday Customer: </p>
     <input type="date" th:field="${customer.customer_birthday}">
-    <p style="color: red" th:if="${#fields.hasErrors('customer_birthday')}" th:errors="*{customer_birthday}">Error Birthday</p>
+    <p style="color: red" th:if="${#fields.hasErrors('customer_birthday')}" th:errors="*{customer_birthday}">Error
+        Birthday</p>
     <p>Gender Customer: </p>
     <input type="text" th:field="${customer.customer_gender}">
-    <p style="color: red" th:if="${#fields.hasErrors('customer_gender')}" th:errors="*{customer_gender}">Error Gender</p>
+    <p style="color: red" th:if="${#fields.hasErrors('customer_gender')}" th:errors="*{customer_gender}">Error
+        Gender</p>
     <p>Customer Id Card: </p>
     <input type="text" th:field="${customer.customer_id_card}">
-    <p style="color: red" th:if="${#fields.hasErrors('customer_id_card')}" th:errors="*{customer_id_card}">Error ID Card</p>
+    <p style="color: red" th:if="${#fields.hasErrors('customer_id_card')}" th:errors="*{customer_id_card}">Error ID
+        Card</p>
     <p>Phone Customer: </p>
     <input type="text" th:field="${customer.customer_phone}">
     <p style="color: red" th:if="${#fields.hasErrors('customer_phone')}" th:errors="*{customer_phone}">Error Phone</p>
     <p>Email Customer: </p>
     <input type="text" th:field="${customer.customer_email}">
-    <p style="color: red" th:if="${#fields.hasErrors('customer_email')}" th:errors="*{customer_email}">Error Customer Email</p>
+    <p style="color: red" th:if="${#fields.hasErrors('customer_email')}" th:errors="*{customer_email}">Error Customer
+        Email</p>
 
     <p>Address Customer: </p>
     <input type="text" th:field="${customer.customer_address}">
     <p>Customer Type</p>
     <select th:field="${customer.customerType}">
-        <option th:each="customertype: ${customerType}" th:text="${customertype.customer_type_name}" th:value="${customertype.customer_type_id}"></option>
+        <option th:each="customertype: ${customerType}" th:text="${customertype.customer_type_name}"
+                th:value="${customertype.customer_type_id}"></option>
     </select>
     <br>
     <button>Update</button>

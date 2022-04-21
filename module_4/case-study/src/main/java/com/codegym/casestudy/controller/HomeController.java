@@ -15,8 +15,9 @@ import java.security.Principal;
 public class HomeController {
     @Autowired
     IEmployeeRepository iEmployeeRepository;
-    @GetMapping("")
-    public String homePage(){
-        return "index" ;
+
+    @GetMapping("/")
+    public String homePage() {
+        return "index";
     }
 }

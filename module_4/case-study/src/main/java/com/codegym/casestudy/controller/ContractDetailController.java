@@ -28,24 +28,26 @@ public class ContractDetailController {
     IAttachServiceOfService attachServiceOfService;
 
     @GetMapping("")
-    public ModelAndView view(Pageable pageable){
-        return new ModelAndView("contractDetail/view","contractdetails",contractDetailService.findAllContractDetail(pageable));
+    public ModelAndView view(Pageable pageable) {
+        return new ModelAndView("contractDetail/view", "contractdetails", contractDetailService.findAllContractDetail(pageable));
     }
+
     @GetMapping("/create")
-    public ModelAndView create(Model model, Pageable pageable){
-        model.addAttribute("contractServices",contractService.findAllContract(pageable));
-        model.addAttribute("attachservices",attachServiceOfService.findAllAttachService());
-        return new ModelAndView("contractDetail/create","contractdetail",new ContractDetail());
+    public ModelAndView create(Model model, Pageable pageable) {
+        model.addAttribute("contractServices", contractService.findAllContract(pageable));
+        model.addAttribute("attachservices", attachServiceOfService.findAllAttachService());
+        return new ModelAndView("contractDetail/create", "contractdetail", new ContractDetail());
     }
+
     @PostMapping("/update")
-    public String createContractDetail(@Validated @ModelAttribute ContractDetail contractdetail, BindingResult bindingResult, RedirectAttributes redirectAttributes,Model model,Pageable pageable){
-        if (bindingResult.hasFieldErrors()){
-            model.addAttribute("contractServices",contractService.findAllContract(pageable));
-            model.addAttribute("attachservices",attachServiceOfService.findAllAttachService());
+    public String createContractDetail(@Validated @ModelAttribute ContractDetail contractdetail, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model, Pageable pageable) {
+        if (bindingResult.hasFieldErrors()) {
+            model.addAttribute("contractServices", contractService.findAllContract(pageable));
+            model.addAttribute("attachservices", attachServiceOfService.findAllAttachService());
             return "contractDetail/create";
         }
         contractDetailService.saveContractDetail(contractdetail);
-        redirectAttributes.addFlashAttribute("message","Create Contract Detail Success");
+        redirectAttributes.addFlashAttribute("message", "Create Contract Detail Success");
         return "redirect:/contract-detail";
     }
 

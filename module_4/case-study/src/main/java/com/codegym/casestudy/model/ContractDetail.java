@@ -8,11 +8,11 @@ public class ContractDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long contract_detail_id;
-    @Min(value = 1,message = "nhap vao so nguyen duong")
+    @Min(value = 1, message = "nhap vao so nguyen duong")
     private int quantity;
 
-    @ManyToOne(targetEntity = Contract.class,cascade = CascadeType.ALL)
-    @JoinColumn(name="contract_id", nullable=false)
+    @ManyToOne(targetEntity = Contract.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "contract_id", nullable = false)
     private Contract contract;
 
     public Contract getContract() {
@@ -31,8 +31,8 @@ public class ContractDetail {
         this.attachService = attachService;
     }
 
-    @ManyToOne(targetEntity = AttachService.class,cascade = CascadeType.ALL)
-    @JoinColumn(name="attach_service_id", nullable=false)
+    @ManyToOne(targetEntity = AttachService.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "attach_service_id", nullable = false)
     private AttachService attachService;
 
     public ContractDetail() {

@@ -13,12 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 @SessionAttributes("user")
 public class LoginController {
     @ModelAttribute("user")
-    public User SetUpUserForm(){
+    public User SetUpUserForm() {
         return new User();
     }
+
     @RequestMapping("/login")
     public String Index(@CookieValue(value = "setUser", defaultValue = "") String setUser,
-                        @CookieValue(value = "setPass",defaultValue = "") String setPass  ,Model model) {
+                        @CookieValue(value = "setPass", defaultValue = "") String setPass, Model model) {
         Cookie cookie = new Cookie("setUser", setUser);
         Cookie cookie1 = new Cookie("setUser", setPass);
         model.addAttribute("cookieValue", cookie);

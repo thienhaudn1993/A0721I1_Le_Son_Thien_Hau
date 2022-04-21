@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <script type="text/javascript">
         function addNewBlog() {
-        // lay du lieu
+            // lay du lieu
             let nameBlog = $("#nameBlog").val();
             let content = $("#content").val();
             let date = $("#date").val();
@@ -14,7 +17,7 @@
             let newBlogOnJson = {
                 nameBlog: nameBlog,
                 content: content,
-                date:date,
+                date: date,
                 category: category
             };
             console.log(newBlogOnJson)
@@ -32,10 +35,12 @@
             //chặn sự kiện mặc định của thẻ
             event.preventDefault();
         }
+
         function getBlog(blog) {
             return `<tr><td>${blog.id}</td><td>${blog.nameBlog}</td><td>${blog.content}</td><td>${blog.date}</td><td>${blog.category.name}</td></tr>`;
 
         }
+
         function successHandler() {
             $.ajax({
                 type: "GET",
@@ -44,13 +49,13 @@
                 //xử lý khi thành công
                 success: function (data) {
                     let content = '<tr>\n' +
-                            '<td>ID</td>\n' +
-                            '<td>Blog Name</td>\n' +
-                            '<td>Content</td>\n' +
-                            '<td>Date</td>\n' +
-                            '<td>Category</td>\n' +
-                            '</tr>';
-                    for (let i=0;i<data.length;i++) {
+                        '<td>ID</td>\n' +
+                        '<td>Blog Name</td>\n' +
+                        '<td>Content</td>\n' +
+                        '<td>Date</td>\n' +
+                        '<td>Category</td>\n' +
+                        '</tr>';
+                    for (let i = 0; i < data.length; i++) {
                         content += getBlog(data[i]);
                     }
                     document.getElementById('blogList').innerHTML = content;
@@ -61,7 +66,7 @@
 
         function searchNameBlog() {
             // lay du lieu
-            let nameBlog =$('#searchByName').val();
+            let nameBlog = $('#searchByName').val();
             /*let searchBlog = {
                 nameBlog: nameBlog,
             };*/
@@ -72,7 +77,7 @@
                     'Content-Type': 'application/json'
                 },*/
                 type: "GET",
-                url: '/blog/search?name='+nameBlog,
+                url: '/blog/search?name=' + nameBlog,
                 success: function (data) {
                     let content = '<tr>\n' +
                         '<td>ID</td>\n' +
@@ -81,7 +86,7 @@
                         '<td>Date</td>\n' +
                         '<td>Category</td>\n' +
                         '</tr>';
-                    for (let i=0;i<data.length;i++) {
+                    for (let i = 0; i < data.length; i++) {
                         content += getBlogSearch(data[i]);
                         /*content +=
                             '<tr>'+
@@ -96,6 +101,7 @@
                 }
             })
         }
+
         function getBlogSearch(blog) {
             return `<tr><td>${blog.id}</td><td>${blog.nameBlog}</td><td>${blog.content}</td><td>${blog.date}</td><td>${blog.category.id}</td></tr>`;
 
@@ -122,7 +128,8 @@
             <td>Category:</td>
             <td>
                 <select th:field="*{category}" id="categoryId">
-                    <option  th:each="category:${categorys}" th:text="${category.name}" th:value="${category.id}"></option>
+                    <option th:each="category:${categorys}" th:text="${category.name}"
+                            th:value="${category.id}"></option>
                 </select>
             </td>
         </tr>
@@ -140,7 +147,7 @@
 </form>
 
 <h1>Blog List</h1>
-<table id="blogList" border="1px">
+<table class="table table-striped" id="blogList" border="1px">
     <tr>
         <td>ID</td>
         <td>Blog Name</td>
@@ -156,5 +163,14 @@
         <td th:text="${blog.category.name}"></td>
     </tr>
 </table>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 </body>
 </html>

@@ -23,22 +23,25 @@ public class BlogRestController {
     private BlogService blogService;
     @Autowired
     private CategoryService categoryService;
+
     @GetMapping("")
-    public ResponseEntity<List<Blog>> findAllBlog(){
+    public ResponseEntity<List<Blog>> findAllBlog() {
         List<Blog> blogs = blogService.findAll();
-        if (blogs.isEmpty()){
+        if (blogs.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(blogs,HttpStatus.OK);
+        return new ResponseEntity<>(blogs, HttpStatus.OK);
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<Blog> findByIdBlog(@PathVariable Long id) {
         Blog blog = blogService.findBlogById(id);
         if (blog == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(blog,HttpStatus.OK);
+        return new ResponseEntity<>(blog, HttpStatus.OK);
     }
+
     @GetMapping("/search/{id}")
     public ResponseEntity<List<Blog>> searchByCategoryId(@PathVariable int id) {
 //        List<Category> categoryList = categoryService.findAll();

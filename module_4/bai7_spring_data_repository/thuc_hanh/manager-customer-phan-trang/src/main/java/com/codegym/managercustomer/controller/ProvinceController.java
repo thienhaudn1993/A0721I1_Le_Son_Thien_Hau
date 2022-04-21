@@ -20,37 +20,43 @@ public class ProvinceController {
     private ProvinceService provinceService;
 
     @GetMapping("")
-    public ModelAndView list(){
-        return new ModelAndView("/province/list","provinces", provinceService.findAll());
+    public ModelAndView list() {
+        return new ModelAndView("/province/list", "provinces", provinceService.findAll());
     }
+
     @GetMapping("/create-province")
-    public ModelAndView create(){
-        return new ModelAndView("/province/create","province", new Province());
+    public ModelAndView create() {
+        return new ModelAndView("/province/create", "province", new Province());
     }
+
     @PostMapping("/create-province")
-    public String save(Province province, RedirectAttributes redirect){
+    public String save(Province province, RedirectAttributes redirect) {
         provinceService.saveProvince(province);
-        redirect.addFlashAttribute("message","Create Success");
+        redirect.addFlashAttribute("message", "Create Success");
         return "redirect:/province";
     }
+
     @GetMapping("/{id}/edit")
-    public ModelAndView edit(@PathVariable Long id){
-        return new ModelAndView("/province/edit","province",provinceService.findProvinceById(id));
+    public ModelAndView edit(@PathVariable Long id) {
+        return new ModelAndView("/province/edit", "province", provinceService.findProvinceById(id));
     }
+
     @PostMapping("/edit-province")
-    public String update(Province province, RedirectAttributes redirect){
+    public String update(Province province, RedirectAttributes redirect) {
         provinceService.saveProvince(province);
-        redirect.addFlashAttribute("message","Update Success");
+        redirect.addFlashAttribute("message", "Update Success");
         return "redirect:/province";
     }
+
     @GetMapping("/{id}/delete")
-    public ModelAndView delete(@PathVariable Long id){
-        return new ModelAndView("delete","province",provinceService.findProvinceById(id));
+    public ModelAndView delete(@PathVariable Long id) {
+        return new ModelAndView("delete", "province", provinceService.findProvinceById(id));
     }
+
     @PostMapping("/delete-province")
-    public String remove(Province province, RedirectAttributes redirect){
+    public String remove(Province province, RedirectAttributes redirect) {
         provinceService.deleteProvince(province.getId());
-        redirect.addFlashAttribute("message","Delete Success");
+        redirect.addFlashAttribute("message", "Delete Success");
         return "redirect:/province";
     }
 }

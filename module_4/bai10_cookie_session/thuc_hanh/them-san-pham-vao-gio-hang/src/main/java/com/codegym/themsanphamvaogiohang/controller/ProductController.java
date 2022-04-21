@@ -15,16 +15,19 @@ import java.util.Optional;
 public class ProductController {
     @Autowired
     private IProductService productService;
+
     @ModelAttribute("cart")
     public Cart setupCart() {
         return new Cart();
     }
+
     @GetMapping("/shop")
     public ModelAndView showShop() {
         ModelAndView modelAndView = new ModelAndView("/shop");
         modelAndView.addObject("products", productService.findAll());
         return modelAndView;
     }
+
     @GetMapping("/add/{id}")
     public String addToCart(@PathVariable Long id, @ModelAttribute Cart cart, @RequestParam("action") String action) {
         Optional<Product> productOptional = productService.findById(id);

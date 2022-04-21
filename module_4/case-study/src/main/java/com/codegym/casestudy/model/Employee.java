@@ -16,7 +16,7 @@ public class Employee {
     @NotEmpty(message = "Không được để trống")
     private String employee_birthday;
     @NotEmpty(message = "Không được để trống")
-    @Pattern(regexp = "^^([0-9]{9})|([0-9]{12})$$", message = "CMND nhap khong dung")
+    @Pattern(regexp = "^^([0-9]{9})|([0-9]{12})$", message = "CMND nhap khong dung")
     private String employee_id_card;
     @NotEmpty(message = "Không được để trống")
     @Pattern(regexp = "^(090|091|(\\+8490)|(\\+8491))+[0-9]{7}$", message = "Phone nhập không hợp lệ")
@@ -25,29 +25,30 @@ public class Employee {
     @NotEmpty(message = "Không được để trống")
     @Email(message = "Email nhap chua dung dinh dang")
     private String employee_email;
-    @Min(value = 1,message = "Luong phai lon hon 0")
+    @Min(value = 1, message = "Luong phai lon hon 0")
     private double employee_salary;
     @NotEmpty(message = "Không được để trống")
     private String employee_address;
 
     public Employee() {
     }
+
     @ManyToOne(targetEntity = Position.class)
-    @JoinColumn(name="position_id", nullable=false)
+    @JoinColumn(name = "position_id", nullable = false)
     private Position position;
 
     @ManyToOne(targetEntity = EducationDegree.class)
-    @JoinColumn(name="education_degree_id", nullable=false)
+    @JoinColumn(name = "education_degree_id", nullable = false)
     private EducationDegree educationDegree;
 
     @ManyToOne(targetEntity = Devision.class)
-    @JoinColumn(name="devision_id", nullable=false)
+    @JoinColumn(name = "devision_id", nullable = false)
     private Devision devision;
 
-    @ManyToOne(targetEntity = User.class)
-    @JoinColumn(name="username", nullable=false)
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+    @JoinColumn(name = "username", nullable = false)
     private User user;
-    @OneToMany(mappedBy = "employee",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     Set<Contract> contractSet;
 
     public Set<Contract> getContractSet() {

@@ -1,1 +1,2 @@
-SELECT * FROM baitap7baitap.blog;
+SELECT *
+FROM baitap7baitap.blog;

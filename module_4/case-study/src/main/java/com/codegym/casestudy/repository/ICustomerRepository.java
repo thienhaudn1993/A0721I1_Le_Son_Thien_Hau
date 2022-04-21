@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ICustomerRepository extends JpaRepository<Customer,Long> {
-    @Query(value = "select * from Customer where customer_name like %?1%",nativeQuery = true)
+public interface ICustomerRepository extends JpaRepository<Customer, Long> {
+    @Query(value = "select * from Customer where customer_name like %?1%", nativeQuery = true)
     Page<Customer> searchCustomerByName(String name, Pageable pageable);
 }

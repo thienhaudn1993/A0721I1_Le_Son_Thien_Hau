@@ -14,6 +14,7 @@ public interface BlogService {
     void deleteBlog(Long id);
 
     Blog findBlogById(Long id);
-    Page<Blog> findAllByNameBlogContaining(String nameBlog,Pageable pageable);
+
+    Page<Blog> findAllByNameBlogContaining(String nameBlog, Pageable pageable);
 //    Page<Blog> sortTime(Pageable pageable);
 }

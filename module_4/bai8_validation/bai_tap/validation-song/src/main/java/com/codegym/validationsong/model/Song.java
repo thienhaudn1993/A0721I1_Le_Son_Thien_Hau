@@ -16,18 +16,18 @@ public class Song {
     private Long id;
 
     @NotEmpty(message = "Không được để trống")
-    @Size(min = 1,max = 800, message = "kí tự tối đa 800")
-    @Pattern(regexp = "^[a-z A-Z 0-9]+$",message = "Không chứa các kí tự đặc biệt như @ ; , . = - + , ….")
+    @Size(min = 1, max = 800, message = "kí tự tối đa 800")
+    @Pattern(regexp = "^[a-z A-Z 0-9]+$", message = "Không chứa các kí tự đặc biệt như @ ; , . = - + , ….")
     private String name;
 
     @NotEmpty(message = "Không được để trống")
-    @Size(min = 1,max = 300, message = "kí tự tối đa 300")
-    @Pattern(regexp = "^[a-z A-Z 0-9]+$",message = "Không chứa các kí tự đặc biệt như @ ; , . = - + , ….")
+    @Size(min = 1, max = 300, message = "kí tự tối đa 300")
+    @Pattern(regexp = "^[a-z A-Z 0-9]+$", message = "Không chứa các kí tự đặc biệt như @ ; , . = - + , ….")
     private String singer;
 
     @NotEmpty(message = "Không được để trống")
-    @Size(min = 1,max = 800, message = "kí tự tối đa 1000")
-    @Pattern(regexp = "^[a-z A-Z 0-9 |,]+$",message = "Ngoại trừ dấu phẩy “,” , các ký tự đặc biệt còn lại không được phép")
+    @Size(min = 1, max = 800, message = "kí tự tối đa 1000")
+    @Pattern(regexp = "^[a-z A-Z 0-9 |,]+$", message = "Ngoại trừ dấu phẩy “,” , các ký tự đặc biệt còn lại không được phép")
     private String typeSong;
 
     public Song() {

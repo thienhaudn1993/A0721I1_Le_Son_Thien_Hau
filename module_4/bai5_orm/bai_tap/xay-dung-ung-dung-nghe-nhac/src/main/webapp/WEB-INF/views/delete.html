@@ -8,10 +8,10 @@
 <h3>Delete Song</h3>
 <p><a th:href="@{/home}">Back to List</a></p>
 <form th:action="@{/home/delete}" th:object="${song}" novalidate="novalidate" method="post">
-        <div>
-            <label>ID:</label>
-            <input type="text" th:field="*{id}">
-        </div>
+    <div>
+        <label>ID:</label>
+        <input type="text" th:field="*{id}">
+    </div>
     <div>
         <label>Name Song:</label>
         <input type="text" th:field="*{name}">

@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class RentTypeService implements IRentTypeService {
     @Autowired
     IRentTypeRepository rentTypeRepository;
+
     @Override
     public List<RentType> findAllRentType() {
         return rentTypeRepository.findAll();

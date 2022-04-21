@@ -7,7 +7,10 @@ import java.util.List;
 
 public interface ProvinceService {
     List<Province> findAll();
+
     void saveProvince(Province province);
+
     void deleteProvince(Long id);
+
     Province findProvinceById(Long id);
 }

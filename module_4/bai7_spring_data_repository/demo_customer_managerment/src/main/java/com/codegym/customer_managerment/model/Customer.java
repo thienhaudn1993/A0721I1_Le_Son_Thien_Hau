@@ -12,6 +12,7 @@ public class Customer {
 
     @ManyToOne(targetEntity = Province.class)
     private Province province;
+
     public Customer() {
     }
 

@@ -15,11 +15,13 @@ public class Hello {
         System.out.println("Thực thi method 1");
         System.out.println("Kết thúc method 1");
     }
+
     public void method2() {
         System.out.println("Bắt đầu method 2");
         System.out.println("Thực thi method 2");
         System.out.println("Kết thúc method 2");
     }
+
     public void method3() {
         System.out.println("Bắt đầu method 3");
         System.out.println("Thực thi method 3");

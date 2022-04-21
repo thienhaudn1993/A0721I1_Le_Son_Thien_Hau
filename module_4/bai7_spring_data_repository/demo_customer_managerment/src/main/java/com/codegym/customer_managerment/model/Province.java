@@ -12,6 +12,7 @@ public class Province {
 
     @OneToMany(mappedBy = "id")
     private Set<Customer> customers;
+
     public Province() {
     }
 

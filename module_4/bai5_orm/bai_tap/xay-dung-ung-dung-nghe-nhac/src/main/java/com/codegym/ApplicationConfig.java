@@ -47,29 +47,30 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         this.applicationContext = applicationContext;
     }
 
-   /* @Bean
-    public CustomerRepository customerRepository(){
-        return new CustomerRepositoryImpl();
+    /* @Bean
+     public CustomerRepository customerRepository(){
+         return new CustomerRepositoryImpl();
+     }
+
+
+     @Bean
+     public CustomerService customerService(){
+         return new CustomerServiceImpl();
+     }*/
+    @Bean
+    public SongRepository songRepository() {
+        return new SongRepositoryImpl();
     }
 
-
     @Bean
-    public CustomerService customerService(){
-        return new CustomerServiceImpl();
-    }*/
-   @Bean
-   public SongRepository songRepository(){
-       return new SongRepositoryImpl();
-   }
-   @Bean
-   public SongService songService(){
-       return new SongServiceImpl();
-   }
+    public SongService songService() {
+        return new SongServiceImpl();
+    }
 
 
     //Thymeleaf Configuration
     @Bean
-    public SpringResourceTemplateResolver templateResolver(){
+    public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("/WEB-INF/views/");
@@ -79,14 +80,14 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     }
 
     @Bean
-    public TemplateEngine templateEngine(){
+    public TemplateEngine templateEngine() {
         TemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver());
         return templateEngine;
     }
 
     @Bean
-    public ThymeleafViewResolver viewResolver(){
+    public ThymeleafViewResolver viewResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine());
         return viewResolver;
@@ -112,17 +113,17 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     }
 
     @Bean
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/a07?useSSL=false");
-        dataSource.setUsername( "root" );
-        dataSource.setPassword( "1561993" );
+        dataSource.setUsername("root");
+        dataSource.setPassword("1561993");
         return dataSource;
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
+    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(emf);
         return transactionManager;

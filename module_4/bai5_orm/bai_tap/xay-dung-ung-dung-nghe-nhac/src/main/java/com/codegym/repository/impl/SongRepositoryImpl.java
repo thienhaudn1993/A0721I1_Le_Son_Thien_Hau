@@ -9,14 +9,15 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import java.util.List;
+
 @Transactional
 public class SongRepositoryImpl implements SongRepository {
-@PersistenceContext
-private EntityManager em;
+    @PersistenceContext
+    private EntityManager em;
 
     @Override
     public List<Song> findAll() {
-        TypedQuery<Song> query =em.createQuery("select c from Song c",Song.class);
+        TypedQuery<Song> query = em.createQuery("select c from Song c", Song.class);
         return query.getResultList();
     }
 
@@ -26,14 +27,14 @@ private EntityManager em;
         query.setParameter("id", id);
         try {
             return query.getSingleResult();
-        }catch (NoResultException e){
+        } catch (NoResultException e) {
             return null;
         }
     }
 
     @Override
     public void save(Song model) {
-        if(model.getId() != null){
+        if (model.getId() != null) {
             em.merge(model);
         } else {
             em.persist(model);
@@ -43,7 +44,7 @@ private EntityManager em;
     @Override
     public void remove(Long id) {
         Song song = findById(id);
-        if(song != null){
+        if (song != null) {
             em.remove(song);
         }
     }

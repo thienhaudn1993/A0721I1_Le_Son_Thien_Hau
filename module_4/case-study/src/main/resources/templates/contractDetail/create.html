@@ -8,11 +8,13 @@
 <form th:action="@{/contract-detail/update}" method="post" th:object="${contractdetail}">
     <p>Contract Id:</p>
     <select th:field="${contractdetail.contract}">
-        <option th:each="contract: ${contractServices}" th:text="${contract.contract_id}" th:value="${contract.contract_id}"></option>
+        <option th:each="contract: ${contractServices}" th:text="${contract.contract_id}"
+                th:value="${contract.contract_id}"></option>
     </select>
     <p>Attach Service Id:</p>
     <select th:field="${contractdetail.attachService}">
-        <option th:each="attachservice: ${attachservices}" th:text="${attachservice.attach_service_id}" th:value="${attachservice.attach_service_id}"></option>
+        <option th:each="attachservice: ${attachservices}" th:text="${attachservice.attach_service_id}"
+                th:value="${attachservice.attach_service_id}"></option>
     </select>
 
     <input type="hidden" th:field="*{contract_detail_id}">

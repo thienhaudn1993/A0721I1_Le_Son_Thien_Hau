@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "outDir": "myJs",
+    "target": "ES6",
+    "watch": false
+  }
+}

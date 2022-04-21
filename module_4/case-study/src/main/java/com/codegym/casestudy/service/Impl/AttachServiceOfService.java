@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class AttachServiceOfService implements IAttachServiceOfService {
     @Autowired
     IAttachServiceRepository attachServiceRepository;
+
     @Override
     public List<AttachService> findAllAttachService() {
         return attachServiceRepository.findAll();

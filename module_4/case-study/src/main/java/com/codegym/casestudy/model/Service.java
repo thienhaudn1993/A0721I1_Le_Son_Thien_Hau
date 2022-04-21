@@ -13,7 +13,7 @@ public class Service {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long service_id;
     @NotEmpty(message = "Khong duoc de trong")
-    @Size(min = 1, max = 54, message ="ten phai toi da 54 ki tu" )
+    @Size(min = 1, max = 54, message = "ten phai toi da 54 ki tu")
     private String service_name;
 
     private double service_area;
@@ -25,11 +25,11 @@ public class Service {
     private String standard_room;
     private String description_other_convenience;
     private double pool_area;
-    @Min(value = 1,message = "nhap vao so nguyen duong")
+    @Min(value = 1, message = "nhap vao so nguyen duong")
     private int number_of_floors;
 
     @ManyToOne(targetEntity = RentType.class)
-    @JoinColumn(name="rent_type_id", nullable=false)
+    @JoinColumn(name = "rent_type_id", nullable = false)
     private RentType rentType;
 
     public RentType getRentType() {
@@ -39,8 +39,9 @@ public class Service {
     public void setRentType(RentType rentType) {
         this.rentType = rentType;
     }
+
     @ManyToOne(targetEntity = ServiceType.class)
-    @JoinColumn(name="service_type_id", nullable=false)
+    @JoinColumn(name = "service_type_id", nullable = false)
     private ServiceType serviceType;
 
     @OneToMany(mappedBy = "service")

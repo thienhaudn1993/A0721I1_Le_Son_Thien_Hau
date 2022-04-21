@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class MyLogger {
 
     @Before("execution(* com.codegym.demoaop.controller.HelloController.*(..))")
-    private void writeLogServer(){
+    private void writeLogServer() {
         //Ghi thông tin mỗi khi phương thức trong HelloController được gọi
 
     }

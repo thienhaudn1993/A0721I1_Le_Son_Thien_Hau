@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class FoodController {
     @GetMapping("list")
-    public String list(){
+    public String list() {
         return "home";
     }
+
     @PostMapping("save")
-    public String save(@RequestParam("condiment") String[] condiment, Model model){
-        model.addAttribute("condiment",condiment);
+    public String save(@RequestParam("condiment") String[] condiment, Model model) {
+        model.addAttribute("condiment", condiment);
         return "home";
     }
 }

@@ -14,6 +14,7 @@ import java.util.List;
 public class CustomerService implements ICustomerService {
     @Autowired
     ICustomerRepository customerRepository;
+
     @Override
     public Page<Customer> findAll(Pageable pageable) {
         return customerRepository.findAll(pageable);
@@ -36,7 +37,7 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Page<Customer> searchCustomerByName(String name, Pageable pageable) {
-        return customerRepository.searchCustomerByName(name,pageable);
+        return customerRepository.searchCustomerByName(name, pageable);
     }
 
     @Override

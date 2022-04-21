@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "myJs",
+    "target": "ES6",
+//    "esModuleInterop": true,
+//    "skipLibCheck": true,
+    "module": "commonjs",
+//    "moduleResolution": "node",
+//    "allowJs": true,
+//    "resolveJsonModule": true,
+//    "rootDir": "src",
+    "watch": false
+  }
+//  "include": ["src/**/*"],
+//  "exclude": ["node_modules"]
+}

@@ -1,6 +1,7 @@
 package com.codegym.demoaop.controller;
 
 //import com.codegym.demoaop.Hello;
+
 import com.codegym.demoaop.Hello;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,9 +22,8 @@ public class HelloController {
     }
 
 
-
     @ExceptionHandler()
-    public String getErrorPage(){
+    public String getErrorPage() {
         return "error";
     }
 }

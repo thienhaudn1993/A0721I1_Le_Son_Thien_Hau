@@ -9,6 +9,7 @@ import java.util.List;
 
 public class TranslateServiceImpl implements ITranslateService {
     ITranslateRepository iTranslateRepository = new TranslateRepository();
+
     @Override
     public List<Dictionary> findAll() {
         return iTranslateRepository.findAll();

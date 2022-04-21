@@ -15,20 +15,24 @@ import java.util.Optional;
 public class SmartphoneController {
     @Autowired
     private ISmartphoneService smartphoneService;
+
     @PostMapping
     public ResponseEntity<Smartphone> createSmartphone(@RequestBody Smartphone smartphone) {
         return new ResponseEntity<>(smartphoneService.save(smartphone), HttpStatus.CREATED);
     }
+
     @GetMapping("/list")
     public ModelAndView getAllSmartphonePage() {
         ModelAndView modelAndView = new ModelAndView("/phones/list");
         modelAndView.addObject("smartphones", smartphoneService.findAll());
         return modelAndView;
     }
+
     @GetMapping
     public ResponseEntity<Iterable<Smartphone>> allPhones() {
         return new ResponseEntity<>(smartphoneService.findAll(), HttpStatus.OK);
     }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Smartphone> deleteSmartphone(@PathVariable Long id) {
         Optional<Smartphone> smartphoneOptional = smartphoneService.findById(id);
@@ -38,13 +42,14 @@ public class SmartphoneController {
         smartphoneService.remove(id);
         return new ResponseEntity<>(smartphoneOptional.get(), HttpStatus.NO_CONTENT);
     }
+
     @GetMapping("/{id}")
-    public ResponseEntity<Smartphone> getSmartPhone (@PathVariable Long id){
+    public ResponseEntity<Smartphone> getSmartPhone(@PathVariable Long id) {
         Optional<Smartphone> smartphoneOptional = smartphoneService.findById(id);
         if (!smartphoneOptional.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(smartphoneOptional.get(),HttpStatus.OK);
+        return new ResponseEntity<>(smartphoneOptional.get(), HttpStatus.OK);
     }
     /*@PutMapping("/{id}")
     public ResponseEntity<Smartphone> saveSmartphone(@PathVariable Long id,@RequestBody Smartphone smartphone) {

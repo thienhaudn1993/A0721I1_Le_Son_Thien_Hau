@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style th:fragment="css">
+        .col-1 {
+            width: 8.33%
+        }
+
+        .col-2 {
+            width: 16.66%
+        }
+
+        .col-3 {
+            width: 25%
+        }
+
+        .col-4 {
+            width: 33.3%
+        }
+
+        .col-5 {
+            width: 41.66%
+        }
+
+        .col-6 {
+            width: 50%
+        }
+
+        .col-7 {
+            width: 58.33%
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75px;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 0px 5px 0px 5px;
+        }
+
+        body {
+            font-family: Arial;
+        }
+
+        nav ul, nav li {
+            padding: 0;
+            margin: 0;
+        }
+
+        nav {
+            padding: 20px 20px 20px 0px;
+            margin: 5px 5px 0px 5px;
+            background-color: #161605;
+            color: white;
+        }
+
+        nav ul li {
+            display: inline;
+            padding: 10px;
+        }
+
+        nav li a {
+            text-decoration: none;
+            text-align: center;
+            color: gray;
+            padding: 20px 10px 20px 0px;
+            font-size: 20px;
+
+        }
+
+        nav li a:hover {
+            /*background-color: black;*/
+            color: white;
+        }
+
+        .left {
+            text-align: center;
+            background-color: #CDCDCD;
+            height: 600px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: grey;
+            color: white;
+            padding: 20px;
+        }
+
+        header {
+            /*text-align: center;*/
+            background-color: grey;
+            color: white;
+            padding: 40px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="col-12" th:fragment="header">
+    <header>
+        <div class="col-1 d-flex align-items-center">
+            <a th:href="@{/}">
+                <img src="https://static.chotot.com/storage/marketplace/nha_white_logo.png"
+                     style="height: 40px;" alt="">
+            </a>
+        </div>
+    </header>
+</div>
+<nav th:fragment="nav">
+    <ul>
+        <li><a th:href="@{/}">Home</a></li>
+        <li><a th:href="@{/product}">Product</a></li>
+        <li><a th:href="@{/}">Category</a></li>
+    </ul>
+</nav>
+<div class="row">
+    <div>
+        <div class="col-2">
+            <div class="left">
+                <br>
+                <div><a href="#">Item One</a></div>
+                <br>
+                <div><a href="#">Item Two</a></div>
+                <br>
+                <div><a href="#">Item Three</a></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-10">
+        <div>
+            <h2>Information Product</h2>
+        </div>
+    </div>
+</div>
+<div class="col-12" th:fragment="footer">
+    <footer>
+        <h2>Footer Text</h2>
+    </footer>
+</div>
+</body>
+</html>

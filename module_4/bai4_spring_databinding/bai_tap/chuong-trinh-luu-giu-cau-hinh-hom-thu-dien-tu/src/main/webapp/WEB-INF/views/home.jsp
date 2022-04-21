@@ -6,16 +6,17 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Mail Box</title>
     <style>
-      table tr th {
-          padding-right: 50px;
-          margin: 10px 0px 10px 0px;
-          float: left;
-      }
+        table tr th {
+            padding-right: 50px;
+            margin: 10px 0px 10px 0px;
+            float: left;
+        }
+
         table
     </style>
 </head>
@@ -58,7 +59,8 @@
             <th><form:textarea path="signature"></form:textarea></th>
         </tr>
         <tr>
-            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </th>
             <th>
                 <label><form:button>Update</form:button></label>
                 <label><form:button><a href="/home">Cancel</a></form:button></label>

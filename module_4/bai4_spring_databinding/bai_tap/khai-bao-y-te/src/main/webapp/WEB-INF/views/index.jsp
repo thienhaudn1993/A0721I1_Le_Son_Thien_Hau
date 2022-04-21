@@ -13,16 +13,17 @@
 </head>
 <body>
 <h1 style="text-align: center">TỜ KHAI Y TẾ</h1>
-<h1 style="text-align: center">ĐÂY LÀ TÀI LIỆU QUAN TRỌNG, THÔNG TIN CỦA ANH/CHỊ SẼ GIÚP CƠ QUAN Y TẾ LIÊN LẠC KHI CẦN THIẾT ĐỂ PHÒNG CHỐNG DỊCH BỆNH TRUYỀN NHIỄM</h1>
-<h1 style="text-align: center; color: red"  >Khuyến cáo khai báo thông tin sai là vi phạm pháp luật Việt Nam</h1>
+<h1 style="text-align: center">ĐÂY LÀ TÀI LIỆU QUAN TRỌNG, THÔNG TIN CỦA ANH/CHỊ SẼ GIÚP CƠ QUAN Y TẾ LIÊN LẠC KHI CẦN
+    THIẾT ĐỂ PHÒNG CHỐNG DỊCH BỆNH TRUYỀN NHIỄM</h1>
+<h1 style="text-align: center; color: red">Khuyến cáo khai báo thông tin sai là vi phạm pháp luật Việt Nam</h1>
 <form:form method="post" action="home/save" modelAttribute="health">
     <span>Họ tên (ghi chữ IN HOA) <span style="color:red;">(*)</span></span>
     <p><form:input path="fullName" cssStyle="width: 100%;height: 35px"></form:input></p>
     <table width="100%">
         <tr>
-            <td> <span>Năm sinh <span style="color:red;">(*)</span></span></td>
-            <td> <span>Giới tính <span style="color:red;">(*)</span></span></td>
-            <td> <span>Quốc tế <span style="color:red;">(*)</span></span></td>
+            <td><span>Năm sinh <span style="color:red;">(*)</span></span></td>
+            <td><span>Giới tính <span style="color:red;">(*)</span></span></td>
+            <td><span>Quốc tế <span style="color:red;">(*)</span></span></td>
         </tr>
         <tr>
             <td><form:input path="birthday" type="date" cssStyle="width: 100%;height: 35px"></form:input></td>
@@ -33,7 +34,7 @@
                     <form:option value="Nữ">Nữ</form:option>
                 </form:select>
             </td>
-            <td><form:input path="country"  cssStyle="width: 100%;height: 35px"></form:input></td>
+            <td><form:input path="country" cssStyle="width: 100%;height: 35px"></form:input></td>
         </tr>
     </table>
     <p>Số hộ chiếu hoặc CMND hoặc giấy thông hành khác <span style="color:red;">(*)</span></p>

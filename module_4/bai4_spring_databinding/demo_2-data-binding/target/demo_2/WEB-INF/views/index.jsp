@@ -28,14 +28,14 @@
     </thead>
     <tbody>
     <c:forEach var="user" items="${listUser}">
-    <tr>
-        <td>${user.id}</td>
-        <td>${user.name}</td>
-        <td>${user.age}</td>
-        <td>${user.address}</td>
-        <td>${user.email}</td>
-        <td></td>
-    </tr>
+        <tr>
+            <td>${user.id}</td>
+            <td>${user.name}</td>
+            <td>${user.age}</td>
+            <td>${user.address}</td>
+            <td>${user.email}</td>
+            <td></td>
+        </tr>
     </c:forEach>
     </tbody>
 </table>

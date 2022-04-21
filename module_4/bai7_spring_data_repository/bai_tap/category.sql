@@ -1,1 +1,2 @@
-SELECT * FROM baitap7baitap.category;
+SELECT *
+FROM baitap7baitap.category;

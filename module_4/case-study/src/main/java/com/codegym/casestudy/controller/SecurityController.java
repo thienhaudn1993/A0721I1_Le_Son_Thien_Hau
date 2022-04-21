@@ -20,18 +20,20 @@ import java.security.Principal;
 public class SecurityController {
     @Autowired
     IEmployeeRepository iEmployeeRepository;
+
     @GetMapping("/login")
-    public String login(HttpSession session , Model model){
+    public String login(HttpSession session, Model model) {
         return "authentication/login";
     }
+
     @GetMapping("/user")
-    public String userPage(Principal principal , HttpSession session) {
-        session.setAttribute("user" , iEmployeeRepository.getEmployeeByUser(principal.getName()));
+    public String userPage(Principal principal, HttpSession session) {
+        session.setAttribute("user", iEmployeeRepository.getEmployeeByUser(principal.getName()));
         return "redirect:/";
     }
 
     @GetMapping("/logout")
-    public String logout(HttpServletRequest request, HttpServletResponse response){
+    public String logout(HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);

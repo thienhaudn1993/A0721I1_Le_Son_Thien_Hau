@@ -17,21 +17,21 @@ public class UserController {
     IUserService userService = new UserServiceImpl();
 
     @GetMapping()
-    public String getUserListPage(Model model){
+    public String getUserListPage(Model model) {
         List<User> userList = userService.getAllUser();
         model.addAttribute("listUser", userList);
         return "index";
     }
 
     @GetMapping("/create")
-    public String getCreatePage(Model model){
+    public String getCreatePage(Model model) {
         User user = new User();
         model.addAttribute("user", user);
         return "create";
     }
 
     @PostMapping("/create")
-    public String saveUser(@ModelAttribute(name = "user") User userNew){
+    public String saveUser(@ModelAttribute(name = "user") User userNew) {
         userService.saveUser(userNew);
         return "redirect:/";
     }

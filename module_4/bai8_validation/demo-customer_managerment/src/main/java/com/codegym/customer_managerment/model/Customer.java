@@ -12,7 +12,7 @@ public class Customer {
     private Long id;
 
     @NotEmpty(message = "Khong duoc de trong")
-    @Size(min = 6, max = 50, message ="ten phai tu 6 den 50 ki tu" )
+    @Size(min = 6, max = 50, message = "ten phai tu 6 den 50 ki tu")
     private String name;
 
     @Size(min = 10, max = 100)
@@ -20,6 +20,7 @@ public class Customer {
 
     @ManyToOne(targetEntity = Province.class)
     private Province province;
+
     public Customer() {
     }
 

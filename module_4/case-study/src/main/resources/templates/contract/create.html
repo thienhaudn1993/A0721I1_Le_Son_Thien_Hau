@@ -8,15 +8,18 @@
 <form th:action="@{/contract/update}" method="post" th:object="${contract}">
     <p>Service Id:</p>
     <select th:field="${contract.service}">
-        <option th:each="service: ${services}" th:text="${service.service_id}" th:value="${service.service_id}"></option>
+        <option th:each="service: ${services}" th:text="${service.service_id}"
+                th:value="${service.service_id}"></option>
     </select>
     <p>Customer Id:</p>
     <select th:field="${contract.customer}">
-        <option th:each="customer: ${customers}" th:text="${customer.customer_id}" th:value="${customer.customer_id}"></option>
+        <option th:each="customer: ${customers}" th:text="${customer.customer_id}"
+                th:value="${customer.customer_id}"></option>
     </select>
     <p>Employee Id:</p>
     <select th:field="${contract.employee}">
-        <option th:each="employee: ${employees}" th:text="${employee.employee_id}" th:value="${employee.employee_id}"></option>
+        <option th:each="employee: ${employees}" th:text="${employee.employee_id}"
+                th:value="${employee.employee_id}"></option>
     </select>
     <input type="hidden" th:field="*{contract_id}">
     <p>Contract Start Date:</p>
@@ -25,10 +28,12 @@
     <input type="datetime-local" th:field="*{contract_end_date}">
     <p>Contract Deposit:</p>
     <input type="text" th:field="*{contract_deposit}">
-    <p style="color: red" th:if="${#fields.hasErrors('contract_deposit')}" th:errors="*{contract_deposit}">Error Contract Deposit</p>
+    <p style="color: red" th:if="${#fields.hasErrors('contract_deposit')}" th:errors="*{contract_deposit}">Error
+        Contract Deposit</p>
     <p>Contract Total Money:</p>
     <input type="text" th:field="*{contract_total_money}">
-    <p style="color: red" th:if="${#fields.hasErrors('contract_total_money')}" th:errors="*{contract_total_money}">Error Contract Toltal Money</p>
+    <p style="color: red" th:if="${#fields.hasErrors('contract_total_money')}" th:errors="*{contract_total_money}">Error
+        Contract Toltal Money</p>
     <input type="submit" value="Create">
 </form>
 </body>

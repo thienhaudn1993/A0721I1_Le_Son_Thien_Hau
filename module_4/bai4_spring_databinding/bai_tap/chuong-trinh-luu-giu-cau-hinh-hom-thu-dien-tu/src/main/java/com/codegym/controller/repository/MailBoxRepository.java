@@ -7,6 +7,7 @@ import java.util.List;
 
 public class MailBoxRepository implements IMailBoxRepository {
     List<MailBox> mailBoxList = new ArrayList<>();
+
     @Override
     public void save(MailBox mailBox) {
         mailBoxList.add(mailBox);

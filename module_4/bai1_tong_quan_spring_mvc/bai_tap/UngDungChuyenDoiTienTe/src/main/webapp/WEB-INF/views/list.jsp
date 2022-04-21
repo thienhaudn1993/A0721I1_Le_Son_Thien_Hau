@@ -14,7 +14,7 @@
 <body>
 <h1> Chuyển đổi USD qua VNĐ</h1>
 <p>Tỉ giá 1 USD = 23.000 VNĐ</p>
-<form  action="/controller" method="post">
+<form action="/controller" method="post">
     <p>Nhập USD:</p>
     <input type="text" name="usd">
     <br><br>

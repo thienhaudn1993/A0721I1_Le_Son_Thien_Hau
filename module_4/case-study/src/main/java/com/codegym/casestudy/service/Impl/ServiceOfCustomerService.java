@@ -9,10 +9,12 @@ import org.springframework.data.domain.Pageable;
 
 
 import java.util.List;
+
 @org.springframework.stereotype.Service
 public class ServiceOfCustomerService implements IServiceOfService {
     @Autowired
     IServiceOfRepository serviceOfRepository;
+
     @Override
     public List<Service> findAllService() {
         return serviceOfRepository.findAll();

@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class DevisionService implements IDevisionService {
     @Autowired
     IDevisionRepository devisionRepository;
+
     @Override
     public List<Devision> findAllDevision() {
         return devisionRepository.findAll();

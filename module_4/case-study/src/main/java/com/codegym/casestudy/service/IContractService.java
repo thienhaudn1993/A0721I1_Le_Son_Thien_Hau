@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface IContractService {
     Page<Contract> findAllContract(Pageable pageable);
+
     void saveContract(Contract contract);
 }

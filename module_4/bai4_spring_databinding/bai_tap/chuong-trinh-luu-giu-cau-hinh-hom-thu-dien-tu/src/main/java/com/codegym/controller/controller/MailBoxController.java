@@ -13,12 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/home")
 public class MailBoxController {
-        IMailBoxService iMailBoxService = new MailBoxService();
+    IMailBoxService iMailBoxService = new MailBoxService();
+
     @GetMapping("")
     public String home(Model model) {
         model.addAttribute("box", new MailBox());
         return "home";
     }
+
     @PostMapping("/save")
     public String save(@ModelAttribute(name = "box") MailBox mailBox) {
         iMailBoxService.save(mailBox);

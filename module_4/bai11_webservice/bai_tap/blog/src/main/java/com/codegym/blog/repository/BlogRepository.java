@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface BlogRepository extends JpaRepository<Blog,Long> {
-    @Query(value = "select * from blog where category_id =?1",nativeQuery = true)
+public interface BlogRepository extends JpaRepository<Blog, Long> {
+    @Query(value = "select * from blog where category_id =?1", nativeQuery = true)
     List<Blog> searchByCategoryId(int id);
 
 }

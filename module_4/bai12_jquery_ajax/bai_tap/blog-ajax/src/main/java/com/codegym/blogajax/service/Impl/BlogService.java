@@ -10,12 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class BlogService implements IBlogService {
     @Autowired
     IBlogRepository blogRepository;
     @Autowired
     ICategoryRepository categoryRepository;
+
     @Override
     public List<Blog> findAll() {
         return blogRepository.findAll();
@@ -44,7 +46,7 @@ public class BlogService implements IBlogService {
         blog.setDate(blogDTO.getDate());
         Category category = categoryRepository.findById(Long.valueOf(blogDTO.getCategory())).orElse(null);
         blog.setCategory(category);
-         blogRepository.save(blog);
+        blogRepository.save(blog);
     }
 
     @Override

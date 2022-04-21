@@ -14,6 +14,7 @@ public interface BlogService {
     void deleteBlog(Long id);
 
     Blog findBlogById(Long id);
+
     List<Blog> searchByCategoryId(int id);
 
 }

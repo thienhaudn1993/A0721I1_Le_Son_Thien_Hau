@@ -14,7 +14,7 @@ public class ProvinceController {
     ProvinceService provinceService;
 
     @GetMapping("/provinces")
-    public String getListProvinces(Model model){
+    public String getListProvinces(Model model) {
         Province province = provinceService.findProvinceById(1L);
         return "province";
     }

@@ -15,18 +15,18 @@ public class Contract {
     private double contract_deposit;
     private double contract_total_money;
     @ManyToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name="employee_id", nullable=false)
+    @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
-    @ManyToOne(targetEntity = Customer.class,cascade = CascadeType.ALL)
-    @JoinColumn(name="customer_id", nullable=false)
+    @ManyToOne(targetEntity = Customer.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    @ManyToOne(targetEntity = Service.class,cascade = CascadeType.ALL)
-    @JoinColumn(name="service_id", nullable=false)
+    @ManyToOne(targetEntity = Service.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "service_id", nullable = false)
     private Service service;
 
-    @OneToMany(mappedBy = "contract",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "contract", cascade = CascadeType.ALL)
     Set<ContractDetail> contractDetailSet;
 
 
@@ -88,6 +88,7 @@ public class Contract {
     public void setContract_end_date(String contract_end_date) {
         this.contract_end_date = contract_end_date;
     }
+
     @Min(value = 1, message = "Tien coc phai la so duong")
     public double getContract_deposit() {
         return contract_deposit;
@@ -96,6 +97,7 @@ public class Contract {
     public void setContract_deposit(double contract_deposit) {
         this.contract_deposit = contract_deposit;
     }
+
     @Min(value = 1, message = "Tien tien phai la so duong")
     public double getContract_total_money() {
         return contract_total_money;

@@ -14,6 +14,7 @@ import java.util.List;
 public class EmployeeService implements IEmployeeService {
     @Autowired
     IEmployeeRepository employeeRepository;
+
     @Override
     public Page<Employee> findAll(Pageable pageable) {
         return employeeRepository.findAll(pageable);
@@ -36,7 +37,7 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public Page<Employee> searchEmployeeByName(String name, Pageable pageable) {
-        return employeeRepository.searchEmployeeByName(name,pageable);
+        return employeeRepository.searchEmployeeByName(name, pageable);
     }
 
     @Override

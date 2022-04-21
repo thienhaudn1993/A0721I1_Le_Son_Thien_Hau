@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface IAttachServiceOfService {
     List<AttachService> findAllAttachService();
+
     void save(AttachService attachService);
 }

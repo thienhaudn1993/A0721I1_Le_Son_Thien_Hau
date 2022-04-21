@@ -9,10 +9,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class ContractService implements IContractService {
     @Autowired
     IContractRepository contractRepository;
+
     @Override
     public Page<Contract> findAllContract(Pageable pageable) {
         return contractRepository.findAll(pageable);

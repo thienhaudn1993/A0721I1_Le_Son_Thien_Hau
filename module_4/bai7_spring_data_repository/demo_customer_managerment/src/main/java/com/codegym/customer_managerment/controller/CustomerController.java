@@ -31,14 +31,14 @@ public class CustomerController {
     }
 
     @GetMapping("/create")
-    public ModelAndView getCreatePage(Model model){
+    public ModelAndView getCreatePage(Model model) {
         List<Province> provinces = provinceService.findAll();
         model.addAttribute("provinces", provinces);
         return new ModelAndView("create", "customer", new Customer());
     }
 
     @PostMapping("/create")
-    public String saveCustomer(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes){
+    public String saveCustomer(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes) {
         customerService.saveCustomer(customer);
         redirectAttributes.addFlashAttribute("message", "Create success");
         return "redirect:/";

@@ -14,6 +14,7 @@ public interface IBlogService {
 
     Blog findBlogById(Long id);
 
-     void saveBlogDTO(BlogDTO blogDTO );
+    void saveBlogDTO(BlogDTO blogDTO);
+
     List<Blog> searchByNameBlog(String name);
 }

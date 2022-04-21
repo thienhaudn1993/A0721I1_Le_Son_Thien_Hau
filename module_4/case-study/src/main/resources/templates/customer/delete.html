@@ -28,7 +28,8 @@
     <input type="text" th:field="${customer.customer_address}">
     <p>Customer Type</p>
     <select th:field="${customer.customerType}">
-        <option th:each="customertype: ${customerType}" th:text="${customertype.customer_type_name}" th:value="${customertype.customer_type_id}"></option>
+        <option th:each="customertype: ${customerType}" th:text="${customertype.customer_type_name}"
+                th:value="${customertype.customer_type_id}"></option>
     </select>
     <br>
     <button>Delete</button>

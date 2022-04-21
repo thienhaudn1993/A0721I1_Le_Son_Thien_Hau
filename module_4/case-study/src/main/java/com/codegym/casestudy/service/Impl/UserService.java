@@ -20,6 +20,7 @@ import java.util.Set;
 public class UserService implements IUserService, UserDetailsService {
     @Autowired
     IUserRepository userRepository;
+
     @Override
     public List<User> findAllUser() {
         return userRepository.findAll();

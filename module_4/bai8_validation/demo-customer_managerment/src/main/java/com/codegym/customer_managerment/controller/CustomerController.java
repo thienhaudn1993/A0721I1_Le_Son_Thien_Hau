@@ -34,19 +34,19 @@ public class CustomerController {
     }
 
     @GetMapping("/create")
-    public ModelAndView getCreatePage(Model model){
+    public ModelAndView getCreatePage(Model model) {
         List<Province> provinces = provinceService.findAll();
         model.addAttribute("provinces", provinces);
         return new ModelAndView("create", "customer", new Customer());
     }
 
     @PostMapping("/create")
-    public String saveCustomer(@Validated @ModelAttribute Customer customer, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model){
-        if (bindingResult.hasFieldErrors()){
+    public String saveCustomer(@Validated @ModelAttribute Customer customer, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+        if (bindingResult.hasFieldErrors()) {
             List<Province> provinces = provinceService.findAll();
             model.addAttribute("provinces", provinces);
             return "create";
-        }else {
+        } else {
             customerService.saveCustomer(customer);
             redirectAttributes.addFlashAttribute("message", "Create success");
             return "redirect:/";

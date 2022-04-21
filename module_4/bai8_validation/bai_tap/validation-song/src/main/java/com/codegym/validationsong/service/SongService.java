@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface SongService {
     List<Song> findAll();
+
     void saveSong(Song song);
+
     Song findById(Long id);
 }

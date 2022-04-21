@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements IUserService{
+public class UserServiceImpl implements IUserService {
     private static List<User> userList;
+
     static {
         userList = new ArrayList<>();
         userList.add(new User(1, "TrungDP", "Da Nang", 30, "trung.doan@codegym.vn"));
@@ -17,6 +18,7 @@ public class UserServiceImpl implements IUserService{
         userList.add(new User(4, "HaiTT", "Quảng Nam", 23, "hai.truong@codegym.vn"));
         userList.add(new User(5, "ChanhTV", "Quy Nhơn", 31, "chanh.tran@codegym.vn"));
     }
+
     @Override
     public List<User> getAllUser() {
         return userList;

@@ -3,7 +3,7 @@ package com.codegym.managerphone.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="smartphones")
+@Table(name = "smartphones")
 public class Smartphone {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -55,6 +55,6 @@ public class Smartphone {
 
     @Override
     public String toString() {
-        return producer+": "+model+" with price "+price;
+        return producer + ": " + model + " with price " + price;
     }
 }

@@ -14,13 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/home")
 public class HealthController {
     private HealthService healthService = new HealthServiceImpl();
+
     @GetMapping("")
-    public String home(Model model){
+    public String home(Model model) {
         model.addAttribute("health", new HealthDeclaration());
         return "index";
     }
+
     @PostMapping("/save")
-    public String save(@ModelAttribute(name = "health") HealthDeclaration healthDeclaration){
+    public String save(@ModelAttribute(name = "health") HealthDeclaration healthDeclaration) {
         healthService.save(healthDeclaration);
         return "save";
     }

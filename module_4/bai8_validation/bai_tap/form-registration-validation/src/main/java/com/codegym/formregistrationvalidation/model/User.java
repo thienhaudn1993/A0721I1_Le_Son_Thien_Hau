@@ -13,11 +13,11 @@ public class User {
     private Long id;
 
     @NotEmpty(message = "Không được để trống")
-    @Size(min = 5,max = 45,message = "Độ dài phải từ 5 đến 45 kí tự")
+    @Size(min = 5, max = 45, message = "Độ dài phải từ 5 đến 45 kí tự")
     private String firstName;
 
     @NotEmpty(message = "Không được để trống")
-    @Size(min = 5,max = 45,message = "Độ dài phải từ 5 đến 45 kí tự")
+    @Size(min = 5, max = 45, message = "Độ dài phải từ 5 đến 45 kí tự")
     private String lastName;
 
     @Pattern(regexp = "^(09|03|07|08|05)+[0-9]{8}$", message = "Phone nhập không hợp lệ")

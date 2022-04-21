@@ -14,14 +14,15 @@ import java.util.Locale;
 
 @Configuration
 public class Config implements WebMvcConfigurer {
-//Khai báo cấu hình bean messageSource, ở đây là mã mẫu khi khai báo bằng annotation trong file cấu hình bằng java.
-@Bean
-public MessageSource messageSource() {
-    ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-    messageSource.setBasename("message");
-    messageSource.setDefaultEncoding("UTF-8");
-    return messageSource;
-}
+    //Khai báo cấu hình bean messageSource, ở đây là mã mẫu khi khai báo bằng annotation trong file cấu hình bằng java.
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasename("message");
+        messageSource.setDefaultEncoding("UTF-8");
+        return messageSource;
+    }
+
     /*Trong đó, giá trị "message" chính là tên file trong file message.properties.
     Nhớ thêm các imports cần thiết.
     Sau đó, ở templates, gọi tới tên của các message trong file message.properties thay vì sử dụng hard-coded,

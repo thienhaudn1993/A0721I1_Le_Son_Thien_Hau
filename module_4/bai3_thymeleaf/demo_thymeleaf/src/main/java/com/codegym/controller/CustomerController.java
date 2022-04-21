@@ -16,12 +16,12 @@ public class CustomerController {
     private ICustomerService customerService = new CustomerServiceImpl();
 
     @GetMapping("/list")
-    public ModelAndView getListCustomer(){
+    public ModelAndView getListCustomer() {
         return new ModelAndView("index", "customers", customerService.findAll());
     }
 
     @GetMapping("/create")
-    public String getCreatePage(){
+    public String getCreatePage() {
         return "create";
     }
 }

@@ -29,10 +29,10 @@ public class Customer {
     @NotEmpty(message = "Không được để trống")
     private String customer_address;
     @ManyToOne(targetEntity = CustomerType.class)
-    @JoinColumn(name="customer_type_id", nullable=false)
+    @JoinColumn(name = "customer_type_id", nullable = false)
     private CustomerType customerType;
 
-    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     Set<Contract> contractSet;
 
     public Set<Contract> getContractSet() {

@@ -28,14 +28,14 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         query.setParameter("id", id);
         try {
             return query.getSingleResult();
-        }catch (NoResultException e){
+        } catch (NoResultException e) {
             return null;
         }
     }
 
     @Override
     public void save(Customer model) {
-        if(model.getId() != null){
+        if (model.getId() != null) {
             em.merge(model);
         } else {
             em.persist(model);
@@ -45,7 +45,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     @Override
     public void remove(Long id) {
         Customer customer = findById(id);
-        if(customer != null){
+        if (customer != null) {
             em.remove(customer);
         }
     }

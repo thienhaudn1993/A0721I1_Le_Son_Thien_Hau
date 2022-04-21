@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class HomeController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String getHomePage(Model model){
+    public String getHomePage(Model model) {
         String message = "hello lop A0721I1 va A0721I2";
         model.addAttribute("thongbao", message);
         return "index";
@@ -19,11 +19,11 @@ public class HomeController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String getLoginInformation(@RequestParam("username") String username,
                                       @RequestParam("password") String password,
-                                      Model model){
+                                      Model model) {
         String result = "";
-        if ("admin".equals(username) && "123456".equals(password)){
+        if ("admin".equals(username) && "123456".equals(password)) {
             result = "Login Success";
-        }else {
+        } else {
             result = "Login Fail";
         }
         model.addAttribute("result", result);

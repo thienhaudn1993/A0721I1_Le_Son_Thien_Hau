@@ -21,16 +21,17 @@ public class FormController {
     UserService userService;
 
     @GetMapping("")
-    public ModelAndView view(){
-        return new ModelAndView("index","user", new User());
+    public ModelAndView view() {
+        return new ModelAndView("index", "user", new User());
     }
+
     @PostMapping("/createUser")
-    public ModelAndView save(@Validated @ModelAttribute User user, BindingResult bindingResult){
-        if (bindingResult.hasFieldErrors()){
+    public ModelAndView save(@Validated @ModelAttribute User user, BindingResult bindingResult) {
+        if (bindingResult.hasFieldErrors()) {
             return new ModelAndView("index");
         } else {
             userService.saveUser(user);
-            return new ModelAndView("result","user1",user);
+            return new ModelAndView("result", "user1", user);
         }
     }
 }

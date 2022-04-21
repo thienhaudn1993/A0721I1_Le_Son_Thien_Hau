@@ -17,31 +17,35 @@ public class ProductController {
     IProductService productService;
 
     @ModelAttribute("cart")
-    public Cart setupCart(){
+    public Cart setupCart() {
         return new Cart();
     }
+
     @GetMapping("/shop")
     public ModelAndView showShop() {
         ModelAndView modelAndView = new ModelAndView("/shop");
         modelAndView.addObject("products", productService.findAll());
         return modelAndView;
     }
+
     @GetMapping("/shop/{id}/view")
     public ModelAndView view(@PathVariable Long id) {
         ModelAndView modelAndView = new ModelAndView("/view");
         modelAndView.addObject("product", productService.findById(id));
         return modelAndView;
     }
+
     @GetMapping("/add/{id}")
     public String addToCard(@PathVariable Long id, @ModelAttribute("cart") Cart cart, @RequestParam("action") String action) {
         Product product = productService.findById(id);
-        if (product==null){
+        if (product == null) {
             return "/error";
         }
-        if (action.equals("show")){
+        if (action.equals("show")) {
             cart.addProduct(product);
             return "redirect:/shopping-cart";
-        }if (action.equals("list")){
+        }
+        if (action.equals("list")) {
             cart.addProduct(product);
             return "redirect:/shop/{id}/view ";
         }

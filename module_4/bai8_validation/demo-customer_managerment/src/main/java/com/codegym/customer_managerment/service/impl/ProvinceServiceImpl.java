@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ProvinceServiceImpl  implements ProvinceService {
+public class ProvinceServiceImpl implements ProvinceService {
     @Autowired
     ProvinceRepository provinceRepository;
-    
+
     @Override
     public List<Province> findAll() {
         return provinceRepository.findAll();

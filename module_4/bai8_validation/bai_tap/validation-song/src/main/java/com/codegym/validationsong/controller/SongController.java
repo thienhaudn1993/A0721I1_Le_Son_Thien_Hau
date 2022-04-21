@@ -17,35 +17,40 @@ import javax.validation.Valid;
 public class SongController {
     @Autowired
     SongService songService;
+
     @GetMapping("")
-    public ModelAndView viewList(){
-        return new ModelAndView("index","songs",songService.findAll());
+    public ModelAndView viewList() {
+        return new ModelAndView("index", "songs", songService.findAll());
     }
+
     @GetMapping("/create")
-    public ModelAndView create(){
-        return new ModelAndView("create","song",new Song());
+    public ModelAndView create() {
+        return new ModelAndView("create", "song", new Song());
     }
+
     @PostMapping("/create")
-    public String save(@Valid @ModelAttribute Song song, BindingResult bindingResult, RedirectAttributes redirectAttributes){
-        if (bindingResult.hasFieldErrors()){
+    public String save(@Valid @ModelAttribute Song song, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+        if (bindingResult.hasFieldErrors()) {
             return "create";
-        }else {
+        } else {
             songService.saveSong(song);
-            redirectAttributes.addFlashAttribute("message","Create Song Success");
+            redirectAttributes.addFlashAttribute("message", "Create Song Success");
             return "redirect:/list";
         }
     }
+
     @GetMapping("/{id}/edit")
-    public ModelAndView edit(@PathVariable Long id, Model model){
-        return new ModelAndView("edit","song",songService.findById(id));
+    public ModelAndView edit(@PathVariable Long id, Model model) {
+        return new ModelAndView("edit", "song", songService.findById(id));
     }
+
     @PostMapping("/edit")
-    public String update(@Valid @ModelAttribute Song song, BindingResult bindingResult, RedirectAttributes redirectAttributes){
-        if (bindingResult.hasFieldErrors()){
+    public String update(@Valid @ModelAttribute Song song, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+        if (bindingResult.hasFieldErrors()) {
             return "edit";
-        }else {
+        } else {
             songService.saveSong(song);
-            redirectAttributes.addFlashAttribute("message","Update Success");
+            redirectAttributes.addFlashAttribute("message", "Update Success");
             return "redirect:/list";
         }
     }

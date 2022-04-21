@@ -17,8 +17,8 @@ public class EmployeeController {
     }
 
     @PostMapping(value = "addEmployee")
-    public String submit (@ModelAttribute("employee") Employee employee, ModelMap modelMap) {
-        modelMap.addAttribute("name",employee.getName());
+    public String submit(@ModelAttribute("employee") Employee employee, ModelMap modelMap) {
+        modelMap.addAttribute("name", employee.getName());
         modelMap.addAttribute("contactNumber", employee.getContactNumber());
         modelMap.addAttribute("id", employee.getId());
         return "employee/info";

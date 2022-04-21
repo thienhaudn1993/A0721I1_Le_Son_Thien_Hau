@@ -13,17 +13,17 @@ import javax.validation.Valid;
 @Controller
 public class PhoneController {
     @GetMapping("/")
-    public String showForm(Model model){
+    public String showForm(Model model) {
         model.addAttribute("phone", new PhoneNumber());
         return "index";
     }
+
     @PostMapping("/create")
-    public String checkValidation (@Valid @ModelAttribute("phone") PhoneNumber phoneNumber, BindingResult bindingResult, Model model){
+    public String checkValidation(@Valid @ModelAttribute("phone") PhoneNumber phoneNumber, BindingResult bindingResult, Model model) {
         new PhoneNumber().validate(phoneNumber, bindingResult);
-        if (bindingResult.hasFieldErrors()){
+        if (bindingResult.hasFieldErrors()) {
             return "index";
-        }
-        else {
+        } else {
             model.addAttribute("phone1", phoneNumber);
             return "result";
         }

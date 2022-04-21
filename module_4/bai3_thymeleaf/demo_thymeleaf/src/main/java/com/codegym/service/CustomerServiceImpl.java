@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CustomerServiceImpl implements ICustomerService{
+public class CustomerServiceImpl implements ICustomerService {
     private static final Map<Integer, Customer> customers;
 
     static {

@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes("counter")
 public class CounterController {
     @ModelAttribute("counter")
-    public Counter setUpCounter(){
+    public Counter setUpCounter() {
         return new Counter();
     }
+
     @GetMapping("/")
-    public String get(@ModelAttribute("counter") Counter counter){
+    public String get(@ModelAttribute("counter") Counter counter) {
         counter.increment();
         return "/index";
     }

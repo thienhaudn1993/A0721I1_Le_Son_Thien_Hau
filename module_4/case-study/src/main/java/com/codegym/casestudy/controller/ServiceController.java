@@ -25,21 +25,24 @@ public class ServiceController {
     IRentTypeService rentTypeService;
     @Autowired
     IServiceTypeService serviceTypeService;
+
     @GetMapping("")
-    public ModelAndView listService(){
-        return new ModelAndView("/service/view","services", serviceOfService.findAllService());
+    public ModelAndView listService() {
+        return new ModelAndView("/service/view", "services", serviceOfService.findAllService());
     }
+
     @GetMapping("/create")
-    public ModelAndView create(Model model){
-        model.addAttribute("rentType",rentTypeService.findAllRentType());
-        model.addAttribute("serviceType",serviceTypeService.findAllServiceType());
-        return new ModelAndView("/service/create","service", new Service());
+    public ModelAndView create(Model model) {
+        model.addAttribute("rentType", rentTypeService.findAllRentType());
+        model.addAttribute("serviceType", serviceTypeService.findAllServiceType());
+        return new ModelAndView("/service/create", "service", new Service());
     }
+
     @PostMapping("/update")
-    public String saveService(@Validated @ModelAttribute Service service, BindingResult bindingResult, RedirectAttributes redirectAttributes,Model model){
-        if (bindingResult.hasFieldErrors()){
-            model.addAttribute("rentType",rentTypeService.findAllRentType());
-            model.addAttribute("serviceType",serviceTypeService.findAllServiceType());
+    public String saveService(@Validated @ModelAttribute Service service, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+        if (bindingResult.hasFieldErrors()) {
+            model.addAttribute("rentType", rentTypeService.findAllRentType());
+            model.addAttribute("serviceType", serviceTypeService.findAllServiceType());
             return "/service/create";
         }
         serviceOfService.saveService(service);

@@ -1,0 +1,11 @@
+
+<div>
+  <label>Choose color: </label>
+  <input type="color" [(ngModel)]="backgroundColor">
+</div>
+<p class="h4">Result:</p>
+<div class="col-6">
+  <div class="output" [style.background-color]="backgroundColor" >
+    <div>After choose color:</div>
+  </div>
+</div>

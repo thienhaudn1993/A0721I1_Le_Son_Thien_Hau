@@ -2,22 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Title</title> 
 </head>
 <body>
 <!--Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
 Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.-->
 <script>
-    let num=[];
+    let num=[]; 
     let sapXep=[];
     for (i=0;i<10;i++) {
         num[i] = Number(prompt('Nhập lần lượt 10 số nguyên '));
     }
     document.write('Mảng 10 phần từ mà ta đã nhập vào được là num=['+num+']<br/>');
     sapXep=num.sort(function (a,b) {
-        return b-a
+        return b-a;
     })
-    document.write('Sắp xếp các phần tử theo thứ tự giảm dần '+sapXep)
+    document.write('Sắp xếp các phần tử theo thứ tự giảm dần '+sapXep);
+    
 
 </script>
 </body>

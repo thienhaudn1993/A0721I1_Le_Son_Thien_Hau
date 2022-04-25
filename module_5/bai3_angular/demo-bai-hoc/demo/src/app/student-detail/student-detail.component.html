@@ -1,0 +1,19 @@
+<h3>List Students</h3>
+<p>ID Student: {{student.id}}</p>
+<p>Name Student: {{student.name}}</p>
+<p>Age Student: {{student.age}}</p>
+<p>Mark Student: {{student.mark}}</p>
+<p>Avatar Student</p>
+
+
+<div class="col-2">
+  <img class="card-img-bottom" [src]="student.avatar">
+</div>
+
+<div class="col-2">
+  <label>Change Mark:</label>
+  <input class="form-control" type="number" min="0" max="10" [(ngModel)]="student.mark">
+</div>
+
+
+

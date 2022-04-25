@@ -1,0 +1,10 @@
+<h1>Chương trình máy tính</h1>
+<input #element1 type ="number" >
+<input #element2 type ="number" >
+<br><br>
+<button type="button" (click)="addition(element1.value,element2.value)">Addition(+)</button>
+<button type="button" (click)="subtraction(element1.value,element2.value)">Subtraction(-)</button>
+<button type="button" (click)="multiplication(element1.value,element2.value)">Multiplication(X)</button>
+<button type="button" (click)="division(element1.value,element2.value)">Division(/)</button>
+<h3>Result: {{result}}</h3>
+

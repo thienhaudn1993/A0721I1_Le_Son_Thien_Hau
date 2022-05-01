@@ -1,0 +1,5 @@
+<h1>Rating Bar</h1>
+<div *ngFor="let item of rating  " class="btn-group" role="group" aria-label="First group">
+  <button (click)="getData(item.value)" [ngStyle]="{'background-color': item.action? 'yellow': 'white'}" type="button" class="btn btn-outline-secondary">{{item.value}}</button>
+</div>
+

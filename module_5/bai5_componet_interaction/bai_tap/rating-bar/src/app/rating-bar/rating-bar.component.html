@@ -1,0 +1,4 @@
+<div *ngFor="let item of rating" class="btn-group" role="group" aria-lab el="First group">
+  <button (click)="getValue(item.value)" [ngStyle]="{'background-color':item.action? 'yellow':'white'}" type="button" class="btn btn-outline-secondary m-1" >{{item.value}}</button>
+</div>
+<!--[ngStyle]="{'background-color': item.action? 'yellow': 'white'}-->

@@ -31,5 +31,5 @@ export class StudentDao {
       mark: 7,
       avatar: 'https://m.media-amazon.com/images/M/MV5BMTMxOTEwNDcxN15BMl5BanBnXkFtZTcwOTg0MTUzNA@@._V1_.jpg'
     }
-  ]
+  ];
 }

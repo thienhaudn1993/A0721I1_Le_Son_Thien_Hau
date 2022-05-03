@@ -1,0 +1,31 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email">
+  </div>
+  <div class="alert-danger p-2 m-1" *ngIf="!email?.valid && (email?.dirty || email?.touched)">
+      <div [hidden]="!email.errors.required">
+        <p>Email is required</p>
+      </div>
+    <div [hidden]="!email.errors.email">
+      <p>Email is not Valid</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+  </div>
+  <div class="alert-danger p-2 m-1" *ngIf="!password?.valid && (password?.dirty || password?.touched)">
+    <div [hidden]="!password.errors.required">
+      <p>Password is required</p>
+    </div>
+    <div [hidden]="!password.errors.minlength">
+      <p>Password minlength is 6</p>
+    </div>
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Remember</label>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Submit</button>
+</form>

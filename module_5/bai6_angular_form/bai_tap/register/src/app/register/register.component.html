@@ -1,0 +1,109 @@
+<h2 class="text-center p-3 mb-2 bg-primary text-white">Form Register</h2>
+<form class="offset-md-4" [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="col-6  mb-3">
+    <label for="email" class="form-label">Email address:</label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" formControlName="email">
+  </div>
+
+  <div *ngIf="!email?.valid && (email?.dirty || email?.touched)">
+    <div [hidden]="!email.errors.required">
+      <p style="color: red">Email is request</p>
+    </div>
+    <div [hidden]="!email.errors.email">
+      <p style="color:red;">Email is not valid</p>
+    </div>
+  </div>
+
+<!--  password-->
+<div formGroupName="pwGroup">
+  <div class=" form-group col-6  mb-3">
+    <label for="password" class="form-label">Password:</label>
+    <input type="password" class="form-control" id="password" name="password" formControlName="password">
+  </div>
+
+  <div *ngIf="!password?.valid && (password?.dirty || password?.touched)">
+    <div [hidden]="!password.errors.required">
+      <p style="color: red">Password is request</p>
+    </div>
+    <div [hidden]="!password.errors.minlength">
+      <p style="color:red;">Password minlength is 6</p>
+    </div>
+  </div>
+
+  <div class="form-group col-6  mb-3">
+    <label for="confirmPassword" class="form-label">Confirm Password:</label>
+    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
+  </div>
+
+  <div *ngIf="!confirmPassword?.valid && (confirmPassword?.dirty || confirmPassword?.touched)">
+    <div [hidden]="!confirmPassword.errors.required">
+      <p style="color: red">Comfirm password is request</p>
+    </div>
+    <div [hidden]="!confirmPassword.errors.minlength">
+      <p style="color:red;">Comfirm password minlength is 6</p>
+    </div>
+  </div>
+  <div class="alert alert-danger" role="alert"
+       *ngIf="registerForm.hasError('passwordnotmatch', ['pwGroup']) && registerForm.get('pwGroup').touched">
+    Password does not match!
+  </div>
+</div>
+  <!--  password-->
+
+  <div class="col-6  mb-3">
+    <label for="country" class="form-label">Country:</label>
+    <select id="country" name="country" formControlName="country">
+      <option [ngValue]="c.id" *ngFor="let c of countryList">
+        {{c.name}}
+      </option>
+    </select>
+  </div>
+
+  <div *ngIf="!country?.valid && (country?.dirty || country?.touched)">
+    <div [hidden]="!country.errors.required">
+      <p style="color: red">Country is request</p>
+    </div>
+  </div>
+
+  <div class="col-6  mb-3">
+    <label for="age" class="form-label">Age</label>
+    <input type="number" class="form-control" id="age" name="age" formControlName="age">
+  </div>
+
+  <div *ngIf="!age?.valid && (age?.dirty || age?.touched)">
+    <div [hidden]="!age.errors.required">
+      <p style="color: red">Age is request</p>
+    </div>
+    <div [hidden]="!age.errors.min">
+      <p style="color:red;">Age min is 18</p>
+    </div>
+  </div>
+
+  <div class="col-6  mb-3">
+    <p for="gender" class="form-label">Gender: </p>
+    <input type="radio"  id="gender" name="gender" value="male" formControlName="gender"> Male
+    <input type="radio" id="gender" name="gender" value="famale" formControlName="gender">Famale
+  </div>
+
+  <div *ngIf="!gender?.valid && (gender?.dirty || gender?.touched)">
+    <div [hidden]="!gender.errors.required">
+      <p style="color: red">Gender is request</p>
+    </div>
+  </div>
+
+  <div class="col-6  mb-3">
+    <label for="phone" class="form-label">Phone number:</label>
+    <input type="text" class="form-control" id="phone" name="phone" formControlName="phone">
+  </div>
+
+  <div *ngIf="!phone?.valid && (phone?.dirty || phone?.touched)">
+    <div [hidden]="!phone.errors.required">
+      <p style="color: red">Phone is request</p>
+    </div>
+    <div [hidden]="!phone.errors.pattern">
+      <p style="color:red;">Phone is not valid</p>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Submit</button>
+</form>

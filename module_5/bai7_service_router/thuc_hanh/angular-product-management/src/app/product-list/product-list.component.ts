@@ -9,6 +9,7 @@ import {Product} from '../model/product';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
+  message: string;
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
@@ -17,5 +18,4 @@ export class ProductListComponent implements OnInit {
   getAllList() {
     this.products = this.productService.getAll();
   }
-
 }

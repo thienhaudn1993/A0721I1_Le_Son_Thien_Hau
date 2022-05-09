@@ -38,4 +38,28 @@ export class ProductService {
   saveProduct(product: Product) {
     this.products.push(product);
   }
+  // @ts-ignore
+  findById(id: number): Product {
+    return this.products.find((product) => product.id === id);
+  }
+  updateProduct(id: number, product: Product){
+    // tslint:disable-next-line:prefer-for-of
+   for (let i = 0; i <= this.products.length; i++){
+     if (this.products[i].id === id) {
+       this.products[i] = product;
+     }
+   }
+  }
+  // deleteProduct(id: number){
+  //   for (let i = 0; i <= this.products.length; i++) {
+  //     if (this.products[i].id === id) {
+  //       this.pr
+  //     }
+  //   }
+  // }
+  deleteProduct(id: number) {
+    this.products = this.products.filter(product => {
+      return product.id !== id;
+    });
+  }
 }

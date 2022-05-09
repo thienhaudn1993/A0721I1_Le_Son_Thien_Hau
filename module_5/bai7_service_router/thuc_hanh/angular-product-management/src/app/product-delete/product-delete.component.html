@@ -1,12 +1,9 @@
-<form [formGroup]="formProduct" (ngSubmit)="submit()">
+<h1>Xoá sản phẩm</h1>
+<form [formGroup]="productFormDelete" (ngSubmit)="delete(id)">
   <table>
     <tr>
       <td>Mã sản phẩm:</td>
       <td><input type="number" formControlName="id"></td>
-      <div *ngIf="id?.invalid && (id?.dirty || id?.touched)">
-        <div class="alert-danger m-2">Id is required</div>
-      </div>
-<!--      <div *ngIf="id.errors.gte"> Id has exist</div>-->
     </tr>
     <tr>
       <td>Tên sản phẩm:</td>
@@ -22,7 +19,7 @@
     </tr>
     <tr>
       <td></td>
-      <td><button>Tạo mới</button></td>
+      <td><button>Xoá sản phẩm</button></td>
     </tr>
   </table>
 </form>

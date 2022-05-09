@@ -1,0 +1,16 @@
+<a class="btn btn-primary m-2" routerLink="/product/create">Create Product</a>
+<h1>Danh sách sản phẩm</h1>
+<table class="table">
+  <tr>
+    <td>STT</td>
+    <td>Tên</td>
+    <td>Giá</td>
+    <td>Mô tả</td>
+  </tr>
+  <tr *ngFor="let product of products; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+  </tr>
+</table>

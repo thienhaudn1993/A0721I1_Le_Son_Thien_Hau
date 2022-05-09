@@ -35,5 +35,24 @@
       </td>
     </tr>
   </tbody>
+
+
 </table>
-<app-student-detail (evenSendData)="getData($event)" [student]="studentDetail" ></app-student-detail>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Detail Student:</th>
+      <th>Template-Form</th>
+      <th>Reactive-Form</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="col-4"><app-student-detail (evenSendData)="getData($event)" [student]="studentDetail" ></app-student-detail></td>
+      <td class="col-4"><app-template-form></app-template-form></td>
+      <td class="col-4"><app-reactive-form></app-reactive-form></td>
+    </tr>
+  </tbody>
+</table>
+
+

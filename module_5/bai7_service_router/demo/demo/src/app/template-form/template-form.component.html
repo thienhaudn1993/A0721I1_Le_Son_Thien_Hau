@@ -1,0 +1,24 @@
+<form #createStudentForm="ngForm" (ngSubmit)="createStudent(createStudentForm)">
+  <div class="mb-3">
+    <label for="id" class="form-label">ID</label>
+    <input  ngModel type="number" class="form-control" id="id" aria-describedby="emailHelp" name="id">
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input ngModel type="text" class="form-control" id="name" name="name">
+  </div>
+  <div class="mb-3">
+    <label for="age" class="form-label">Age</label>
+    <input ngModel type="number" class="form-control" id="age" name="age">
+  </div>
+  <div class="mb-3">
+    <label for="mark" class="form-label">Mark</label>
+    <input ngModel type="number" class="form-control" id="mark" name="mark">
+  </div>
+  <div class="mb-3">
+    <label for="avatar" class="form-label">Avatar</label>
+    <input ngModel type="text" class="form-control" id="avatar" name="avatar">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>

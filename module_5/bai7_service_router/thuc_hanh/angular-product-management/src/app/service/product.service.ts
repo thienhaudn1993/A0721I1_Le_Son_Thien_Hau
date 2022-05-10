@@ -36,7 +36,20 @@ export class ProductService {
     return this.products;
   }
   saveProduct(product: Product) {
-    this.products.push(product);
+    let check = true;
+    let j: number;
+    for (let i = 0; i < this.products.length; i++) {
+      if (this.products[i].id === product.id) {
+        check = false;
+        j = i;
+        break;
+      }
+    }
+    if (check) {
+      this.products.push(product);
+    } else {
+      this.products[j] = product;
+    }
   }
   // @ts-ignore
   findById(id: number): Product {
@@ -44,7 +57,7 @@ export class ProductService {
   }
   updateProduct(id: number, product: Product){
     // tslint:disable-next-line:prefer-for-of
-   for (let i = 0; i <= this.products.length; i++){
+   for (let i = 0; i < this.products.length; i++){
      if (this.products[i].id === id) {
        this.products[i] = product;
      }

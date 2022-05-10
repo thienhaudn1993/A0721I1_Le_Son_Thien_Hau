@@ -19,20 +19,30 @@ export class ProductDeleteComponent implements OnInit {
     this.activatedRouter.paramMap.subscribe((param) => {
       // dấu + để hiểu id là number
       this.id = +param.get('id');
-      this.product = this.productService.findById(this.id);
-    });
-    this.productFormDelete = new FormGroup({
-      id: new FormControl(this.product.id),
-      name: new FormControl(this.product.name),
-      price: new FormControl(this.product.price),
-      description: new FormControl(this.product.description)
+      // @ts-ignore
+      this.product = this.productService.findById(this.id).subscribe(
+        (product) => {
+          this.productFormDelete = new FormGroup({
+            id: new FormControl(product.id),
+            name: new FormControl(product.name),
+            price: new FormControl(product.price),
+            description: new FormControl(product.description)
+          });
+        }
+      );
     });
   }
-
   delete(id: number) {
-    this.productService.deleteProduct(id);
-    alert('Xoá thành công ' + this.product.name);
-    this.router.navigateByUrl('/product/list');
+    // tslint:disable-next-line:no-unused-expression
+    // this.productService.deleteProduct(id);
+    // alert('Xoá thành công ' + this.product.name);
+    // this.router.navigateByUrl('/product/list');
+    this.productService.deleteProduct(id).subscribe(
+      () => {},
+      () => {},
+      () => {
+        this.router.navigateByUrl('/product/list');
+      },
+    );
   }
-
 }

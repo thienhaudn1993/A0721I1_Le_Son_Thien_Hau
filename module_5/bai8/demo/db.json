@@ -1,0 +1,32 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Hau Le",
+      "age": 29,
+      "mark": 9,
+      "avatar": "https://m.media-amazon.com/images/M/MV5BMTMxOTEwNDcxN15BMl5BanBnXkFtZTcwOTg0MTUzNA@@._V1_.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Nguyen van B",
+      "age": 25,
+      "mark": 6,
+      "avatar": "https://m.media-amazon.com/images/M/MV5BMTMxOTEwNDcxN15BMl5BanBnXkFtZTcwOTg0MTUzNA@@._V1_.jpg"
+    },
+    {
+      "id": 4,
+      "name": "sfdsfsd",
+      "age": 232,
+      "mark": 23,
+      "avatar": ""
+    },
+    {
+      "id": 5,
+      "name": "4234234",
+      "age": 23,
+      "mark": 22,
+      "avatar": ""
+    }
+  ]
+}

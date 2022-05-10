@@ -1,0 +1,41 @@
+<form [formGroup]="studentForm" (ngSubmit)="createStudentForm()">
+  <!--<div class="mb-3">
+    <label for="id" class="form-label">ID</label>
+    <input  ngModel type="number" class="form-control" id="id" aria-describedby="emailHelp" formControlName="id">
+  </div>
+  <div class="alert-danger" *ngIf="id?.invalid && (id?.dirty || id?.touched)">
+      <div [hidden]="!id.errors.required">
+        ID is request
+      </div>z
+      <div [hidden]="!id.errors.max">
+        ID Max is 100
+      </div>
+  </div>-->
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input ngModel type="text" class="form-control" id="name" formControlName="name">
+  </div>
+  <div class="alert-danger" *ngIf="name?.invalid &&(name?.dirty || name?.touched)">
+    Name is request
+  </div>
+  <div class="mb-3">
+    <label for="age" class="form-label">Age</label>
+    <input ngModel type="number" class="form-control" id="age" formControlName="age">
+  </div>
+  <div class="alert-danger" *ngIf="age?.invalid &&(age?.dirty || age?.touched)">
+    Age is request
+  </div>
+  <div class="mb-3">
+    <label for="mark" class="form-label">Mark</label>
+    <input ngModel type="number" class="form-control" id="mark" formControlName="mark">
+  </div>
+  <div class="alert-danger" *ngIf="mark?.invalid &&(mark?.dirty || mark?.touched)">
+    Age is request
+  </div>
+  <div class="mb-3">
+    <label for="avatar" class="form-label">Avatar</label>
+    <input ngModel type="text" class="form-control" id="avatar" formControlName="avatar">
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="studentForm.invalid">Submit</button>
+</form>

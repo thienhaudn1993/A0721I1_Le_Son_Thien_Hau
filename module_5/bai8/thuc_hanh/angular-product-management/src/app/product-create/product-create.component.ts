@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class ProductCreateComponent implements OnInit {
   formProduct = new FormGroup({
-    id: new FormControl('', [Validators.required]),
+    // id: new FormControl('', [Validators.required]),
     name: new FormControl(),
     price: new FormControl(),
     description: new FormControl()
@@ -17,7 +17,7 @@ export class ProductCreateComponent implements OnInit {
   constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.productService.getAll());
+    // console.log(this.productService.getAll());
   }
 
   get id(){
@@ -26,7 +26,8 @@ export class ProductCreateComponent implements OnInit {
 
 
   submit() {
-    this.productService.saveProduct(this.formProduct.value);
+    this.productService.saveProduct(this.formProduct.value).subscribe();
+    alert('Tạo thành công');
     this.router.navigateByUrl('/product/list');
   }
 

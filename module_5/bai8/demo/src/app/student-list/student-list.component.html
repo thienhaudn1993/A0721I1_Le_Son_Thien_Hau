@@ -1,0 +1,60 @@
+
+<!--Cách 1: Dùng [ngClass] khai báo từ css trong file.css-->
+<!--<h1 [ngClass]="'colorBlue sizeFont textAlign'"> Student Management </h1>-->
+
+<!-- Cách 2: tạo 1 biến css trong .ts và binding nó qua đây-->
+<h1 [ngClass]="cssStringvar"> Student Management </h1>
+<!--    Cách 3: Dùng class và boolean-->
+
+<br><br>
+<!--Lớp class ="table-hover" giúp tạo ra hiệu ứng (effect) đổi mầu nền khi con trỏ (pointer) di chuyển phía trên các dòng (row) của bảng-->
+<!--Lớp class ="table-striped" cho màu nền của tbody khác nhau giữa chẵn lẻ-->
+<a class="btn btn-primary m-2" routerLink="create">Create Student</a>
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Mark</th>
+      <th>Result</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{student.id}}</td>
+<!--      titlecase viết hoa chữ cái đầu chữ-->
+      <td>{{student.name | titlecase}}</td>
+      <td>{{student.age}}</td>
+      <td>{{student.mark}}</td>
+      <td *ngIf="student.mark>=5" class="text-success">PASS</td>
+      <td *ngIf="student.mark<5" class="text-danger">FAIL</td>
+      <td>
+        <a class="btn btn-info m-2" [routerLink]="['detail', student.id]">Detail</a>
+        <a class="btn btn-warning m-2">Edit</a>
+        <a class="btn btn-danger m-2"  (click)="deleteStudent(student.id)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+
+
+<!--</table>-->
+<!--<table class="table">-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th>Detail Student:</th>-->
+<!--      <th>Template-Form</th>-->
+<!--      <th>Reactive-Form</th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--    <tr>-->
+<!--      <td class="col-4"><app-student-detail (evenSendData)="getData($event)" [student]="studentDetail" ></app-student-detail></td>-->
+<!--      <td class="col-4"><app-template-form></app-template-form></td>-->
+<!--      <td class="col-4"><app-reactive-form></app-reactive-form></td>-->
+<!--    </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+

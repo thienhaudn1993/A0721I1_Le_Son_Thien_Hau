@@ -1,0 +1,85 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Iphone 12",
+      "price": 1100,
+      "description": "New",
+      "category": "Laptop"
+    },
+    {
+      "id": 2,
+      "name": "IPhone 11 Promax",
+      "price": 1560,
+      "description": "Like new",
+      "category": "Phone"
+    },
+    {
+      "id": 3,
+      "name": "IPhone X",
+      "price": 968000,
+      "description": "97%",
+      "category": "Phone"
+    },
+    {
+      "id": 4,
+      "name": "IPhone 8",
+      "price": 7540000,
+      "description": "98%",
+      "category": "Phone"
+    },
+    {
+      "id": 5,
+      "name": "IPhone 11 Pro",
+      "price": 1895000,
+      "description": "Like new",
+      "category": "Phone"
+    },
+    {
+      "id": 6,
+      "name": "Dell",
+      "price": 1200,
+      "description": "Used",
+      "category": "Laptop"
+    },
+    {
+      "id": 7,
+      "name": "SamSung S1",
+      "price": 700,
+      "description": "New",
+      "category": "Phone"
+    },
+    {
+      "id": 8,
+      "name": "Airpod",
+      "price": 250,
+      "description": "New",
+      "category": "Earphone"
+    },
+    {
+      "id": 10,
+      "name": "ádasd",
+      "price": 121,
+      "description": "ádasd",
+      "category": "Phone"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "nameCategory": "Phone"
+    },
+    {
+      "id": 2,
+      "nameCategory": "Laptop"
+    },
+    {
+      "nameCategory": "Mac",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "nameCategory": "Earphone"
+    }
+  ]
+}

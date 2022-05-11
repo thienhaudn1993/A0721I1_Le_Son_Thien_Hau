@@ -1,0 +1,12 @@
+<form [formGroup]="formEditCategory" (ngSubmit)="editCategory()" *ngIf="formEditCategory">
+  <table>
+    <tr>
+      <td>Category Name:</td>
+      <td><input type="text" formControlName="nameCategory"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button [disabled]="!formEditCategory.valid">Edit</button></td>
+    </tr>
+  </table>
+</form>

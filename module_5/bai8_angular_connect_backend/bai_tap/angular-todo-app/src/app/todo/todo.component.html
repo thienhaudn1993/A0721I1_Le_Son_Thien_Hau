@@ -1,5 +1,5 @@
 <h2 class="text-center">
-  Todo App
+  Todo App with HttpClient
 </h2>
 <div class="col-md-8 offset-md-2">
   <input type="text" class="form-control" [formControl]="content" (change)="change()">
@@ -7,7 +7,10 @@
     <li (click)="toggleTodo(i)"
         [class.complete]="todo.complete"
         *ngFor="let todo of todos; index as i">
-      {{todo.content}}
+      <p>Id: {{todo.id}}</p>
+      <p>Content: {{todo.content}}</p>
+      <a class="btn btn-danger m-2" (click)="deleteTodo(todo.id)">Delete</a>
+      <a class="btn btn-warning m-2" [routerLink]="['/edit' , todo.id]">Edit</a>
     </li>
   </ul>
 </div>

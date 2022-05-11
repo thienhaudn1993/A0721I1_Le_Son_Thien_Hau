@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "content": "code",
+      "id": 1
+    },
+    {
+      "content": "java",
+      "id": 2
+    },
+    {
+      "content": "f8",
+      "id": 3
+    },
+    {
+      "content": "love",
+      "id": 4
+    },
+    {
+      "content": "asd",
+      "complete": false,
+      "id": 5
+    },
+    {
+      "content": "x",
+      "complete": false,
+      "id": 6
+    },
+    {
+      "content": "test",
+      "id": 7
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+<a class="btn btn-info m-2" routerLink="/service/list">Back Service Page</a>
+<div class="container">
+  <div class="row">
+<table border="1px" class="col-4 m-2" *ngIf="dichVu">
+  <tr>
+    <td>Service ID: </td>
+    <td>{{dichVu.id}}</td>
+  </tr>
+  <tr>
+    <td>Tên dịch vụ: </td>
+    <td>{{dichVu.tenDichVu}}</td>
+  </tr>
+  <tr>
+    <td>Diện tích: </td>
+    <td>{{dichVu.dienTich}}</td>
+  </tr>
+  <tr>
+    <td>Chi phí thuê: </td>
+    <td>{{dichVu.chiPhiThue}}</td>
+  </tr>
+  <tr>
+    <td>Số lượng người tối đa: </td>
+    <td>{{dichVu.soLuongNguoiToiDa}}</td>
+  </tr>
+  <tr>
+    <td>Kiểu thuê: </td>
+    <td>{{dichVu.kieuThue}}</td>
+  </tr>
+  <tr>
+    <td>Loại Dịch Vụ: </td>
+    <td>{{dichVu.loaiDichVu}}</td>
+  </tr>
+
+  <tr *ngIf="dichVu.loaiDichVu == 'Villa' ">
+    <td>Tiêu chuẩn phòng: </td>
+    <td>{{dichVu.tieuChuanPhong}}</td>
+  </tr>
+  <tr *ngIf="dichVu.loaiDichVu == 'House' ">
+    <td>Tiêu chuẩn phòng: </td>
+    <td>{{dichVu.tieuChuanPhong}}</td>
+  </tr>
+  <tr *ngIf="dichVu.loaiDichVu == 'Villa' ">
+    <td>Mô tả tiện nghi khác: </td>
+    <td>{{dichVu.moTaTienNghiKhac}}</td>
+  </tr>
+  <tr *ngIf="dichVu.loaiDichVu == 'House' ">
+    <td>Mô tả tiện nghi khác: </td>
+    <td>{{dichVu.moTaTienNghiKhac}}</td>
+  </tr>
+  <tr *ngIf="dichVu.loaiDichVu == 'Villa' ">
+    <td>Diện tích hồ bơi: </td>
+    <td>{{dichVu.dienTichHoBoi}}</td>
+  </tr>
+  <tr *ngIf="dichVu.loaiDichVu == 'Villa' ">
+    <td>Số tầng: </td>
+    <td>{{dichVu.soTang}}</td>
+  </tr>
+  <tr *ngIf="dichVu.loaiDichVu == 'House' ">
+    <td>Số tầng: </td>
+    <td>{{dichVu.soTang}}</td>
+  </tr>
+  <tr *ngIf="dichVu.loaiDichVu == 'Room'">
+    <td>Dịch vụ miễn phí kèm theo: </td>
+    <td>{{dichVu.dichVuMienPhiKemTheo}}</td>
+  </tr>
+  <table class="table" border="1px">
+    <tr>
+      <td style="font-weight: bold; ">Dịch vụ đi kèm: </td>
+    </tr>
+    <tr>
+      <td>Tên dịch vụ đi kèm: </td>
+      <td>{{dichVu.tenDichVuDiKem}}</td>
+    </tr>
+    <tr>
+      <td>Đơn Vị: </td>
+      <td>{{dichVu.donVi}}</td>
+    </tr>
+    <tr>
+      <td>Giá tiền: </td>
+      <td>{{dichVu.giaTien}}</td>
+    </tr>
+  </table>
+</table>
+<img  class="col-8 m-2" src="{{dichVu.src}}" alt="image" style="width: 520px; height: 505px" *ngIf="dichVu">
+  </div>
+</div>

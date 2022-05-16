@@ -2,8 +2,11 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bai2_typescript/bai_tap/sum-fibonacci" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bai2_typescript/bai_tap/sum-fibonacci-de-qui" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/bai2_typescript/thuc_hanh" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/bai2_typescript/thuc_hanh/typescript-is-prime" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bai2_typescript/thuc_hanh/typescript-promise" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/bai2_typescript/thuc_hanh/typescript-sharp" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/bai2_typescript/thuc_hanh/typescript_variable" vcs="Git" />
   </component>

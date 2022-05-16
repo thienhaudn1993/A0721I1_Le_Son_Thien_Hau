@@ -1,0 +1,102 @@
+<a class="btn btn-info m-2" routerLink="/service/list">Back Serrvice Page</a>
+<div class="m-4">
+<h2 class="text-primary">Tạo dịch vụ mới: </h2>
+<form [formGroup]="createForm" (ngSubmit)="createService()">
+  <table>
+    <tr>
+      <td>Tên dịch vụ:</td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="tenDichVu"></td>
+    </tr>
+    <tr>
+      <td>Diện tích:</td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="dienTich"></td>
+    </tr>
+    <tr>
+      <td>Chi phí thuê:</td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="chiPhiThue"></td>
+    </tr>
+    <tr>
+      <td>Số lượng người tối đa: </td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="soLuongNguoiToiDa"></td>
+    </tr>
+    <tr>
+      <td class="pb-3">Loại Dịch Vụ: </td>
+<!--      <td><input style="width: 500px" class="my-2" type="text" formControlName="loaiDichVu"></td>-->
+      <td>
+        <select #element formControlName="loaiDichVu">
+          <option value="null">Choose</option>
+          <option value="Villa">Villa</option>
+          <option value="House">House</option>
+          <option value="Room">Room</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td class="pb-3">Kiểu thuê: </td>
+      <td>
+        <select formControlName="kieuThue">
+          <option value="null">Choose</option>
+          <option value="Year">Year</option>
+          <option value="Month">Month</option>
+          <option value="Day">Day</option>
+          <option value="House">House</option>
+        </select>
+      </td>
+    </tr>
+
+    <tr *ngIf="element.value == 'Villa'">
+      <td>Tiêu chuẩn phòng: </td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="tieuChuanPhong"></td>
+    </tr>
+    <tr *ngIf="element.value == 'House'">
+      <td>Tiêu chuẩn phòng: </td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="tieuChuanPhong"></td>
+    </tr>
+    <tr *ngIf="element.value == 'Villa'">
+      <td>Mô tả tiện nghi khác: </td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="moTaTienNghiKhac"></td>
+    </tr>
+    <tr *ngIf="element.value == 'House'">
+      <td>Mô tả tiện nghi khác: </td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="moTaTienNghiKhac"></td>
+    </tr>
+    <tr *ngIf="element.value == 'Villa'">
+      <td>Diện tích hồ bơi: </td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="dienTichHoBoi"></td>
+    </tr>
+    <tr *ngIf="element.value == 'Villa'">
+      <td>Số tầng: </td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="soTang"></td>
+    </tr>
+    <tr *ngIf="element.value == 'House'">
+      <td>Số tầng: </td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="soTang"></td>
+    </tr>
+    <tr *ngIf="element.value == 'Room'">
+      <td>Dịch vụ miễn phí kèm theo: </td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="dichVuMienPhiKemTheo"></td>
+    </tr>
+    <tr>
+      <td>Tên dịch vụ đi kèm: </td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="tenDichVuDiKem"></td>
+    </tr>
+    <tr>
+      <td>Đơn vị: </td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="donVi"></td>
+    </tr>
+    <tr>
+      <td>Giá tiền:</td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="giaTien"></td>
+    </tr>
+    <tr>
+      <td>Link ảnh:</td>
+      <td><input style="width: 500px" class="my-2" type="text" formControlName="src"></td>
+    </tr>
+    <br>
+    <tr>
+      <td></td>
+      <td><button>Create</button></td>
+    </tr>
+  </table>
+</form>
+</div>

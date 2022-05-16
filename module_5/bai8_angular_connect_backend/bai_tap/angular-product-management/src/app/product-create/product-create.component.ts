@@ -11,10 +11,6 @@ import {Category} from '../model/category';
 })
 export class ProductCreateComponent implements OnInit {
   constructor(private productService: ProductService, private router: Router, private categoryService: CategoryService) { }
-
-  get id(){
-    return this.formProduct.get('id');
-  }
   formProduct = new FormGroup({
     // id: new FormControl('', [Validators.required]),
     name: new FormControl(),
@@ -28,7 +24,9 @@ export class ProductCreateComponent implements OnInit {
     // console.log(this.productService.getAll());
     this.getAllCategory();
   }
-
+  get id(){
+    return this.formProduct.get('id');
+  }
 
   submit() {
     this.productService.saveProduct(this.formProduct.value).subscribe();

@@ -30,6 +30,13 @@ export class ProductService {
      }
    }
   }*/
+  searchByName(name: string): Observable<Product[]> {
+    // console.log(URL_API + '?' + 'name_like=' + name);
+    return this.httpClient.get<Product[]>(URL_API + '?' + 'name_like=' + name);
+  }
+  sortByPrice(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(URL_API + '?' + '_sort=price&_order=asc');
+  }
   updateProduct(id: number, product: Product): Observable<Product>{
     return this.httpClient.put(URL_API + '/' + id, product);
   }

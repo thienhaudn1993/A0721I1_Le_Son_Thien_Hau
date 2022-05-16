@@ -3,6 +3,7 @@ import {CategoryService} from '../../service/category/category.service';
 import {Category} from '../../model/category';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-category-list',
   templateUrl: './category-list.component.html',
@@ -24,6 +25,7 @@ export class CategoryListComponent implements OnInit {
     this.categoryService.deleteCategory(id).subscribe(
       () => {
         alert('Delete Success');
+        console.log(id);
       },
       () => {},
       () => {

@@ -52,34 +52,27 @@
     {
       "id": 8,
       "name": "Airpod",
-      "price": 250,
+      "price": 270,
       "description": "New",
       "category": "Earphone"
-    },
-    {
-      "id": 10,
-      "name": "ádasd",
-      "price": 121,
-      "description": "ádasd",
-      "category": "Phone"
     }
   ],
   "categories": [
     {
-      "id": 1,
-      "nameCategory": "Phone"
+      "id": 8,
+      "nameCategory": "asdas="
     },
     {
-      "id": 2,
-      "nameCategory": "Laptop"
+      "nameCategory": "as",
+      "id": 9
     },
     {
-      "nameCategory": "Mac",
-      "id": 3
+      "nameCategory": " ",
+      "id": 10
     },
     {
-      "id": 4,
-      "nameCategory": "Earphone"
+      "nameCategory": "asdasd",
+      "id": 11
     }
   ]
 }

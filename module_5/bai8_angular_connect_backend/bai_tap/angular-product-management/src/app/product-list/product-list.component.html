@@ -1,11 +1,23 @@
 <a class="btn btn-warning m-2" routerLink="/product/create">Create Product</a>
+<form [formGroup]="searchForm" (ngSubmit)="search()">
+  <h1>Tìm kiếm sản phẩm theo tên cách 1: </h1>
+  <input type="text" name="search" value="search"  formControlName="nameS">
+  <button>Search</button>
+</form>
+
+<!--//Cách 2:-->
+<!--<form>-->
+  <h1>Tìm kiếm sản phẩm theo tên cách 2: </h1>
+  <input type="text" name="search" value="search" #name formControlName="name">
+  <button type="submit" (click)="searchS(name.value)">Search</button>
+<!--</form>-->
 <h1>Danh sách sản phẩm</h1>
 <table class="table">
   <thead>
   <tr>
     <th>STT</th>
     <th>Tên</th>
-    <th>Giá</th>
+    <th><a (click)="sort()">Giá</a></th>
     <th>Danh mục</th>
     <th>Mô tả</th>
     <th>Action</th>
@@ -25,3 +37,4 @@
   </tr>
   </tbody>
 </table>
+

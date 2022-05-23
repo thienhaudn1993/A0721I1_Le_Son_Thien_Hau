@@ -1,0 +1,53 @@
+<a class="btn btn-warning m-2" routerLink="/products/create" >Create Product</a>
+<input #searchName (change)="search(searchName.value)" class="float-end m-3 col-2" type="search" placeholder="Search name" name="search">
+<h1 class="text-primary">Danh sách sản phẩm</h1>
+<table class="table">
+  <thead>
+  <tr>
+    <th>STT</th>
+    <th>ID</th>
+    <th>Tên sản phẩm</th>
+    <th><a (click)="sortByPrice()">Giá</a></th>
+    <th>Trạng thái</th>
+    <th>Mô tả</th>
+    <th>Số lượng</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{product.id}}</td>
+    <td>{{product.name | titlecase}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.status}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.quantity}}</td>
+    <td>
+      <a class="btn btn-info m-2" [routerLink]="['/products/edit', product.id]">Edit</a>
+      <a class="btn  btn-danger m-2" data-bs-toggle="modal" [attr.data-bs-target]="'#deleteProduct' + product.id">Delete</a>
+    </td>
+    <!-- Modal -->
+    <div class="modal" [id]="'deleteProduct' + product.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Product</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Bạn có muốn xóa product có tên là : {{product.name}} không?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteProduct(product.id)">Delete product</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </tr>
+  </tbody>
+</table>
+<!--<button class="btn btn-primary m-2" (click)="previous()">Previous</button>-->
+<!--<button class="btn btn-primary m-2" (click)="next()">Next</button>-->
+

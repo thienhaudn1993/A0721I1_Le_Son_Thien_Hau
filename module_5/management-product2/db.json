@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "name": "Iphone 13Pro",
+      "price": 800,
+      "status": "New",
+      "description": "ddddaaaaaaa",
+      "quantity": 100,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Iphone 13Pro Max",
+      "price": 1400,
+      "status": "New",
+      "description": "asdasd",
+      "quantity": 50
+    },
+    {
+      "id": 3,
+      "name": "macbook 14inch",
+      "price": 2500,
+      "status": "New",
+      "description": "asdasd",
+      "quantity": 80
+    },
+    {
+      "name": "Oppa",
+      "price": 300,
+      "status": "New ",
+      "description": "Camera 360",
+      "quantity": "20",
+      "id": 4
+    },
+    {
+      "name": "Dell",
+      "price": 900,
+      "status": "Used",
+      "description": "asdklhalkdjaslkdj",
+      "quantity": "10",
+      "id": 5
+    }
+  ]
+}

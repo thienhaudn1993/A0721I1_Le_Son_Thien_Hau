@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../service/product.service';
 import {Product} from '../model/product';
 import {FormControl, FormGroup} from '@angular/forms';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -11,10 +12,13 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
   searchForm: FormGroup;
+  sortEd = true;
+  private subscription: Subscription | undefined;
+  x = 1;
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-   this.productService.getAll().subscribe(
+   this.productService.getAll(this.x).subscribe(
      (data) => {
        this.products = data;
      }
@@ -48,12 +52,27 @@ export class ProductListComponent implements OnInit {
   }
 
   sort() {
-    this.productService.sortByPrice().subscribe(
+    this.sortEd = !this.sortEd;
+    this.productService.sortByPrice(this.sortEd).subscribe(
       (data) => {
-        this.products = data;
-        // @ts-ignore
-        // this.products = ! this.products;
+        if (this.sortEd) {
+          this.products = data;
+        } else {
+          this.products = data;
+        }
       }
     );
+  }
+
+  previous() {
+    this.x = this.x - 1;
+    console.log(this.x);
+    this.ngOnInit();
+  }
+
+  next() {
+    this.x = this.x + 1;
+    console.log(this.x);
+    this.ngOnInit();
   }
 }

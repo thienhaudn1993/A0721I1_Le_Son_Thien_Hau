@@ -1,14 +1,16 @@
 <a class="btn btn-warning m-2" routerLink="/product/create">Create Product</a>
-<form [formGroup]="searchForm" (ngSubmit)="search()">
-  <h1>Tìm kiếm sản phẩm theo tên cách 1: </h1>
-  <input type="text" name="search" value="search"  formControlName="nameS">
+<form [formGroup]="searchForm" (ngSubmit)="search()" *ngIf="searchForm">
+  <div class="float-end">
+<!--  <h1>Tìm kiếm sản phẩm theo tên cách 1: </h1>-->
+  <input type="text" placeholder="search" value="search"  formControlName="nameS">
   <button>Search</button>
+  </div>
 </form>
 
 <!--//Cách 2:-->
 <!--<form>-->
   <h1>Tìm kiếm sản phẩm theo tên cách 2: </h1>
-  <input type="text" name="search" value="search" #name formControlName="name">
+  <input type="text" placeholder="search" #name formControlName="name">
   <button type="submit" (click)="searchS(name.value)">Search</button>
 <!--</form>-->
 <h1>Danh sách sản phẩm</h1>
@@ -37,4 +39,6 @@
   </tr>
   </tbody>
 </table>
+<button class="btn btn-primary m-2" (click)="previous()">Previous</button>
+<button class="btn btn-primary m-2" (click)="next()">Next</button>
 

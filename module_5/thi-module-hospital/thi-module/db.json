@@ -1,0 +1,37 @@
+{
+  "products": [
+    {
+      "ma_benh_an": "BA-001",
+      "ma_benh_nhan": "BN-435",
+      "ten_bn": "Nguyen Van A",
+      "ngay_nv": "2016-08-07",
+      "ngay_rv": "2017-08-08",
+      "ly_do_nv": "Ung thư giai đoạn cuối",
+      "phuong_phap": "Hóa trị",
+      "bac_si_dieu_tri": "Hậu Lê",
+      "id": 1
+    },
+    {
+      "ma_benh_an": "BA-112",
+      "ma_benh_nhan": "BN-123",
+      "ten_bn": "Nguyen Van C",
+      "ngay_nv": "2021-05-04",
+      "ngay_rv": "2021-06-04",
+      "ly_do_nv": "Suy thận mạn",
+      "phuong_phap": "Chạy thận",
+      "bac_si_dieu_tri": "Lê Văn C",
+      "id": 2
+    },
+    {
+      "ma_benh_an": "BA-223",
+      "ma_benh_nhan": "BN-984",
+      "ten_bn": "Ton Nu D",
+      "ngay_nv": "2022-05-04",
+      "ngay_rv": "2022-05-12",
+      "ly_do_nv": "Covid-19",
+      "phuong_phap": "Cách ly và theo dõi thường xuyên",
+      "bac_si_dieu_tri": "Lê Văn N",
+      "id": 3
+    }
+  ]
+}

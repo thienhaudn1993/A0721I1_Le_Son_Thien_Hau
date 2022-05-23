@@ -55,6 +55,13 @@
       "price": 270,
       "description": "New",
       "category": "Earphone"
+    },
+    {
+      "id": 9,
+      "name": "dsfs",
+      "price": 1,
+      "description": null,
+      "category": null
     }
   ],
   "categories": [

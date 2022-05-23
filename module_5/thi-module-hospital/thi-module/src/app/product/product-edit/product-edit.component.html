@@ -1,0 +1,113 @@
+<div class="container-xl mt-5">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+<!--        <a class="btn btn-info" routerLink="/products/list"><< Trở lại trang product</a>-->
+        <div>
+          <div class="modal-content mt-5">
+            <form [formGroup]="formEdit" (ngSubmit)="editForm(id)" *ngIf="formEdit">
+              <div class="modal-header">
+                <h4 class="modal-title text-primary">Sửa thông tin bệnh án</h4>
+              </div>
+              <div class="modal-body">
+                <table>
+                  <tr>
+                    <td>Mã bệnh án:</td>
+                    <td><input style="width: 300px" type="text" formControlName="ma_benh_an" disabled></td>
+                  </tr>
+                  <tr>
+                    <td>Mã bệnh nhân:</td>
+                    <td><input type="text" style="width: 300px" formControlName="ma_benh_nhan" disabled></td>
+                  </tr>
+                  <tr>
+                    <td>Tên bệnh nhân:</td>
+                    <td><input style="width: 300px" type="text" formControlName="ten_bn"></td>
+                  </tr>
+                  <div *ngIf="ten_bn.invalid && (ten_bn.dirty || ten_bn.touched)">
+                    <div class="alert-danger" [hidden]="!ten_bn.errors.required">
+                      Tên bệnh nhận bắt buộc phải nhập
+                    </div>
+                    <div class="alert-danger" [hidden]="!ten_bn.errors.pattern">
+                      Tên bệnh nhận không được có kí tự số
+                    </div>
+                  </div>
+                  <tr>
+                    <td>Ngày vào viện:</td>
+                    <td><input style="width: 300px" type="date" formControlName="ngay_nv"></td>
+                  </tr>
+                  <div *ngIf="ngay_nv.invalid && (ngay_nv.dirty || ngay_nv.touched)">
+                    <div class="alert-danger" [hidden]="!ngay_nv.errors.required">
+                      Ngày nhập viện bắt buộc phải nhập
+                    </div>
+                  </div>
+                  <tr>
+                    <td>Ngày ra viện:</td>
+                    <td><input style="width: 300px" type="date" formControlName="ngay_rv"></td>
+                  </tr>
+                  <div *ngIf="ngay_rv.invalid && (ngay_rv.dirty || ngay_nv.touched)">
+                    <div class="alert-danger" [hidden]="!ngay_rv.errors.required">
+                      Ngày ra viện bắt buộc phải nhập
+                    </div>
+                  </div>
+                  <tr>
+                    <td>Lý do nhập viện:</td>
+                    <td><input style="width: 300px" type="text" formControlName="ly_do_nv"></td>
+                  </tr>
+                  <div *ngIf="ly_do_nv.invalid && (ly_do_nv.dirty || ly_do_nv.touched)">
+                    <div class="alert-danger" [hidden]="!ly_do_nv.errors.required">
+                      Lý do nhập viện bắt buộc phải nhập
+                    </div>
+                  </div>
+                  <tr>
+                    <td>Phương pháp điều trị:</td>
+                    <td><input style="width: 300px" type="text" formControlName="phuong_phap"></td>
+                  </tr>
+                  <div *ngIf="phuong_phap.invalid && (phuong_phap.dirty || phuong_phap.touched)">
+                    <div class="alert-danger" [hidden]="!phuong_phap.errors.required">
+                      Phương pháp điều trị bắt buộc phải nhập
+                    </div>
+                  </div>
+                  <tr>
+                    <td>Bác sĩ điều trị:</td>
+                    <td><input style="width: 300px" type="text" formControlName="bac_si_dieu_tri"></td>
+                  </tr>
+                  <div *ngIf="bac_si_dieu_tri.invalid && (bac_si_dieu_tri.dirty || bac_si_dieu_tri.touched)">
+                    <div class="alert-danger" [hidden]="!bac_si_dieu_tri.errors.required">
+                      Bác sĩ điều trị bắt buộc phải nhập
+                    </div>
+                  </div>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <button class="btn btn-warning" [disabled]="!formEdit.valid">Sửa</button>
+<!--                      <a class="btn btn-info m-2" routerLink="/products/list">Trở lại trang danh sách</a>-->
+                      <a class="btn btn-info m-2" data-bs-toggle="modal" [attr.data-bs-target]="'#backList' + id">Trở lại trang danh sách</a>
+                      <!-- Modal -->
+                      <div class="modal" [id]="'backList' + id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Xác nhận</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Bạn có muốn trở về danh sách
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+                              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="back()">Có</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,9 +8,10 @@ const URL_API = 'http://localhost:3000/products';
 })
 export class ProductService {
   products: Product[]  | undefined;
+  nameSearch = '';
   constructor(private httpClient: HttpClient) { }
-  getAll(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(URL_API);
+  getAll(x): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(URL_API + '?_page=' + x + '&_limit=5&_sort=price&_order=desc&name_like=' + this.nameSearch);
   }
   saveProduct(product: Product): Observable<any> {
     return this.httpClient.post(URL_API, product);
@@ -32,11 +33,16 @@ export class ProductService {
   }*/
   searchByName(name: string): Observable<Product[]> {
     // console.log(URL_API + '?' + 'name_like=' + name);
-    return this.httpClient.get<Product[]>(URL_API + '?' + 'name_like=' + name);
+    this.nameSearch = name;
+    return this.httpClient.get<Product[]>(URL_API + '?name_like=' + name);
   }
-  sortByPrice(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(URL_API + '?' + '_sort=price&_order=asc');
+  sortByPrice(sorted): Observable<Product[]> {
+    if (sorted) {
+      return this.httpClient.get<Product[]>(URL_API + '?' + '_sort=price&_order=desc&name_like=' + this.nameSearch);
+    }
+    return this.httpClient.get<Product[]>(URL_API + '?' + '_sort=price&_order=asc&name_like=' + this.nameSearch);
   }
+
   updateProduct(id: number, product: Product): Observable<Product>{
     return this.httpClient.put(URL_API + '/' + id, product);
   }

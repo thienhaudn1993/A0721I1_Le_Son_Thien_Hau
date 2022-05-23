@@ -1,0 +1,53 @@
+<!--<a class="btn btn-warning m-2" routerLink="/products/create">Create Product</a>-->
+<h3 class="text-primary m-2 text-center">Danh sách bệnh án</h3>
+<table class="table table-striped table-bordered border-primary">
+  <thead>
+    <tr class="text-center">
+      <th>STT</th>
+      <th>Mã bệnh án</th>
+      <th>Mã bệnh nhân</th>
+      <th>Tên bệnh nhân</th>
+      <th>Ngày nhập viện</th>
+      <th>Ngày ra viện</th>
+      <th>Lý do nhập viện</th>
+      <th>Phương pháp điều trị</th>
+      <th>Bác sĩ điều tri</th>
+      <th>Tác vụ</th>
+    </tr>
+  </thead>
+  <tbody class="text-center">
+    <tr *ngFor="let product of products; index as i">
+      <td>{{i+1}}</td>
+      <td>{{product.ma_benh_an}}</td>
+      <td>{{product.ma_benh_nhan}}</td>
+      <td>{{product.ten_bn}}</td>
+      <td>{{product.ngay_nv | date: "dd-MM-yyyy"}}</td>
+      <td>{{product.ngay_rv | date: "dd-MM-yyyy"}}</td>
+      <td>{{product.ly_do_nv}}</td>
+      <td>{{product.phuong_phap}}</td>
+      <td>{{product.bac_si_dieu_tri}}</td>
+      <td>
+        <a class="btn btn-info m-2" [routerLink]="['/products/edit', product.id]">Edit</a>
+        <a class="btn  btn-danger m-2" data-bs-toggle="modal" [attr.data-bs-target]="'#deleteProduct' + product.id">Delete</a>
+      </td>
+      <!-- Modal -->
+      <div class="modal" [id]="'deleteProduct' + product.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Xác nhận</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Bạn có muốn xóa thông tin bệnh án {{product.ma_benh_an}} hay không?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteProduct(product.id)">Có</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </tr>
+  </tbody>
+</table>

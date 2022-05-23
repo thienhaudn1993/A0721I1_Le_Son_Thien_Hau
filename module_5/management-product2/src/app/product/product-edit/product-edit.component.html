@@ -1,0 +1,87 @@
+<div class="container-xl mt-5">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <a class="btn btn-info" routerLink="/products/list"><< Trở lại trang product</a>
+      </div>
+      <div class="modal-content mt-5">
+        <form [formGroup]="formEdit" (ngSubmit)="editProduct(id)" *ngIf="formEdit">
+          <div class="modal-header">
+            <h4 class="modal-title">Update Product</h4>
+          </div>
+          <div class="modal-body">
+            <table>
+                <tr>
+                  <td>Tên sản phẩm:</td>
+                  <td><input type="text" formControlName="name"></td>
+                </tr>
+                <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                  <div class="alert-danger" [hidden]="!name.errors.required">
+                    Name is request
+                  </div>
+                </div>
+                <tr>
+                  <td>Giá sản phẩm</td>
+                  <td><input type="number" formControlName="price"></td>
+                </tr>
+                <div *ngIf="price.invalid && (price.dirty || price.touched)">
+                  <div class="alert-danger" [hidden]="!price.errors.required">
+                    Price is request
+                  </div>
+                  <div class="alert-danger" [hidden]="!price.errors.min">
+                    Price min is 1$
+                  </div>
+                </div>
+                <tr>
+                  <td>Mô tả về sản phẩm</td>
+                  <td><input type="text" formControlName="description"></td>
+                </tr>
+                <div *ngIf="description.invalid && (description.dirty || description.touched)">
+                  <div class="alert-danger" [hidden]="!description.errors.required">
+                    Description is request
+                  </div>
+                  <div class="alert-danger" [hidden]="!description.errors.minlength">
+                    Description minlengt is 10
+                  </div>
+                </div>
+              <tr>
+                  <td>Trạng thái</td>
+                  <!--      <td><input type="text" formControlName="status"></td>-->
+                  <td>
+                    <select formControlName="status">
+                      <option selected [value]="null" disabled>--Choose--</option>
+                      <option value="New">New</option>
+                      <option value="Used">Used</option>
+                    </select>
+                  </td>
+             </tr>
+                <div *ngIf="status.invalid && (status.dirty || status.touched)">
+                  <div class="alert-danger" [hidden]="!status.errors.required">
+                    Status is request
+                  </div>
+                </div>
+              <tr>
+                  <td>Quantity</td>
+                  <td><input type="text" formControlName="quantity"></td>
+             </tr>
+                <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)">
+                  <div class="alert-danger" [hidden]="!quantity.errors.required">
+                    Quantity is request
+                  </div>
+                  <div class="alert-danger" [hidden]="!quantity.errors.min">
+                    Quantity min is 0$
+                  </div>
+                </div>
+          <div class="modal-footer">
+              <tr>
+                  <td></td>
+                  <td><button [disabled]="!formEdit.valid">Update</button></td>
+              </tr>
+           </div>
+            </table>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

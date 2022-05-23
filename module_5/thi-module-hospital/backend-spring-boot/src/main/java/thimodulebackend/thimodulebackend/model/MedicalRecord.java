@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "hospital")
-public class BenhAn {
+public class MedicalRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,7 +17,7 @@ public class BenhAn {
     private String phuong_phap;
     private String bac_si_dieu_tri;
 
-    public BenhAn() {
+    public MedicalRecord() {
     }
 
     public Long getId() {

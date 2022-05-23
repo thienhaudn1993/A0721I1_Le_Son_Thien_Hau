@@ -22,8 +22,8 @@ public class MedicalRecordServiceImpl implements MedicalRecordService {
     }
 
     @Override
-    public void saveHospital(MedicalRecord medicalRecord) {
-        medicalRecordRepository.save(medicalRecord);
+    public MedicalRecord saveHospital(MedicalRecord medicalRecord) {
+        return medicalRecordRepository.save(medicalRecord);
     }
 
     @Override
